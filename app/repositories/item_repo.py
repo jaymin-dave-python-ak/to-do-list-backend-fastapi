@@ -9,7 +9,7 @@ class ItemRepository:
         return db.scalar(select(ItemModel).where(ItemModel.id == item_id))
 
     def get_all(self, owner_id: int, db: Session):
-        """Fetch all items."""
+        """Fetch all items with current user's owner_id."""
         return db.scalars(select(ItemModel).where(ItemModel.owner_id == owner_id)).all()
 
     def get_by_title(self, title: str, db: Session):
@@ -29,16 +29,6 @@ class ItemRepository:
         item = self.get_by_id(item_id, db)
         if item:
             for key, value in update_data.items():
-                setattr(item, key, value)
-            db.commit()
-            db.refresh(item)
-        return item
-
-    def replace(self, item_id: int, new_data: dict, db: Session):
-        """Replace an entire item (Full update)."""
-        item = self.get_by_id(item_id, db)
-        if item:
-            for key, value in new_data.items():
                 setattr(item, key, value)
             db.commit()
             db.refresh(item)

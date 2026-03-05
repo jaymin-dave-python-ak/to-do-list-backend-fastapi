@@ -1,83 +1,72 @@
-from fastapi import APIRouter, status, HTTPException, Depends
-from typing import Annotated
-from sqlalchemy.orm import Session
-
-from app.db.database import get_db
-from app.db.models.user import UserModel
-from app.repositories.item_repo import ItemRepository
-from app.api.v1.dependencies import get_current_user
+from fastapi import APIRouter, status, HTTPException
+from app.api.v1.dependencies import db_dep, item_repo_dep, user_dep
 from app.api.v1.schemas.response import ResponseSchema, create_response
 from app.api.v1.schemas.item import ItemOutSchema, ItemSchema
 
-router = APIRouter(
-    prefix="/items", tags=["Items"], dependencies=[Depends(get_current_user)]
-)
-ItemRepo = ItemRepository()
-DBDep = Annotated[Session, Depends(get_db)]
-UserDep = Annotated[UserModel, Depends(get_current_user)]
+router = APIRouter(prefix="/items", tags=["Items"])
 
 
-# Get All Items
 @router.get("/", status_code=status.HTTP_200_OK, response_model=ResponseSchema)
-def get_items(db: DBDep, current_user: UserDep):
-    """Retrieve all items of current user."""
-    items = ItemRepo.get_all(current_user.id, db)
-    return create_response(items, "Successfully retrieved all items.")
+def get_items(db: db_dep, current_user: user_dep, item_repo: item_repo_dep):
+    """Get all the items of current user."""
+    items = item_repo.get_all(current_user.id, db)
+    items_data = [ItemOutSchema.model_validate(item).model_dump() for item in items]
+    return create_response(items_data, "Successfully retrieved all items.")
 
 
-# Create an Item
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=ResponseSchema)
-def create_item(db: DBDep, current_user: UserDep, item: ItemSchema):
+def create_item(
+    item: ItemSchema, db: db_dep, current_user: user_dep, item_repo: item_repo_dep
+):
     """Create a new item and check it doesn't already exist."""
-    if ItemRepo.get_by_title(item.title, db):
+    if item_repo.get_by_title(item.title, db):
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT, detail="Item already exists"
         )
-    new_item = ItemRepo.create(item, owner_id=current_user.id, db=db)
+    new_item = item_repo.create(item, owner_id=current_user.id, db=db)
     item_data = ItemOutSchema.model_validate(new_item).model_dump()
     return create_response(item_data, "Item added successfully.")
 
 
-# FROM HERE ...
-@router.put("/{item_id}", status_code=status.HTTP_200_OK)
-async def replace_item(item_id: int, item: ItemSchema, db: DBDep):
-    """Replace an entire item (Full update)."""
-    updated_item = ItemRepo.replace(item_id, item.model_dump(), db)
-    if not updated_item:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail=f"Item {item_id} not found"
-        )
-    return {"message": f"Item {item_id} fully updated", "data": updated_item}
-
-
-@router.patch("/{item_id}", status_code=status.HTTP_200_OK)
-async def update_item(item_id: int, item: ItemSchema, db: DBDep):
-    """Update specific fields of an item (Partial update)."""
-    # exclude_unset=True ensures we only update fields sent by the client
-    update_data = item.model_dump(exclude_unset=True)
-    updated_item = ItemRepo.update(item_id, update_data, db)
-    if not updated_item:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail=f"Item {item_id} not found"
-        )
-    return {"message": f"Item {item_id} partially updated", "data": updated_item}
-
-
-@router.delete("/{item_id}", status_code=status.HTTP_200_OK)
-async def delete_item(
-    item_id: int, db: DBDep, current_user: UserModel = Depends(get_current_user)
+@router.patch(
+    "/{item_id}", status_code=status.HTTP_200_OK, response_model=ResponseSchema
+)
+def update_item(
+    item_id: int,
+    item: ItemSchema,
+    db: db_dep,
+    item_repo: item_repo_dep,
+    current_user: user_dep,
 ):
-    if not current_user.is_active:
-        raise HTTPException(status_code=403, detail="Inactive user")
+    """Update specific fields of an item (Partial update)."""
+    existing_item = item_repo.get_by_id(item_id, db)
+    if not existing_item:
+        raise HTTPException(status_code=404, detail="Item not found")
+    if existing_item.owner_id != current_user.id:
+        raise HTTPException(status_code=403, detail="Not authorized to edit this item")
 
-    item = ItemRepo.get_by_id(item_id, db)
+    update_data = item.model_dump(exclude_unset=True)
+    updated_item = item_repo.update(item_id, update_data, db)
+    updated_item_data = ItemOutSchema.model_validate(updated_item).model_dump()
+
+    return create_response(updated_item_data, "Item updated successfully.")
+
+
+@router.delete(
+    "/{item_id}", status_code=status.HTTP_200_OK, response_model=ResponseSchema
+)
+def delete_item(
+    item_id: int, db: db_dep, item_repo: item_repo_dep, current_user: user_dep
+):
+    """Delete an item if it exists."""
+    item = item_repo.get_by_id(item_id, db)
+    if not item:
+        raise HTTPException(status_code=404, detail="Item not found")
     if item.owner_id != current_user.id:
         raise HTTPException(
             status_code=403, detail="Not authorized to delete this item"
         )
+    deleted_item_data = ItemOutSchema.model_validate(item).model_dump()
 
-    if not ItemRepo.delete(item_id, db):
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND, detail=f"Item {item_id} not found"
-        )
-    return {"message": f"Item {item_id} removed successfully"}
+    item_repo.delete(item_id, db)
+    return create_response(deleted_item_data, "Item removed successfully.")

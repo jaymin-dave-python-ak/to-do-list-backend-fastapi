@@ -6,6 +6,7 @@ from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from app.db.database import get_db
 from app.service.auth_service import AuthService
 from app.repositories.users_repo import UserRepository
+from app.repositories.item_repo import ItemRepository
 from app.db.models.user import UserModel
 
 security = HTTPBearer()
@@ -25,11 +26,21 @@ def get_user_repo() -> UserRepository:
     return UserRepository()
 
 
-async def get_current_user(
+def get_item_repo() -> ItemRepository:
+    return ItemRepository()
+
+
+db_dep = Annotated[Session, Depends(get_db)]
+auth_service = Annotated[AuthService, Depends(get_auth_service)]
+user_repo_dep = Annotated[UserRepository, Depends(get_user_repo)]
+item_repo_dep = Annotated[ItemRepository, Depends(get_item_repo)]
+
+
+def get_current_user(
     token_data: Annotated[HTTPAuthorizationCredentials, Depends(security)],
-    db: Annotated[Session, Depends(get_db)],
-    auth_service: Annotated[AuthService, Depends(get_auth_service)],
-    user_repo: Annotated[UserRepository, Depends(get_user_repo)],
+    db: db_dep,
+    auth_service: auth_service,
+    user_repo: user_repo_dep,
 ) -> UserModel:
 
     token = token_data.credentials
@@ -59,3 +70,6 @@ async def get_current_user(
         )
 
     return user
+
+
+user_dep = Annotated[UserModel, Depends(get_current_user)]

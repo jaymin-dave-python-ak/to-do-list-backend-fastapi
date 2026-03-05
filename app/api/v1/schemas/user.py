@@ -1,4 +1,4 @@
-from pydantic import BaseModel, EmailStr, Field
+from pydantic import BaseModel, EmailStr, Field, ConfigDict
 from datetime import datetime
 
 
@@ -15,6 +15,7 @@ class UserCreateSchema(UserBaseSchema):
 class UserOutSchema(UserBaseSchema):
     id: int
     created_at: datetime
+    model_config = ConfigDict(from_attributes=True)
 
 
 class UserInDBSchema(UserOutSchema):

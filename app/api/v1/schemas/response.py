@@ -13,5 +13,4 @@ class ResponseSchema(BaseModel, Generic[T]):
 def create_response(
     data: Any = None, message: str = "Success", success: bool = True
 ) -> ResponseSchema:
-    # Returning the model instance ensures validation
-    return ResponseSchema(success=success, message=message, data=data)
+    return ResponseSchema(data=data, message=message, success=success)

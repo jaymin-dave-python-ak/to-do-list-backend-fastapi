@@ -13,7 +13,7 @@ IntPK = Annotated[int, mapped_column(primary_key=True, index=True)]
 class UserModel(Base):
     __tablename__ = "users"
     id: Mapped[IntPK]
-    username: Mapped[str] = mapped_column(unique=True, index=True)
+    username: Mapped[str] = mapped_column(index=True)
     email: Mapped[str] = mapped_column(unique=True, index=True)
     hashed_password: Mapped[str]
     is_active: Mapped[bool] = mapped_column(default=True)
