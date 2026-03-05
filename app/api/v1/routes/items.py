@@ -2,11 +2,13 @@ from fastapi import APIRouter, status, HTTPException
 from app.api.v1.dependencies import db_dep, item_repo_dep, user_dep
 from app.api.v1.schemas.response import ResponseSchema, create_response
 from app.api.v1.schemas.item import ItemOutSchema, ItemSchema
+from app.core.logger import log_func
 
 router = APIRouter(prefix="/items", tags=["Items"])
 
 
 @router.get("/", status_code=status.HTTP_200_OK, response_model=ResponseSchema)
+@log_func
 def get_items(db: db_dep, current_user: user_dep, item_repo: item_repo_dep):
     """Get all the items of current user."""
     items = item_repo.get_all(current_user.id, db)
@@ -15,6 +17,7 @@ def get_items(db: db_dep, current_user: user_dep, item_repo: item_repo_dep):
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=ResponseSchema)
+@log_func
 def create_item(
     item: ItemSchema, db: db_dep, current_user: user_dep, item_repo: item_repo_dep
 ):
@@ -31,6 +34,7 @@ def create_item(
 @router.patch(
     "/{item_id}", status_code=status.HTTP_200_OK, response_model=ResponseSchema
 )
+@log_func
 def update_item(
     item_id: int,
     item: ItemSchema,
@@ -55,6 +59,7 @@ def update_item(
 @router.delete(
     "/{item_id}", status_code=status.HTTP_200_OK, response_model=ResponseSchema
 )
+@log_func
 def delete_item(
     item_id: int, db: db_dep, item_repo: item_repo_dep, current_user: user_dep
 ):

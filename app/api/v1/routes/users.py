@@ -2,6 +2,7 @@ from fastapi import APIRouter, status, HTTPException
 from app.api.v1.dependencies import db_dep, user_repo_dep, auth_service
 from app.api.v1.schemas.user import UserCreateSchema, UserInSchema, UserOutSchema
 from app.api.v1.schemas.response import ResponseSchema, create_response
+from app.core.logger import log_func
 
 router = APIRouter(prefix="/users", tags=["Users"])
 
@@ -9,6 +10,7 @@ router = APIRouter(prefix="/users", tags=["Users"])
 @router.post(
     "/register", response_model=ResponseSchema, status_code=status.HTTP_201_CREATED
 )
+@log_func
 def register(
     user_in: UserCreateSchema,
     db: db_dep,
@@ -29,6 +31,7 @@ def register(
 
 
 @router.post("/login", response_model=ResponseSchema)
+@log_func
 def login(
     user_in: UserInSchema,
     db: db_dep,
