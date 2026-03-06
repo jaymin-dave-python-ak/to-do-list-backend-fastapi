@@ -12,9 +12,13 @@ class ItemRepository:
         """Fetch all items with current user's owner_id."""
         return db.scalars(select(ItemModel).where(ItemModel.owner_id == owner_id)).all()
 
-    def get_by_title(self, title: str, db: Session):
+    def get_by_title(self, title: str, owner_id: int, db: Session):
         """Fetch a single item by Title."""
-        return db.scalar(select(ItemModel).where(ItemModel.title == title))
+        return db.scalar(
+            select(ItemModel).where(
+                ItemModel.title == title, ItemModel.owner_id == owner_id
+            )
+        )
 
     def create(self, item, owner_id: int, db: Session):
         """Add a new item to the list."""

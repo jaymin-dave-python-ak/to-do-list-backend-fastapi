@@ -1,5 +1,5 @@
 from fastapi import APIRouter, status, HTTPException
-from app.api.v1.dependencies import db_dep, item_repo_dep, user_dep
+from app.api.v1.dependencies import db_dep, item_repo_dep, current_user_dep
 from app.api.v1.schemas.response import ResponseSchema, create_response
 from app.api.v1.schemas.item import ItemOutSchema, ItemSchema
 from app.core.logger import log_func
@@ -9,7 +9,7 @@ router = APIRouter(prefix="/items", tags=["Items"])
 
 @router.get("/", status_code=status.HTTP_200_OK, response_model=ResponseSchema)
 @log_func
-def get_items(db: db_dep, current_user: user_dep, item_repo: item_repo_dep):
+def get_items(db: db_dep, current_user: current_user_dep, item_repo: item_repo_dep):
     """Get all the items of current user."""
     items = item_repo.get_all(current_user.id, db)
     items_data = [ItemOutSchema.model_validate(item).model_dump() for item in items]
@@ -19,10 +19,13 @@ def get_items(db: db_dep, current_user: user_dep, item_repo: item_repo_dep):
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=ResponseSchema)
 @log_func
 def create_item(
-    item: ItemSchema, db: db_dep, current_user: user_dep, item_repo: item_repo_dep
+    item: ItemSchema,
+    db: db_dep,
+    current_user: current_user_dep,
+    item_repo: item_repo_dep,
 ):
     """Create a new item and check it doesn't already exist."""
-    if item_repo.get_by_title(item.title, db):
+    if item_repo.get_by_title(item.title, current_user.id, db):
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT, detail="Item already exists"
         )
@@ -40,7 +43,7 @@ def update_item(
     item: ItemSchema,
     db: db_dep,
     item_repo: item_repo_dep,
-    current_user: user_dep,
+    current_user: current_user_dep,
 ):
     """Update specific fields of an item (Partial update)."""
     existing_item = item_repo.get_by_id(item_id, db)
@@ -61,7 +64,7 @@ def update_item(
 )
 @log_func
 def delete_item(
-    item_id: int, db: db_dep, item_repo: item_repo_dep, current_user: user_dep
+    item_id: int, db: db_dep, item_repo: item_repo_dep, current_user: current_user_dep
 ):
     """Delete an item if it exists."""
     item = item_repo.get_by_id(item_id, db)

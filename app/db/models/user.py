@@ -17,7 +17,7 @@ class UserModel(Base):
     email: Mapped[str] = mapped_column(unique=True, index=True)
     hashed_password: Mapped[str]
     is_active: Mapped[bool] = mapped_column(default=True)
-
+    is_admin: Mapped[bool] = mapped_column(default=False)
     created_at: Mapped[datetime] = mapped_column(
         default=lambda: datetime.now(timezone.utc)
     )

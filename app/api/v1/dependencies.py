@@ -7,6 +7,7 @@ from app.db.database import get_db
 from app.service.auth_service import AuthService
 from app.repositories.users_repo import UserRepository
 from app.repositories.item_repo import ItemRepository
+from app.repositories.admin_repo import AdminRepository
 from app.db.models.user import UserModel
 
 security = HTTPBearer()
@@ -15,6 +16,11 @@ credentials_exception = HTTPException(
     status_code=status.HTTP_401_UNAUTHORIZED,
     detail="Could not validate credentials",
     headers={"WWW-Authenticate": "Bearer"},
+)
+
+admin_exception = HTTPException(
+    status_code=status.HTTP_401_UNAUTHORIZED,
+    detail="Could not validate admin credentials",
 )
 
 
@@ -30,10 +36,15 @@ def get_item_repo() -> ItemRepository:
     return ItemRepository()
 
 
+def get_admin_repo() -> AdminRepository:
+    return AdminRepository()
+
+
 db_dep = Annotated[Session, Depends(get_db)]
 auth_service = Annotated[AuthService, Depends(get_auth_service)]
 user_repo_dep = Annotated[UserRepository, Depends(get_user_repo)]
 item_repo_dep = Annotated[ItemRepository, Depends(get_item_repo)]
+admin_repo_dep = Annotated[AdminRepository, Depends(get_admin_repo)]
 
 
 def get_current_user(
@@ -72,4 +83,15 @@ def get_current_user(
     return user
 
 
-user_dep = Annotated[UserModel, Depends(get_current_user)]
+current_user_dep = Annotated[UserModel, Depends(get_current_user)]
+
+
+def get_admin(
+    current_user: current_user_dep,
+) -> UserModel:
+    if not getattr(current_user, "is_admin", False):
+        raise admin_exception
+    return current_user
+
+
+admin_dep = Annotated[UserModel, Depends(get_admin)]
