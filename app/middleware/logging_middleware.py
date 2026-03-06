@@ -4,7 +4,7 @@ from fastapi import Request
 from app.core.logger import logger
 
 
-async def log_requests_middelware(request: Request, call_next):
+async def log_requests_middleware(request: Request, call_next):
     request_id = str(uuid.uuid4())
     start_time = time.perf_counter()
 
