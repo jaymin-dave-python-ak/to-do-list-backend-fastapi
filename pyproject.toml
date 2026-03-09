@@ -7,9 +7,13 @@ requires-python = ">=3.10"
 dependencies = [
     "bcrypt==4.0.1",
     "fastapi[standard]>=0.132.0",
+    "httpx>=0.28.1",
     "passlib[bcrypt]>=1.7.4",
+    "psycopg>=3.3.3",
     "pydantic-settings>=2.13.1",
     "pydantic[email]>=2.12.5",
     "pyjwt>=2.11.0",
+    "pytest>=9.0.2",
+    "pytest-cov>=7.0.0",
     "sqlalchemy>=2.0.47",
 ]
