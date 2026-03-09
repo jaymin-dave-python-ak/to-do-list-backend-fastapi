@@ -1,5 +1,6 @@
 from pydantic import BaseModel, EmailStr, Field, ConfigDict
 from datetime import datetime
+from typing import Optional
 
 
 class UserBaseSchema(BaseModel):
@@ -26,3 +27,8 @@ class UserInDBSchema(UserOutSchema):
 class UserInSchema(BaseModel):
     email: EmailStr
     password: str = Field(..., min_length=8, description="Plain text password")
+
+
+class UserUpdateSchema(BaseModel):
+    is_active: Optional[bool] = None
+    is_admin: Optional[bool] = None

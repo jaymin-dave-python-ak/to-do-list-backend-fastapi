@@ -6,7 +6,7 @@ from app.db.models.item import ItemModel
 class ItemRepository:
     def get_by_id(self, item_id: int, db: Session):
         """Fetch a single item by ID."""
-        return db.scalar(select(ItemModel).where(ItemModel.id == item_id))
+        return db.get(ItemModel, item_id)
 
     def get_all(self, owner_id: int, db: Session):
         """Fetch all items with current user's owner_id."""
