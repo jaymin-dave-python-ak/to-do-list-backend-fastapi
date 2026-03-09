@@ -9,7 +9,13 @@ class ItemSchema(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
 
+class ItemUpdateSchema(BaseModel):
+    title: Optional[str] = None
+    desc: Optional[str] = None
+    active: Optional[bool] = None
+    model_config = ConfigDict(from_attributes=True)
+
+
 class ItemOutSchema(ItemSchema):
     id: int
     owner_id: int
-    model_config = ConfigDict(from_attributes=True)

@@ -1,7 +1,7 @@
 from fastapi import APIRouter, status, HTTPException
 from app.api.v1.dependencies import db_dep, item_repo_dep, current_user_dep
 from app.api.v1.schemas.response import ResponseSchema, create_response
-from app.api.v1.schemas.item import ItemOutSchema, ItemSchema
+from app.api.v1.schemas.item import ItemOutSchema, ItemSchema, ItemUpdateSchema
 from app.core.logger import log_func
 
 router = APIRouter(prefix="/items", tags=["Items"])
@@ -40,7 +40,7 @@ def create_item(
 @log_func
 def update_item(
     item_id: int,
-    item: ItemSchema,
+    item: ItemUpdateSchema,
     db: db_dep,
     item_repo: item_repo_dep,
     current_user: current_user_dep,
@@ -48,9 +48,14 @@ def update_item(
     """Update specific fields of an item (Partial update)."""
     existing_item = item_repo.get_by_id(item_id, db)
     if not existing_item:
-        raise HTTPException(status_code=404, detail="Item not found")
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="Item not found"
+        )
     if existing_item.owner_id != current_user.id:
-        raise HTTPException(status_code=403, detail="Not authorized to edit this item")
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Not authorized to edit this item",
+        )
 
     update_data = item.model_dump(exclude_unset=True)
     updated_item = item_repo.update(item_id, update_data, db)
@@ -69,10 +74,13 @@ def delete_item(
     """Delete an item if it exists."""
     item = item_repo.get_by_id(item_id, db)
     if not item:
-        raise HTTPException(status_code=404, detail="Item not found")
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, detail="Item not found"
+        )
     if item.owner_id != current_user.id:
         raise HTTPException(
-            status_code=403, detail="Not authorized to delete this item"
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Not authorized to delete this item",
         )
     deleted_item_data = ItemOutSchema.model_validate(item).model_dump()
 
