@@ -1,0 +1,54 @@
+from fastapi import status
+from tests.test_utils import assert_response_structure, create_user_data
+
+class TestUser:
+    def test_register_user_success(self, client):
+        """Test successful user registration."""
+        user_details = create_user_data()
+        
+        response = client.post("/users/register", json=user_details)
+        assert response.status_code == status.HTTP_201_CREATED
+        
+        body = response.json()
+        assert_response_structure(body)
+        
+        assert body["message"] == "User registered successfully."
+        assert body["data"]["email"] == user_details["email"]
+
+    def test_register_duplicate_email_error(self, client):
+        """Test registration with an existing email."""
+        user_details = create_user_data(email="duplicate@gmail.com")
+        
+        client.post("/users/register", json=user_details)
+        
+        response = client.post("/users/register", json=user_details)
+        assert response.status_code == status.HTTP_400_BAD_REQUEST
+        
+        body = response.json()
+        assert body["detail"] == "Email already registered"
+
+    def test_login_success(self, client):
+        """Test successful user login."""
+        user_details = create_user_data(email="login-user@gmail.com")
+        login_payload = {"email": user_details["email"], "password": user_details["password"]}
+        
+        client.post("/users/register", json=user_details)
+        
+        response = client.post("/users/login", json=login_payload)
+        assert response.status_code == status.HTTP_200_OK
+        
+        body = response.json()
+        assert_response_structure(body)
+        
+        assert body["message"] == "Login successful."
+        assert "access_token" in body["data"]
+
+    def test_login_non_existent_user_error(self, client):
+        """Test login failure for a user that does not exist."""
+        login_payload = {"email": "not_existent@gmail.com", "password": "somepassword"}
+        
+        response = client.post("/users/login", json=login_payload)
+        assert response.status_code == status.HTTP_401_UNAUTHORIZED
+        
+        body = response.json()
+        assert body["detail"] == "Invalid credentials"
