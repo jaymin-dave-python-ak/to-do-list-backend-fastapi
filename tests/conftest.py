@@ -10,14 +10,9 @@ engine = create_engine(settings.TEST_DB_URL)
 TestingSession = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
 
-# Fixture Scope Levels
-# scope='function' (Default): Runs once per test function.
-# scope='class': Runs once per test class.
-# scope='module': Runs once per module (file).
-# scope='package': Runs once per package.
-# scope='session': Runs once per test session
 @pytest.fixture(scope="session")
 def db_engine():
+    """Create a test database engine and setup/drop tables for the entire pytest session."""
     Base.metadata.create_all(bind=engine)
     yield engine
     Base.metadata.drop_all(bind=engine)
@@ -25,7 +20,7 @@ def db_engine():
 
 @pytest.fixture
 def db(db_engine):
-    """Create a new database session for a test."""
+    """Provide an isolated SQLAlchemy database session wrapped in a transaction for each test."""
     connection = db_engine.connect()
     transaction = connection.begin()
     session = TestingSession(bind=connection)
@@ -39,7 +34,7 @@ def db(db_engine):
 
 @pytest.fixture
 def client(db):
-    """Override get_db dependency and return a TestClient."""
+    """Return FastAPI TestClient with overridden get_db dependency to use the test database session."""
 
     def override_get_db():
         yield db

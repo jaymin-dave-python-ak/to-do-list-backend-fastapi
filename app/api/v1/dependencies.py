@@ -25,18 +25,20 @@ admin_exception = HTTPException(
 
 
 def get_auth_service() -> AuthService:
+    """Provide AuthService instance used for password hashing and JWT token operations."""
     return AuthService()
 
 
 def get_user_repo() -> UserRepository:
+    """Provide UserRepository instance to perform database operations related to users."""
     return UserRepository()
 
-
 def get_item_repo() -> ItemRepository:
+    """Provide ItemRepository instance to handle item CRUD operations."""
     return ItemRepository()
 
-
 def get_admin_repo() -> AdminRepository:
+    """Provide AdminRepository instance to manage admin related database operations."""
     return AdminRepository()
 
 
@@ -53,6 +55,7 @@ def get_current_user(
     auth_service: auth_service,
     user_repo: user_repo_dep,
 ) -> UserModel:
+    """Extract user from JWT token, validate credentials, and return the authenticated user model."""
 
     token = token_data.credentials
 
@@ -89,6 +92,7 @@ current_user_dep = Annotated[UserModel, Depends(get_current_user)]
 def get_admin(
     current_user: current_user_dep,
 ) -> UserModel:
+    """Verify that the authenticated user has admin privileges before allowing access."""
     if not getattr(current_user, "is_admin", False):
         raise admin_exception
     return current_user

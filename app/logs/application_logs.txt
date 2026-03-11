@@ -1,12 +1,68 @@
-2026-03-09 19:42:33,196 - INFO - 
+2026-03-11 05:39:12,942 - INFO - 
 **********************************************************
-ID: 78aef53b-e29d-4190-b6b2-d9840b40cd5f | Method: GET | Path: /
-2026-03-09 19:42:33,200 - INFO - ID: 78aef53b-e29d-4190-b6b2-d9840b40cd5f | Path: / | Status: 200 | Time: 0.0039s
+ID: 2625ef9c-6c5c-4e67-ba2c-f70c944db7c6 | Method: GET | Path: /docs
+2026-03-11 05:39:12,960 - INFO - ID: 2625ef9c-6c5c-4e67-ba2c-f70c944db7c6 | Path: /docs | Status: 200 | Time: 0.0165s
 **********************************************************
 
-2026-03-09 19:43:51,263 - INFO - 
+2026-03-11 05:39:13,143 - INFO - 
 **********************************************************
-ID: 1ceefba1-7284-4bc7-833b-5940bb5011e7 | Method: GET | Path: /
-2026-03-09 19:43:51,270 - INFO - ID: 1ceefba1-7284-4bc7-833b-5940bb5011e7 | Path: / | Status: 200 | Time: 0.0073s
+ID: 72f9f9cc-c665-42fa-9afc-f69911701e2b | Method: GET | Path: /openapi.json
+2026-03-11 05:39:14,012 - INFO - ID: 72f9f9cc-c665-42fa-9afc-f69911701e2b | Path: /openapi.json | Status: 200 | Time: 0.8692s
+**********************************************************
+
+2026-03-11 05:41:15,229 - INFO - 
+**********************************************************
+ID: 00789a9b-d486-4065-9d62-ea9008877fbe | Method: GET | Path: /
+2026-03-11 05:41:15,236 - INFO - ID: 00789a9b-d486-4065-9d62-ea9008877fbe | Path: / | Status: 200 | Time: 0.0068s
+**********************************************************
+
+2026-03-11 05:51:57,521 - INFO - 
+**********************************************************
+ID: eab2269b-2146-49b2-b23c-e16e7c2c9225 | Method: GET | Path: /docs
+2026-03-11 05:51:57,522 - INFO - ID: eab2269b-2146-49b2-b23c-e16e7c2c9225 | Path: /docs | Status: 200 | Time: 0.0008s
+**********************************************************
+
+2026-03-11 05:51:57,664 - INFO - 
+**********************************************************
+ID: f31ba37b-17b0-4420-b0bb-01c381361393 | Method: GET | Path: /openapi.json
+2026-03-11 05:51:57,765 - INFO - ID: f31ba37b-17b0-4420-b0bb-01c381361393 | Path: /openapi.json | Status: 200 | Time: 0.1009s
+**********************************************************
+
+2026-03-11 05:52:18,970 - INFO - 
+**********************************************************
+ID: 93be58ed-4710-4d67-8a3d-6237fcb8781c | Method: POST | Path: /users/login
+2026-03-11 05:52:19,002 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-11 05:52:19,024 - ERROR - Function Error: login | Exception: 401: Invalid credentials
+2026-03-11 05:52:19,027 - INFO - ID: 93be58ed-4710-4d67-8a3d-6237fcb8781c | Path: /users/login | Status: 401 | Time: 0.0574s
+**********************************************************
+
+2026-03-11 05:52:40,096 - INFO - 
+**********************************************************
+ID: 4d56a9d1-283c-4af8-bed6-250514147c18 | Method: POST | Path: /users/register
+2026-03-11 05:52:40,103 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'jaymin4724', 'is_active': True, 'is_admin': True, 'password': '*******'}}
+2026-03-11 05:52:40,916 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'jaymin4724', 'is_active': True, 'is_admin': True, 'id': 1, 'created_at': datetime.datetime(2026, 3, 11, 5, 52, 40, 885320)}}
+2026-03-11 05:52:40,922 - INFO - ID: 4d56a9d1-283c-4af8-bed6-250514147c18 | Path: /users/register | Status: 201 | Time: 0.8252s
+**********************************************************
+
+2026-03-11 05:52:53,896 - INFO - 
+**********************************************************
+ID: 8ea4c556-91ba-451f-9814-49995e28c6c1 | Method: POST | Path: /users/login
+2026-03-11 05:52:53,902 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-11 05:52:54,709 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'token_type': 'bearer'}}
+2026-03-11 05:52:54,712 - INFO - ID: 8ea4c556-91ba-451f-9814-49995e28c6c1 | Path: /users/login | Status: 200 | Time: 0.8161s
+**********************************************************
+
+2026-03-11 05:53:17,883 - INFO - 
+**********************************************************
+ID: 89554aa5-7010-4057-8d13-d60959474534 | Method: GET | Path: /admin/items
+2026-03-11 05:53:17,904 - INFO - Function Start: get_all_items | Args: () Kwargs: {'db': 'obj', 'admin_repo': 'obj', 'admin_dep': 'obj'}
+2026-03-11 05:53:17,920 - INFO - Function Success: get_all_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': []}
+2026-03-11 05:53:17,923 - INFO - ID: 89554aa5-7010-4057-8d13-d60959474534 | Path: /admin/items | Status: 200 | Time: 0.0405s
+**********************************************************
+
+2026-03-11 05:55:15,983 - INFO - 
+**********************************************************
+ID: c906d940-4555-4cc1-90a5-7a2b8f40f8ab | Method: GET | Path: /admin/items
+2026-03-11 05:55:16,078 - INFO - ID: c906d940-4555-4cc1-90a5-7a2b8f40f8ab | Path: /admin/items | Status: 401 | Time: 0.0945s
 **********************************************************
 

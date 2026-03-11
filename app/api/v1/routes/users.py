@@ -17,6 +17,7 @@ def register(
     user_repo: user_repo_dep,
     auth_service: auth_service,
 ):
+    """Register a new user by validating email uniqueness, hashing password, and storing user in database."""
     if user_repo.get_by_email(db, user_in.email):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Email already registered"
@@ -40,6 +41,7 @@ def login(
     user_repo: user_repo_dep,
     auth_service: auth_service,
 ):
+    """Authenticate user credentials and generate a JWT access token for successful login."""
     user = user_repo.get_by_email(db, user_in.email)
     if not user or not auth_service.verify_password(
         user_in.password, user.hashed_password
