@@ -8,7 +8,6 @@ from tests.test_utils import (
     update_item_data,
 )
 
-
 @pytest.fixture
 def auth_client(client):
     """Creates a user and authenticates the client for item tests."""

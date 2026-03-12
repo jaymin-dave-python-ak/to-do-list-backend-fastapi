@@ -22,31 +22,42 @@ class AuthService:
         return pwd_context.verify(plain_password, hashed_password)
 
     @staticmethod
-    def create_access_token(data: dict, expires_delta: timedelta | None = None) -> str:
-        """Generate a signed JWT access token with expiration time for authenticated sessions."""
+    def _generate_token(data: dict, expires_delta: timedelta, secret: str, token_type: str) -> str:
+        """Internal helper to generate JWT tokens."""
         to_encode = data.copy()
-
-        if expires_delta:
-            expire = datetime.now(timezone.utc) + expires_delta
-        else:
-            expire = datetime.now(timezone.utc) + timedelta(
-                minutes=int(settings.ACCESS_TOKEN_EXPIRE_MINUTES)
-            )
-
-        to_encode.update({"exp": expire})
-
-        encoded_jwt = jwt.encode(
-            to_encode, settings.SECRET_KEY, algorithm=settings.ALGORITHM
-        )
-        return encoded_jwt
+        expire = datetime.now(timezone.utc) + expires_delta
+        to_encode.update({"exp": expire, "type": token_type})
+        return jwt.encode(to_encode, secret, algorithm=settings.ALGORITHM)
 
     @staticmethod
-    def decode_token(token: str) -> dict[str, Any] | None:
-        """Decode and validate a JWT token and return the payload if the signature is valid."""
+    def create_access_token(data: dict) -> str:
+        """Generate a short-lived access token."""
+        return AuthService._generate_token(
+            data=data,
+            expires_delta=timedelta(minutes=int(settings.ACCESS_TOKEN_EXPIRE_MINUTES)),
+            secret=settings.SECRET_ACCESS_KEY,
+            token_type="access"
+        )
+
+    @staticmethod
+    def create_refresh_token(data: dict) -> str:
+        """Generate a long-lived refresh token."""
+        return AuthService._generate_token(
+            data=data,
+            expires_delta=timedelta(days=int(settings.REFRESH_TOKEN_EXPIRE_DAYS)),
+            secret=settings.SECRET_REFRESH_KEY,
+            token_type="refresh"
+        )
+
+    @staticmethod
+    def decode_token(token: str, is_refresh: bool = False) -> dict[str, Any] | None:
+        """Decode token using secret key based on its type."""
+        if is_refresh: 
+            secret = settings.SECRET_REFRESH_KEY
+        else:
+            secret = settings.SECRET_ACCESS_KEY
+
         try:
-            payload = jwt.decode(
-                token, settings.SECRET_KEY, algorithms=[settings.ALGORITHM]
-            )
-            return payload
+            return jwt.decode(token, secret, algorithms=[settings.ALGORITHM])
         except jwt.PyJWTError:
             return None

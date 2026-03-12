@@ -52,3 +52,33 @@ class TestUser:
         
         body = response.json()
         assert body["detail"] == "Invalid credentials"
+
+    def test_refresh_token_success(self, client):
+        """Test successful token rotation using a valid refresh token."""
+        user_details = create_user_data(email="refresher@gmail.com")
+        client.post("/users/register", json=user_details)
+        
+        login_payload = {"email": user_details["email"], "password": user_details["password"]}
+        login_response = client.post("/users/login", json=login_payload)
+        
+        refresh_token = login_response.json()["data"]["refresh_token"]
+        
+        response = client.post(f"/users/refresh?refresh_token={refresh_token}")
+        
+        assert response.status_code == status.HTTP_200_OK
+        
+        body = response.json()
+        assert_response_structure(body)
+        
+        assert body["message"] == "Tokens rotated successfully."
+        assert "access_token" in body["data"]
+        assert "refresh_token" in body["data"]
+
+    def test_refresh_token_invalid_error(self, client):
+        """Test refresh failure with an invalid token string."""
+        invalid_token = "not.a.real.jwt.token"
+        
+        response = client.post(f"/users/refresh?refresh_token={invalid_token}")
+        
+        assert response.status_code == status.HTTP_401_UNAUTHORIZED
+        assert response.json()["detail"] == "Invalid or expired refresh token"
