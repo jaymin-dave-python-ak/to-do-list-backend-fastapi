@@ -10,7 +10,6 @@ app = FastAPI()
 app.middleware("http")(log_requests_middleware)
 
 app.include_router(api_router)
-Base.metadata.create_all(bind=engine)
 
 
 @app.get("/", status_code=status.HTTP_200_OK, response_model=ResponseSchema)
