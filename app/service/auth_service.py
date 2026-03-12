@@ -2,6 +2,7 @@ from datetime import datetime, timedelta, timezone
 from passlib.context import CryptContext
 from app.core.config import settings
 import jwt
+import random
 from typing import Any
 
 # Setup the password hashing context
@@ -61,3 +62,11 @@ class AuthService:
             return jwt.decode(token, secret, algorithms=[settings.ALGORITHM])
         except jwt.PyJWTError:
             return None
+    
+    import secrets
+
+    @staticmethod
+    def generate_otp() -> str:
+        """Generate a secure 6-digit OTP."""
+        otp = random.randint(100000, 999999);
+        return str(otp)

@@ -2,11 +2,12 @@ from typing import Annotated
 from fastapi import HTTPException, status, Depends
 from sqlalchemy.orm import Session
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-import redis 
+import redis
 
 from app.db.database import get_db
 from app.core.redis import get_redis
 from app.service.auth_service import AuthService
+from app.service.email_service import EmailService
 from app.repositories.users_repo import UserRepository
 from app.repositories.item_repo import ItemRepository
 from app.repositories.admin_repo import AdminRepository
@@ -31,13 +32,20 @@ def get_auth_service() -> AuthService:
     return AuthService()
 
 
+def get_email_service() -> EmailService:
+    """Provide EmailService instance used for sending an email for OTP verification."""
+    return EmailService()
+
+
 def get_user_repo() -> UserRepository:
     """Provide UserRepository instance to perform database operations related to users."""
     return UserRepository()
 
+
 def get_item_repo() -> ItemRepository:
     """Provide ItemRepository instance to handle item CRUD operations."""
     return ItemRepository()
+
 
 def get_admin_repo() -> AdminRepository:
     """Provide AdminRepository instance to manage admin related database operations."""
@@ -47,6 +55,7 @@ def get_admin_repo() -> AdminRepository:
 db_dep = Annotated[Session, Depends(get_db)]
 redis_dep = Annotated[redis.Redis, Depends(get_redis)]
 auth_service = Annotated[AuthService, Depends(get_auth_service)]
+email_service = Annotated[EmailService, Depends(get_email_service)]
 user_repo_dep = Annotated[UserRepository, Depends(get_user_repo)]
 item_repo_dep = Annotated[ItemRepository, Depends(get_item_repo)]
 admin_repo_dep = Annotated[AdminRepository, Depends(get_admin_repo)]
