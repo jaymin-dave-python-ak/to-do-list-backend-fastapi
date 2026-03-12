@@ -616,3 +616,1119 @@ ID: c8ba7a4a-bc0a-432c-bc54-a8527f950dc5 | Method: POST | Path: /users/refresh
 2026-03-12 11:14:21,865 - INFO - ID: c8ba7a4a-bc0a-432c-bc54-a8527f950dc5 | Path: /users/refresh | Status: 401 | Time: 0.0010s
 **********************************************************
 
+2026-03-12 13:42:53,527 - INFO - 
+**********************************************************
+ID: d87e08c9-fb38-4fde-9d38-06a1380eb8f5 | Method: POST | Path: /users/register
+2026-03-12 13:42:53,537 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:42:53,774 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 12, 13, 42, 53, 772095)}}
+2026-03-12 13:42:53,775 - INFO - ID: d87e08c9-fb38-4fde-9d38-06a1380eb8f5 | Path: /users/register | Status: 201 | Time: 0.2484s
+**********************************************************
+
+2026-03-12 13:42:53,777 - INFO - 
+**********************************************************
+ID: d5855087-870e-44f5-8c01-4c291fe5583b | Method: POST | Path: /items/
+2026-03-12 13:42:53,782 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:42:53,787 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-12 13:42:53,788 - INFO - ID: d5855087-870e-44f5-8c01-4c291fe5583b | Path: /items/ | Status: 201 | Time: 0.0110s
+**********************************************************
+
+2026-03-12 13:42:53,792 - INFO - 
+**********************************************************
+ID: 97b82e8d-dca6-45ba-9bbb-250db99a65fa | Method: POST | Path: /users/register
+2026-03-12 13:42:53,794 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:42:54,007 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 2, 'created_at': datetime.datetime(2026, 3, 12, 13, 42, 54, 6459)}}
+2026-03-12 13:42:54,008 - INFO - ID: 97b82e8d-dca6-45ba-9bbb-250db99a65fa | Path: /users/register | Status: 201 | Time: 0.2162s
+**********************************************************
+
+2026-03-12 13:42:54,009 - INFO - 
+**********************************************************
+ID: 9cbaef68-6993-4604-af07-0a6c0983b9b3 | Method: POST | Path: /items/
+2026-03-12 13:42:54,013 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:42:54,016 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-12 13:42:54,016 - INFO - ID: 9cbaef68-6993-4604-af07-0a6c0983b9b3 | Path: /items/ | Status: 201 | Time: 0.0069s
+**********************************************************
+
+2026-03-12 13:42:54,017 - INFO - 
+**********************************************************
+ID: d58f5258-1f0b-4f7a-8780-65fa82b993c6 | Method: POST | Path: /items/
+2026-03-12 13:42:54,020 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'different desc', 'active': True}}
+2026-03-12 13:42:54,021 - ERROR - Function Error: create_item | Exception: 409: Item already exists
+2026-03-12 13:42:54,021 - INFO - ID: d58f5258-1f0b-4f7a-8780-65fa82b993c6 | Path: /items/ | Status: 409 | Time: 0.0039s
+**********************************************************
+
+2026-03-12 13:42:54,025 - INFO - 
+**********************************************************
+ID: 407d82ea-b6ab-4dae-a238-8fe3807ec04c | Method: POST | Path: /users/register
+2026-03-12 13:42:54,026 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:42:54,240 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 3, 'created_at': datetime.datetime(2026, 3, 12, 13, 42, 54, 238677)}}
+2026-03-12 13:42:54,240 - INFO - ID: 407d82ea-b6ab-4dae-a238-8fe3807ec04c | Path: /users/register | Status: 201 | Time: 0.2155s
+**********************************************************
+
+2026-03-12 13:42:54,242 - INFO - 
+**********************************************************
+ID: b04c1b74-d098-4ce4-88dc-57170628fc99 | Method: POST | Path: /items/
+2026-03-12 13:42:54,245 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:42:54,248 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:42:54,249 - INFO - ID: b04c1b74-d098-4ce4-88dc-57170628fc99 | Path: /items/ | Status: 201 | Time: 0.0070s
+**********************************************************
+
+2026-03-12 13:42:54,250 - INFO - 
+**********************************************************
+ID: 3ac0244e-a8d8-489a-9645-ad89fc829b6f | Method: PATCH | Path: /items/3
+2026-03-12 13:42:54,253 - INFO - Function Start: update_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 3, 'item': {'title': 'item title x', 'desc': None, 'active': None}}
+2026-03-12 13:42:54,257 - INFO - Function Success: update_item | Result: {'success': True, 'message': 'Item updated successfully.', 'data': {'title': 'item title x', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:42:54,258 - INFO - ID: 3ac0244e-a8d8-489a-9645-ad89fc829b6f | Path: /items/3 | Status: 200 | Time: 0.0079s
+**********************************************************
+
+2026-03-12 13:42:54,263 - INFO - 
+**********************************************************
+ID: 910a538a-e6d8-41a9-b32c-2e04c32ff34f | Method: POST | Path: /users/register
+2026-03-12 13:42:54,265 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:42:54,480 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 4, 'created_at': datetime.datetime(2026, 3, 12, 13, 42, 54, 477866)}}
+2026-03-12 13:42:54,480 - INFO - ID: 910a538a-e6d8-41a9-b32c-2e04c32ff34f | Path: /users/register | Status: 201 | Time: 0.2175s
+**********************************************************
+
+2026-03-12 13:42:54,482 - INFO - 
+**********************************************************
+ID: a4340e8c-e742-43ba-8cd7-8b15eab69652 | Method: POST | Path: /items/
+2026-03-12 13:42:54,485 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:42:54,487 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:42:54,488 - INFO - ID: a4340e8c-e742-43ba-8cd7-8b15eab69652 | Path: /items/ | Status: 201 | Time: 0.0058s
+**********************************************************
+
+2026-03-12 13:42:54,489 - INFO - 
+**********************************************************
+ID: b6a22c3a-7e48-41e8-b070-ce34fe7aec4f | Method: DELETE | Path: /items/4
+2026-03-12 13:42:54,492 - INFO - Function Start: delete_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 4}
+2026-03-12 13:42:54,493 - INFO - Function Success: delete_item | Result: {'success': True, 'message': 'Item removed successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:42:54,494 - INFO - ID: b6a22c3a-7e48-41e8-b070-ce34fe7aec4f | Path: /items/4 | Status: 200 | Time: 0.0055s
+**********************************************************
+
+2026-03-12 13:42:54,499 - INFO - 
+**********************************************************
+ID: 2b701f4b-cb0a-4c22-946a-8cad3459fec0 | Method: GET | Path: /
+2026-03-12 13:42:54,500 - INFO - ID: 2b701f4b-cb0a-4c22-946a-8cad3459fec0 | Path: / | Status: 200 | Time: 0.0010s
+**********************************************************
+
+2026-03-12 13:42:54,505 - INFO - 
+**********************************************************
+ID: dced2277-79f4-4b96-ac3a-e7e3c67a794d | Method: POST | Path: /users/register
+2026-03-12 13:42:54,507 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:42:54,721 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 5, 'created_at': datetime.datetime(2026, 3, 12, 13, 42, 54, 720090)}}
+2026-03-12 13:42:54,722 - INFO - ID: dced2277-79f4-4b96-ac3a-e7e3c67a794d | Path: /users/register | Status: 201 | Time: 0.2167s
+**********************************************************
+
+2026-03-12 13:42:54,726 - INFO - 
+**********************************************************
+ID: 7860357b-3499-4b67-b2a5-704ac951150f | Method: POST | Path: /users/register
+2026-03-12 13:42:54,728 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:42:54,942 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 6, 'created_at': datetime.datetime(2026, 3, 12, 13, 42, 54, 940549)}}
+2026-03-12 13:42:54,942 - INFO - ID: 7860357b-3499-4b67-b2a5-704ac951150f | Path: /users/register | Status: 201 | Time: 0.2164s
+**********************************************************
+
+2026-03-12 13:42:54,943 - INFO - 
+**********************************************************
+ID: 553afb32-3d40-4ce7-8cbf-4b1537c94883 | Method: POST | Path: /users/register
+2026-03-12 13:42:54,945 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:42:54,946 - ERROR - Function Error: register | Exception: 400: Email already registered
+2026-03-12 13:42:54,947 - INFO - ID: 553afb32-3d40-4ce7-8cbf-4b1537c94883 | Path: /users/register | Status: 400 | Time: 0.0035s
+**********************************************************
+
+2026-03-12 13:42:54,951 - INFO - 
+**********************************************************
+ID: a02556bf-39b0-49fb-be95-cddb01050a58 | Method: POST | Path: /users/register
+2026-03-12 13:42:54,953 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:42:55,165 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 7, 'created_at': datetime.datetime(2026, 3, 12, 13, 42, 55, 163883)}}
+2026-03-12 13:42:55,166 - INFO - ID: a02556bf-39b0-49fb-be95-cddb01050a58 | Path: /users/register | Status: 201 | Time: 0.2150s
+**********************************************************
+
+2026-03-12 13:42:55,167 - INFO - 
+**********************************************************
+ID: 702e4b7e-9ca8-4938-b884-e5d709cef57b | Method: POST | Path: /users/login
+2026-03-12 13:42:55,379 - INFO - ID: 702e4b7e-9ca8-4938-b884-e5d709cef57b | Path: /users/login | Status: 200 | Time: 0.2117s
+**********************************************************
+
+2026-03-12 13:42:55,384 - INFO - 
+**********************************************************
+ID: 53836ff5-e969-4ddc-bc69-8f65932af55a | Method: POST | Path: /users/login
+2026-03-12 13:42:55,387 - INFO - ID: 53836ff5-e969-4ddc-bc69-8f65932af55a | Path: /users/login | Status: 401 | Time: 0.0033s
+**********************************************************
+
+2026-03-12 13:42:55,392 - INFO - 
+**********************************************************
+ID: 4dd7d36b-ea78-4865-8f03-08e5e3793bee | Method: POST | Path: /users/register
+2026-03-12 13:42:55,394 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:42:55,607 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 8, 'created_at': datetime.datetime(2026, 3, 12, 13, 42, 55, 605701)}}
+2026-03-12 13:42:55,607 - INFO - ID: 4dd7d36b-ea78-4865-8f03-08e5e3793bee | Path: /users/register | Status: 201 | Time: 0.2154s
+**********************************************************
+
+2026-03-12 13:42:55,608 - INFO - 
+**********************************************************
+ID: a9b3eb33-b683-42ff-9d6a-9c61383e5546 | Method: POST | Path: /users/login
+2026-03-12 13:42:55,820 - INFO - ID: a9b3eb33-b683-42ff-9d6a-9c61383e5546 | Path: /users/login | Status: 200 | Time: 0.2116s
+**********************************************************
+
+2026-03-12 13:42:55,821 - INFO - 
+**********************************************************
+ID: 59c72366-1568-4afa-aaa1-15f74bb49768 | Method: POST | Path: /users/refresh
+2026-03-12 13:43:03,899 - INFO - 
+**********************************************************
+ID: a33f7ce5-0400-4ada-a385-0a58d482a25b | Method: POST | Path: /users/refresh
+2026-03-12 13:43:03,901 - INFO - ID: a33f7ce5-0400-4ada-a385-0a58d482a25b | Path: /users/refresh | Status: 401 | Time: 0.0017s
+**********************************************************
+
+2026-03-12 13:43:03,905 - INFO - 
+**********************************************************
+ID: bdc2acd0-748f-4840-b907-4cdddba7c1cc | Method: POST | Path: /users/register
+2026-03-12 13:43:03,908 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:43:04,120 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 9, 'created_at': datetime.datetime(2026, 3, 12, 13, 43, 4, 119075)}}
+2026-03-12 13:43:04,121 - INFO - ID: bdc2acd0-748f-4840-b907-4cdddba7c1cc | Path: /users/register | Status: 201 | Time: 0.2155s
+**********************************************************
+
+2026-03-12 13:43:04,122 - INFO - 
+**********************************************************
+ID: 45c880ae-4a63-40ee-90a8-57fe4ca4668d | Method: POST | Path: /users/login
+2026-03-12 13:43:04,333 - INFO - ID: 45c880ae-4a63-40ee-90a8-57fe4ca4668d | Path: /users/login | Status: 200 | Time: 0.2111s
+**********************************************************
+
+2026-03-12 13:43:04,334 - INFO - 
+**********************************************************
+ID: c12c5bf6-d3d5-4cf7-b3db-a8f05daff3bf | Method: POST | Path: /users/refresh
+2026-03-12 13:43:26,405 - INFO - 
+**********************************************************
+ID: 09ee0e1e-d4c8-4faf-be16-be9329c6e102 | Method: POST | Path: /users/register
+2026-03-12 13:43:26,416 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:43:26,654 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 12, 13, 43, 26, 651709)}}
+2026-03-12 13:43:26,654 - INFO - ID: 09ee0e1e-d4c8-4faf-be16-be9329c6e102 | Path: /users/register | Status: 201 | Time: 0.2492s
+**********************************************************
+
+2026-03-12 13:43:26,656 - INFO - 
+**********************************************************
+ID: 17f70cca-866c-4fb6-b7b4-e1d3d847ece0 | Method: POST | Path: /items/
+2026-03-12 13:43:26,661 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:43:26,667 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-12 13:43:26,667 - INFO - ID: 17f70cca-866c-4fb6-b7b4-e1d3d847ece0 | Path: /items/ | Status: 201 | Time: 0.0109s
+**********************************************************
+
+2026-03-12 13:43:26,671 - INFO - 
+**********************************************************
+ID: 7b255bad-a9f9-4eac-8575-69d5391be942 | Method: POST | Path: /users/register
+2026-03-12 13:43:26,673 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:43:26,886 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 2, 'created_at': datetime.datetime(2026, 3, 12, 13, 43, 26, 885217)}}
+2026-03-12 13:43:26,887 - INFO - ID: 7b255bad-a9f9-4eac-8575-69d5391be942 | Path: /users/register | Status: 201 | Time: 0.2157s
+**********************************************************
+
+2026-03-12 13:43:26,888 - INFO - 
+**********************************************************
+ID: 66384acb-3254-45ca-9fcd-f90482432f5a | Method: POST | Path: /items/
+2026-03-12 13:43:26,891 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:43:26,893 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-12 13:43:26,894 - INFO - ID: 66384acb-3254-45ca-9fcd-f90482432f5a | Path: /items/ | Status: 201 | Time: 0.0055s
+**********************************************************
+
+2026-03-12 13:43:26,895 - INFO - 
+**********************************************************
+ID: 4f312912-5a8f-4caa-87ff-3ebc23356b0b | Method: POST | Path: /items/
+2026-03-12 13:43:26,899 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'different desc', 'active': True}}
+2026-03-12 13:43:26,900 - ERROR - Function Error: create_item | Exception: 409: Item already exists
+2026-03-12 13:43:26,900 - INFO - ID: 4f312912-5a8f-4caa-87ff-3ebc23356b0b | Path: /items/ | Status: 409 | Time: 0.0054s
+**********************************************************
+
+2026-03-12 13:43:26,904 - INFO - 
+**********************************************************
+ID: cca1e113-84f1-40f9-b6de-25d5d1096a89 | Method: POST | Path: /users/register
+2026-03-12 13:43:26,906 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:43:27,118 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 3, 'created_at': datetime.datetime(2026, 3, 12, 13, 43, 27, 117249)}}
+2026-03-12 13:43:27,119 - INFO - ID: cca1e113-84f1-40f9-b6de-25d5d1096a89 | Path: /users/register | Status: 201 | Time: 0.2149s
+**********************************************************
+
+2026-03-12 13:43:27,120 - INFO - 
+**********************************************************
+ID: efe2bb92-33ab-4b95-af73-c752af2ef0dd | Method: POST | Path: /items/
+2026-03-12 13:43:27,123 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:43:27,125 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:43:27,126 - INFO - ID: efe2bb92-33ab-4b95-af73-c752af2ef0dd | Path: /items/ | Status: 201 | Time: 0.0056s
+**********************************************************
+
+2026-03-12 13:43:27,127 - INFO - 
+**********************************************************
+ID: 0276833b-e629-4900-93a6-2f723b3f9600 | Method: PATCH | Path: /items/3
+2026-03-12 13:43:27,132 - INFO - Function Start: update_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 3, 'item': {'title': 'item title x', 'desc': None, 'active': None}}
+2026-03-12 13:43:27,135 - INFO - Function Success: update_item | Result: {'success': True, 'message': 'Item updated successfully.', 'data': {'title': 'item title x', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:43:27,136 - INFO - ID: 0276833b-e629-4900-93a6-2f723b3f9600 | Path: /items/3 | Status: 200 | Time: 0.0088s
+**********************************************************
+
+2026-03-12 13:43:27,139 - INFO - 
+**********************************************************
+ID: 35833f94-46c9-421f-8020-ef5e6f227668 | Method: POST | Path: /users/register
+2026-03-12 13:43:27,141 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:43:27,354 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 4, 'created_at': datetime.datetime(2026, 3, 12, 13, 43, 27, 352791)}}
+2026-03-12 13:43:27,354 - INFO - ID: 35833f94-46c9-421f-8020-ef5e6f227668 | Path: /users/register | Status: 201 | Time: 0.2149s
+**********************************************************
+
+2026-03-12 13:43:27,356 - INFO - 
+**********************************************************
+ID: 7820ad0a-c6ee-4ff1-94a0-e835b1dc16e1 | Method: POST | Path: /items/
+2026-03-12 13:43:27,359 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:43:27,361 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:43:27,362 - INFO - ID: 7820ad0a-c6ee-4ff1-94a0-e835b1dc16e1 | Path: /items/ | Status: 201 | Time: 0.0060s
+**********************************************************
+
+2026-03-12 13:43:27,363 - INFO - 
+**********************************************************
+ID: 99807836-31f1-4476-bc49-75fd3a215b8c | Method: DELETE | Path: /items/4
+2026-03-12 13:43:27,367 - INFO - Function Start: delete_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 4}
+2026-03-12 13:43:27,369 - INFO - Function Success: delete_item | Result: {'success': True, 'message': 'Item removed successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:43:27,369 - INFO - ID: 99807836-31f1-4476-bc49-75fd3a215b8c | Path: /items/4 | Status: 200 | Time: 0.0059s
+**********************************************************
+
+2026-03-12 13:43:27,373 - INFO - 
+**********************************************************
+ID: cf5577ce-fa93-4405-a361-f991f5a3f30c | Method: GET | Path: /
+2026-03-12 13:43:27,374 - INFO - ID: cf5577ce-fa93-4405-a361-f991f5a3f30c | Path: / | Status: 200 | Time: 0.0009s
+**********************************************************
+
+2026-03-12 13:43:27,379 - INFO - 
+**********************************************************
+ID: 11e82017-c5b5-4808-8f87-91ef7cb153c9 | Method: POST | Path: /users/register
+2026-03-12 13:43:27,383 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:43:27,598 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 5, 'created_at': datetime.datetime(2026, 3, 12, 13, 43, 27, 595975)}}
+2026-03-12 13:43:27,598 - INFO - ID: 11e82017-c5b5-4808-8f87-91ef7cb153c9 | Path: /users/register | Status: 201 | Time: 0.2193s
+**********************************************************
+
+2026-03-12 13:43:27,602 - INFO - 
+**********************************************************
+ID: 05df7ddc-f4d1-4343-ac62-c08c7fd0dd3e | Method: POST | Path: /users/register
+2026-03-12 13:43:27,604 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:43:27,817 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 6, 'created_at': datetime.datetime(2026, 3, 12, 13, 43, 27, 816131)}}
+2026-03-12 13:43:27,818 - INFO - ID: 05df7ddc-f4d1-4343-ac62-c08c7fd0dd3e | Path: /users/register | Status: 201 | Time: 0.2156s
+**********************************************************
+
+2026-03-12 13:43:27,819 - INFO - 
+**********************************************************
+ID: 14526d01-7b31-46e7-8b20-8608145c7180 | Method: POST | Path: /users/register
+2026-03-12 13:43:27,821 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:43:27,821 - ERROR - Function Error: register | Exception: 400: Email already registered
+2026-03-12 13:43:27,822 - INFO - ID: 14526d01-7b31-46e7-8b20-8608145c7180 | Path: /users/register | Status: 400 | Time: 0.0028s
+**********************************************************
+
+2026-03-12 13:43:27,826 - INFO - 
+**********************************************************
+ID: 0d81a9ab-62eb-4091-9e31-f7a3588ee166 | Method: POST | Path: /users/register
+2026-03-12 13:43:27,827 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:43:28,039 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 7, 'created_at': datetime.datetime(2026, 3, 12, 13, 43, 28, 37556)}}
+2026-03-12 13:43:28,039 - INFO - ID: 0d81a9ab-62eb-4091-9e31-f7a3588ee166 | Path: /users/register | Status: 201 | Time: 0.2136s
+**********************************************************
+
+2026-03-12 13:43:28,040 - INFO - 
+**********************************************************
+ID: 9aeeec0b-b98b-4eea-8b60-264f593be23f | Method: POST | Path: /users/login
+2026-03-12 13:43:28,251 - INFO - ID: 9aeeec0b-b98b-4eea-8b60-264f593be23f | Path: /users/login | Status: 200 | Time: 0.2108s
+**********************************************************
+
+2026-03-12 13:43:28,255 - INFO - 
+**********************************************************
+ID: b478a87c-d4d3-44fe-9f3d-eca1a11b710a | Method: POST | Path: /users/login
+2026-03-12 13:43:28,258 - INFO - ID: b478a87c-d4d3-44fe-9f3d-eca1a11b710a | Path: /users/login | Status: 401 | Time: 0.0030s
+**********************************************************
+
+2026-03-12 13:43:28,265 - INFO - 
+**********************************************************
+ID: 09806a6f-0c2b-49eb-a2a3-f348be1b6bc7 | Method: POST | Path: /users/register
+2026-03-12 13:43:28,267 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:43:28,482 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 8, 'created_at': datetime.datetime(2026, 3, 12, 13, 43, 28, 480354)}}
+2026-03-12 13:43:28,483 - INFO - ID: 09806a6f-0c2b-49eb-a2a3-f348be1b6bc7 | Path: /users/register | Status: 201 | Time: 0.2178s
+**********************************************************
+
+2026-03-12 13:43:28,484 - INFO - 
+**********************************************************
+ID: 4f499932-f00e-4dc6-9478-f7b298d4a6a0 | Method: POST | Path: /users/login
+2026-03-12 13:43:28,694 - INFO - ID: 4f499932-f00e-4dc6-9478-f7b298d4a6a0 | Path: /users/login | Status: 200 | Time: 0.2103s
+**********************************************************
+
+2026-03-12 13:43:28,696 - INFO - 
+**********************************************************
+ID: ee5bd280-3b1f-4575-85a3-fd9d1870b1bf | Method: POST | Path: /users/refresh
+2026-03-12 13:43:28,699 - INFO - ID: ee5bd280-3b1f-4575-85a3-fd9d1870b1bf | Path: /users/refresh | Status: 200 | Time: 0.0034s
+**********************************************************
+
+2026-03-12 13:43:28,703 - INFO - 
+**********************************************************
+ID: 36f938ee-cbf0-4946-80a8-7935e19a3201 | Method: POST | Path: /users/refresh
+2026-03-12 13:43:28,705 - INFO - ID: 36f938ee-cbf0-4946-80a8-7935e19a3201 | Path: /users/refresh | Status: 401 | Time: 0.0019s
+**********************************************************
+
+2026-03-12 13:43:28,709 - INFO - 
+**********************************************************
+ID: 1e27433a-aede-4280-9d40-374495000cf9 | Method: POST | Path: /users/register
+2026-03-12 13:43:28,712 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:43:28,927 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 9, 'created_at': datetime.datetime(2026, 3, 12, 13, 43, 28, 926145)}}
+2026-03-12 13:43:28,928 - INFO - ID: 1e27433a-aede-4280-9d40-374495000cf9 | Path: /users/register | Status: 201 | Time: 0.2183s
+**********************************************************
+
+2026-03-12 13:43:28,929 - INFO - 
+**********************************************************
+ID: e1f90eb2-4f26-4073-a0f0-eb28ce0981a1 | Method: POST | Path: /users/login
+2026-03-12 13:43:29,140 - INFO - ID: e1f90eb2-4f26-4073-a0f0-eb28ce0981a1 | Path: /users/login | Status: 200 | Time: 0.2105s
+**********************************************************
+
+2026-03-12 13:43:29,141 - INFO - 
+**********************************************************
+ID: eb76ed2c-37b7-4214-b0e8-b116c46293d6 | Method: POST | Path: /users/refresh
+2026-03-12 13:43:29,142 - INFO - ID: eb76ed2c-37b7-4214-b0e8-b116c46293d6 | Path: /users/refresh | Status: 200 | Time: 0.0016s
+**********************************************************
+
+2026-03-12 13:43:29,143 - INFO - 
+**********************************************************
+ID: c80d36ff-d528-4923-b34b-3ce08ed908f4 | Method: POST | Path: /users/refresh
+2026-03-12 13:43:29,145 - INFO - ID: c80d36ff-d528-4923-b34b-3ce08ed908f4 | Path: /users/refresh | Status: 401 | Time: 0.0014s
+**********************************************************
+
+2026-03-12 13:46:45,695 - INFO - 
+**********************************************************
+ID: 6ba1cdaa-c59b-4b8b-a822-fa50d2f678fd | Method: POST | Path: /users/register
+2026-03-12 13:46:45,704 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:46:45,938 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 12, 13, 46, 45, 935191)}}
+2026-03-12 13:46:45,938 - INFO - ID: 6ba1cdaa-c59b-4b8b-a822-fa50d2f678fd | Path: /users/register | Status: 201 | Time: 0.2436s
+**********************************************************
+
+2026-03-12 13:46:45,940 - INFO - 
+**********************************************************
+ID: ff4a853f-672d-49d6-9485-c324020a66f3 | Method: POST | Path: /items/
+2026-03-12 13:46:45,944 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:46:45,949 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-12 13:46:45,949 - INFO - ID: ff4a853f-672d-49d6-9485-c324020a66f3 | Path: /items/ | Status: 201 | Time: 0.0090s
+**********************************************************
+
+2026-03-12 13:46:45,953 - INFO - 
+**********************************************************
+ID: 9ce20126-3ea5-4acd-bad5-2bfbc44ef134 | Method: POST | Path: /users/register
+2026-03-12 13:46:45,955 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:46:46,166 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 2, 'created_at': datetime.datetime(2026, 3, 12, 13, 46, 46, 164748)}}
+2026-03-12 13:46:46,166 - INFO - ID: 9ce20126-3ea5-4acd-bad5-2bfbc44ef134 | Path: /users/register | Status: 201 | Time: 0.2133s
+**********************************************************
+
+2026-03-12 13:46:46,168 - INFO - 
+**********************************************************
+ID: 18dc42a4-7f95-436f-a2c9-916909e426b1 | Method: POST | Path: /items/
+2026-03-12 13:46:46,171 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:46:46,173 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-12 13:46:46,173 - INFO - ID: 18dc42a4-7f95-436f-a2c9-916909e426b1 | Path: /items/ | Status: 201 | Time: 0.0055s
+**********************************************************
+
+2026-03-12 13:46:46,174 - INFO - 
+**********************************************************
+ID: 8328202d-be57-4012-a099-8810de2deb37 | Method: POST | Path: /items/
+2026-03-12 13:46:46,177 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'different desc', 'active': True}}
+2026-03-12 13:46:46,178 - ERROR - Function Error: create_item | Exception: 409: Item already exists
+2026-03-12 13:46:46,178 - INFO - ID: 8328202d-be57-4012-a099-8810de2deb37 | Path: /items/ | Status: 409 | Time: 0.0040s
+**********************************************************
+
+2026-03-12 13:46:46,182 - INFO - 
+**********************************************************
+ID: 7747f79d-368a-4d21-aebb-2e4c6d44ae40 | Method: POST | Path: /users/register
+2026-03-12 13:46:46,184 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:46:46,390 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 3, 'created_at': datetime.datetime(2026, 3, 12, 13, 46, 46, 389511)}}
+2026-03-12 13:46:46,391 - INFO - ID: 7747f79d-368a-4d21-aebb-2e4c6d44ae40 | Path: /users/register | Status: 201 | Time: 0.2090s
+**********************************************************
+
+2026-03-12 13:46:46,393 - INFO - 
+**********************************************************
+ID: 116d6779-15fa-4a92-a524-1d98376a8f54 | Method: POST | Path: /items/
+2026-03-12 13:46:46,395 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:46:46,398 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:46:46,398 - INFO - ID: 116d6779-15fa-4a92-a524-1d98376a8f54 | Path: /items/ | Status: 201 | Time: 0.0055s
+**********************************************************
+
+2026-03-12 13:46:46,399 - INFO - 
+**********************************************************
+ID: 704f9f01-8416-4c73-b81a-fd1798c0c00c | Method: PATCH | Path: /items/3
+2026-03-12 13:46:46,402 - INFO - Function Start: update_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 3, 'item': {'title': 'item title x', 'desc': None, 'active': None}}
+2026-03-12 13:46:46,406 - INFO - Function Success: update_item | Result: {'success': True, 'message': 'Item updated successfully.', 'data': {'title': 'item title x', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:46:46,406 - INFO - ID: 704f9f01-8416-4c73-b81a-fd1798c0c00c | Path: /items/3 | Status: 200 | Time: 0.0072s
+**********************************************************
+
+2026-03-12 13:46:46,410 - INFO - 
+**********************************************************
+ID: d7f7558a-2901-4864-9a60-5f988bb67c4e | Method: POST | Path: /users/register
+2026-03-12 13:46:46,412 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:46:46,618 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 4, 'created_at': datetime.datetime(2026, 3, 12, 13, 46, 46, 617448)}}
+2026-03-12 13:46:46,619 - INFO - ID: d7f7558a-2901-4864-9a60-5f988bb67c4e | Path: /users/register | Status: 201 | Time: 0.2089s
+**********************************************************
+
+2026-03-12 13:46:46,620 - INFO - 
+**********************************************************
+ID: 0d55e255-0ae8-447c-8bd1-636b77fff784 | Method: POST | Path: /items/
+2026-03-12 13:46:46,623 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:46:46,625 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:46:46,626 - INFO - ID: 0d55e255-0ae8-447c-8bd1-636b77fff784 | Path: /items/ | Status: 201 | Time: 0.0054s
+**********************************************************
+
+2026-03-12 13:46:46,627 - INFO - 
+**********************************************************
+ID: 0f0a7a7a-6f11-46b5-a7ec-b1a5bf3d262f | Method: DELETE | Path: /items/4
+2026-03-12 13:46:46,630 - INFO - Function Start: delete_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 4}
+2026-03-12 13:46:46,632 - INFO - Function Success: delete_item | Result: {'success': True, 'message': 'Item removed successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:46:46,632 - INFO - ID: 0f0a7a7a-6f11-46b5-a7ec-b1a5bf3d262f | Path: /items/4 | Status: 200 | Time: 0.0053s
+**********************************************************
+
+2026-03-12 13:46:46,636 - INFO - 
+**********************************************************
+ID: 0ad4da4e-c0d6-4224-bd6a-ccd1a8f4f053 | Method: GET | Path: /
+2026-03-12 13:46:46,637 - INFO - ID: 0ad4da4e-c0d6-4224-bd6a-ccd1a8f4f053 | Path: / | Status: 200 | Time: 0.0009s
+**********************************************************
+
+2026-03-12 13:46:46,642 - INFO - 
+**********************************************************
+ID: 1371f805-4a56-4460-9f50-c56f43f0415f | Method: POST | Path: /users/register
+2026-03-12 13:46:46,644 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:46:46,851 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 5, 'created_at': datetime.datetime(2026, 3, 12, 13, 46, 46, 850486)}}
+2026-03-12 13:46:46,852 - INFO - ID: 1371f805-4a56-4460-9f50-c56f43f0415f | Path: /users/register | Status: 201 | Time: 0.2101s
+**********************************************************
+
+2026-03-12 13:46:46,856 - INFO - 
+**********************************************************
+ID: d6627efe-1af8-42cd-a25a-f206c6b7d3b3 | Method: POST | Path: /users/register
+2026-03-12 13:46:46,858 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:46:47,065 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 6, 'created_at': datetime.datetime(2026, 3, 12, 13, 46, 47, 63741)}}
+2026-03-12 13:46:47,065 - INFO - ID: d6627efe-1af8-42cd-a25a-f206c6b7d3b3 | Path: /users/register | Status: 201 | Time: 0.2094s
+**********************************************************
+
+2026-03-12 13:46:47,067 - INFO - 
+**********************************************************
+ID: 7319ceea-fd49-40f6-8a39-743f50d5e7cc | Method: POST | Path: /users/register
+2026-03-12 13:46:47,068 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:46:47,069 - ERROR - Function Error: register | Exception: 400: Email already registered
+2026-03-12 13:46:47,070 - INFO - ID: 7319ceea-fd49-40f6-8a39-743f50d5e7cc | Path: /users/register | Status: 400 | Time: 0.0029s
+**********************************************************
+
+2026-03-12 13:46:47,074 - INFO - 
+**********************************************************
+ID: c2c20ba1-6649-4033-a4ae-490b3bd32d72 | Method: POST | Path: /users/register
+2026-03-12 13:46:47,076 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:46:47,284 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 7, 'created_at': datetime.datetime(2026, 3, 12, 13, 46, 47, 282564)}}
+2026-03-12 13:46:47,284 - INFO - ID: c2c20ba1-6649-4033-a4ae-490b3bd32d72 | Path: /users/register | Status: 201 | Time: 0.2100s
+**********************************************************
+
+2026-03-12 13:46:47,285 - INFO - 
+**********************************************************
+ID: 3a6b4515-329b-4031-adfe-833963a34cdb | Method: POST | Path: /users/login
+2026-03-12 13:46:47,490 - INFO - ID: 3a6b4515-329b-4031-adfe-833963a34cdb | Path: /users/login | Status: 200 | Time: 0.2045s
+**********************************************************
+
+2026-03-12 13:46:47,494 - INFO - 
+**********************************************************
+ID: 4fb921e1-7477-4e1b-9857-098f35c156fb | Method: POST | Path: /users/login
+2026-03-12 13:46:47,497 - INFO - ID: 4fb921e1-7477-4e1b-9857-098f35c156fb | Path: /users/login | Status: 401 | Time: 0.0031s
+**********************************************************
+
+2026-03-12 13:46:47,501 - INFO - 
+**********************************************************
+ID: 6b22d0cc-ed63-4df9-84c5-2d843696bb33 | Method: POST | Path: /users/register
+2026-03-12 13:46:47,504 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:46:47,712 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 8, 'created_at': datetime.datetime(2026, 3, 12, 13, 46, 47, 711150)}}
+2026-03-12 13:46:47,713 - INFO - ID: 6b22d0cc-ed63-4df9-84c5-2d843696bb33 | Path: /users/register | Status: 201 | Time: 0.2114s
+**********************************************************
+
+2026-03-12 13:46:47,714 - INFO - 
+**********************************************************
+ID: 63be5b8a-7b04-423c-a897-33bab6159302 | Method: POST | Path: /users/login
+2026-03-12 13:46:47,919 - INFO - ID: 63be5b8a-7b04-423c-a897-33bab6159302 | Path: /users/login | Status: 200 | Time: 0.2049s
+**********************************************************
+
+2026-03-12 13:46:47,920 - INFO - 
+**********************************************************
+ID: d63dcb36-0b69-4130-9bdb-8d92c0f46b89 | Method: POST | Path: /users/refresh
+2026-03-12 13:46:47,922 - INFO - ID: d63dcb36-0b69-4130-9bdb-8d92c0f46b89 | Path: /users/refresh | Status: 200 | Time: 0.0025s
+**********************************************************
+
+2026-03-12 13:46:47,926 - INFO - 
+**********************************************************
+ID: 45483738-2c9d-4c89-b9f7-6fa58be05d50 | Method: POST | Path: /users/refresh
+2026-03-12 13:46:47,928 - INFO - ID: 45483738-2c9d-4c89-b9f7-6fa58be05d50 | Path: /users/refresh | Status: 401 | Time: 0.0019s
+**********************************************************
+
+2026-03-12 13:46:47,933 - INFO - 
+**********************************************************
+ID: 0e8e4010-c93e-4878-bd46-07d440f18040 | Method: POST | Path: /users/register
+2026-03-12 13:46:47,936 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:46:48,143 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 9, 'created_at': datetime.datetime(2026, 3, 12, 13, 46, 48, 142129)}}
+2026-03-12 13:46:48,144 - INFO - ID: 0e8e4010-c93e-4878-bd46-07d440f18040 | Path: /users/register | Status: 201 | Time: 0.2110s
+**********************************************************
+
+2026-03-12 13:46:48,145 - INFO - 
+**********************************************************
+ID: cc932f71-1267-4cec-9ce1-4da6e5d0ce22 | Method: POST | Path: /users/login
+2026-03-12 13:46:48,350 - INFO - ID: cc932f71-1267-4cec-9ce1-4da6e5d0ce22 | Path: /users/login | Status: 200 | Time: 0.2056s
+**********************************************************
+
+2026-03-12 13:46:48,352 - INFO - 
+**********************************************************
+ID: 78bc76d1-e35c-4a9e-a31d-2b9e494dd02e | Method: POST | Path: /users/refresh
+2026-03-12 13:46:48,353 - INFO - ID: 78bc76d1-e35c-4a9e-a31d-2b9e494dd02e | Path: /users/refresh | Status: 200 | Time: 0.0015s
+**********************************************************
+
+2026-03-12 13:46:48,354 - INFO - 
+**********************************************************
+ID: 1d94e27a-c984-4c8c-9db2-c43dffc6d853 | Method: POST | Path: /users/refresh
+2026-03-12 13:46:48,355 - INFO - ID: 1d94e27a-c984-4c8c-9db2-c43dffc6d853 | Path: /users/refresh | Status: 401 | Time: 0.0011s
+**********************************************************
+
+2026-03-12 13:49:06,827 - INFO - 
+**********************************************************
+ID: 5eb7cfc9-4fa6-41d5-87ba-5b87eb788fb9 | Method: POST | Path: /users/register
+2026-03-12 13:49:06,836 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:07,068 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 7, 65369)}}
+2026-03-12 13:49:07,068 - INFO - ID: 5eb7cfc9-4fa6-41d5-87ba-5b87eb788fb9 | Path: /users/register | Status: 201 | Time: 0.2407s
+**********************************************************
+
+2026-03-12 13:49:07,070 - INFO - 
+**********************************************************
+ID: 75db77da-e148-43de-b6f8-b1012f3f945a | Method: POST | Path: /items/
+2026-03-12 13:49:07,074 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:49:07,078 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-12 13:49:07,079 - INFO - ID: 75db77da-e148-43de-b6f8-b1012f3f945a | Path: /items/ | Status: 201 | Time: 0.0090s
+**********************************************************
+
+2026-03-12 13:49:07,083 - INFO - 
+**********************************************************
+ID: e7e1cdc3-01d6-425c-a561-b6da25ec82ff | Method: POST | Path: /users/register
+2026-03-12 13:49:07,084 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:07,291 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 2, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 7, 290274)}}
+2026-03-12 13:49:07,292 - INFO - ID: e7e1cdc3-01d6-425c-a561-b6da25ec82ff | Path: /users/register | Status: 201 | Time: 0.2091s
+**********************************************************
+
+2026-03-12 13:49:07,293 - INFO - 
+**********************************************************
+ID: 1f743996-d2b0-41bd-947a-846221496e5c | Method: POST | Path: /items/
+2026-03-12 13:49:07,297 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:49:07,299 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-12 13:49:07,299 - INFO - ID: 1f743996-d2b0-41bd-947a-846221496e5c | Path: /items/ | Status: 201 | Time: 0.0056s
+**********************************************************
+
+2026-03-12 13:49:07,300 - INFO - 
+**********************************************************
+ID: 0d192869-8c69-410e-b322-7f8a6f6e249f | Method: POST | Path: /items/
+2026-03-12 13:49:07,303 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'different desc', 'active': True}}
+2026-03-12 13:49:07,304 - ERROR - Function Error: create_item | Exception: 409: Item already exists
+2026-03-12 13:49:07,304 - INFO - ID: 0d192869-8c69-410e-b322-7f8a6f6e249f | Path: /items/ | Status: 409 | Time: 0.0040s
+**********************************************************
+
+2026-03-12 13:49:07,308 - INFO - 
+**********************************************************
+ID: 22213f15-f360-427f-be86-893ce203939c | Method: POST | Path: /users/register
+2026-03-12 13:49:07,309 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:07,520 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 3, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 7, 518648)}}
+2026-03-12 13:49:07,520 - INFO - ID: 22213f15-f360-427f-be86-893ce203939c | Path: /users/register | Status: 201 | Time: 0.2124s
+**********************************************************
+
+2026-03-12 13:49:07,522 - INFO - 
+**********************************************************
+ID: 64a3878c-6665-4725-9260-63618a30de8c | Method: POST | Path: /items/
+2026-03-12 13:49:07,525 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:49:07,527 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:49:07,527 - INFO - ID: 64a3878c-6665-4725-9260-63618a30de8c | Path: /items/ | Status: 201 | Time: 0.0055s
+**********************************************************
+
+2026-03-12 13:49:07,528 - INFO - 
+**********************************************************
+ID: 2e37f876-4d49-4f6b-9270-bf1c7868530d | Method: PATCH | Path: /items/3
+2026-03-12 13:49:07,532 - INFO - Function Start: update_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 3, 'item': {'title': 'item title x', 'desc': None, 'active': None}}
+2026-03-12 13:49:07,536 - INFO - Function Success: update_item | Result: {'success': True, 'message': 'Item updated successfully.', 'data': {'title': 'item title x', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:49:07,536 - INFO - ID: 2e37f876-4d49-4f6b-9270-bf1c7868530d | Path: /items/3 | Status: 200 | Time: 0.0080s
+**********************************************************
+
+2026-03-12 13:49:07,540 - INFO - 
+**********************************************************
+ID: 913136d6-350d-4369-b9f0-09b889ac16e0 | Method: POST | Path: /users/register
+2026-03-12 13:49:07,542 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:07,748 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 4, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 7, 746724)}}
+2026-03-12 13:49:07,748 - INFO - ID: 913136d6-350d-4369-b9f0-09b889ac16e0 | Path: /users/register | Status: 201 | Time: 0.2082s
+**********************************************************
+
+2026-03-12 13:49:07,750 - INFO - 
+**********************************************************
+ID: 959bf08d-2163-46d3-be5c-e7fc025752b1 | Method: POST | Path: /items/
+2026-03-12 13:49:07,753 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:49:07,755 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:49:07,756 - INFO - ID: 959bf08d-2163-46d3-be5c-e7fc025752b1 | Path: /items/ | Status: 201 | Time: 0.0057s
+**********************************************************
+
+2026-03-12 13:49:07,757 - INFO - 
+**********************************************************
+ID: e630695c-1587-4e34-885f-7ce27065c83d | Method: DELETE | Path: /items/4
+2026-03-12 13:49:07,760 - INFO - Function Start: delete_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 4}
+2026-03-12 13:49:07,762 - INFO - Function Success: delete_item | Result: {'success': True, 'message': 'Item removed successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:49:07,762 - INFO - ID: e630695c-1587-4e34-885f-7ce27065c83d | Path: /items/4 | Status: 200 | Time: 0.0055s
+**********************************************************
+
+2026-03-12 13:49:07,766 - INFO - 
+**********************************************************
+ID: 608ff860-4e8e-4518-8d6d-eb5936d69120 | Method: GET | Path: /
+2026-03-12 13:49:07,767 - INFO - ID: 608ff860-4e8e-4518-8d6d-eb5936d69120 | Path: / | Status: 200 | Time: 0.0009s
+**********************************************************
+
+2026-03-12 13:49:07,772 - INFO - 
+**********************************************************
+ID: fe4321e3-2ec1-40aa-b8b2-fc84ced808b8 | Method: POST | Path: /users/register
+2026-03-12 13:49:07,774 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:07,981 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 5, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 7, 980376)}}
+2026-03-12 13:49:07,982 - INFO - ID: fe4321e3-2ec1-40aa-b8b2-fc84ced808b8 | Path: /users/register | Status: 201 | Time: 0.2104s
+**********************************************************
+
+2026-03-12 13:49:07,986 - INFO - 
+**********************************************************
+ID: 3b3b5f3a-366b-4250-9e38-ed37c1194979 | Method: POST | Path: /users/register
+2026-03-12 13:49:07,988 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:08,195 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 6, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 8, 194044)}}
+2026-03-12 13:49:08,196 - INFO - ID: 3b3b5f3a-366b-4250-9e38-ed37c1194979 | Path: /users/register | Status: 201 | Time: 0.2097s
+**********************************************************
+
+2026-03-12 13:49:08,197 - INFO - 
+**********************************************************
+ID: ff9e1cf4-2b7b-4f5f-b1bf-3412dedac8e0 | Method: POST | Path: /users/register
+2026-03-12 13:49:08,198 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:08,199 - ERROR - Function Error: register | Exception: 400: Email already registered
+2026-03-12 13:49:08,199 - INFO - ID: ff9e1cf4-2b7b-4f5f-b1bf-3412dedac8e0 | Path: /users/register | Status: 400 | Time: 0.0028s
+**********************************************************
+
+2026-03-12 13:49:08,203 - INFO - 
+**********************************************************
+ID: a753d6aa-a54e-4ca0-a54d-c2d5ba60e217 | Method: POST | Path: /users/register
+2026-03-12 13:49:08,205 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:08,411 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 7, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 8, 410232)}}
+2026-03-12 13:49:08,412 - INFO - ID: a753d6aa-a54e-4ca0-a54d-c2d5ba60e217 | Path: /users/register | Status: 201 | Time: 0.2085s
+**********************************************************
+
+2026-03-12 13:49:08,413 - INFO - 
+**********************************************************
+ID: 0e099768-3521-4688-b1cb-e5e0256744e8 | Method: POST | Path: /users/login
+2026-03-12 13:49:08,620 - INFO - ID: 0e099768-3521-4688-b1cb-e5e0256744e8 | Path: /users/login | Status: 200 | Time: 0.2075s
+**********************************************************
+
+2026-03-12 13:49:08,624 - INFO - 
+**********************************************************
+ID: 7bf6989c-3d91-42a8-8bbf-886f628c1d28 | Method: POST | Path: /users/login
+2026-03-12 13:49:08,628 - INFO - ID: 7bf6989c-3d91-42a8-8bbf-886f628c1d28 | Path: /users/login | Status: 401 | Time: 0.0031s
+**********************************************************
+
+2026-03-12 13:49:08,632 - INFO - 
+**********************************************************
+ID: 0315a830-85df-4528-8563-d82f3c25a1c5 | Method: POST | Path: /users/register
+2026-03-12 13:49:08,635 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:08,842 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 8, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 8, 841467)}}
+2026-03-12 13:49:08,843 - INFO - ID: 0315a830-85df-4528-8563-d82f3c25a1c5 | Path: /users/register | Status: 201 | Time: 0.2105s
+**********************************************************
+
+2026-03-12 13:49:08,844 - INFO - 
+**********************************************************
+ID: 8d692fdd-c90a-4c40-b460-d7b01c8c3402 | Method: POST | Path: /users/login
+2026-03-12 13:49:09,048 - INFO - ID: 8d692fdd-c90a-4c40-b460-d7b01c8c3402 | Path: /users/login | Status: 200 | Time: 0.2039s
+**********************************************************
+
+2026-03-12 13:49:09,049 - INFO - 
+**********************************************************
+ID: fce2f5fb-ae54-4c12-bc77-0f54ec80c51e | Method: POST | Path: /users/refresh
+2026-03-12 13:49:09,052 - INFO - ID: fce2f5fb-ae54-4c12-bc77-0f54ec80c51e | Path: /users/refresh | Status: 200 | Time: 0.0027s
+**********************************************************
+
+2026-03-12 13:49:09,056 - INFO - 
+**********************************************************
+ID: d26af795-d920-431e-a3c3-dcbc135177c0 | Method: POST | Path: /users/refresh
+2026-03-12 13:49:09,057 - INFO - ID: d26af795-d920-431e-a3c3-dcbc135177c0 | Path: /users/refresh | Status: 401 | Time: 0.0014s
+**********************************************************
+
+2026-03-12 13:49:09,061 - INFO - 
+**********************************************************
+ID: bdc7c016-d391-4bb2-b78d-3d4f9b4ab353 | Method: POST | Path: /users/register
+2026-03-12 13:49:09,064 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:09,270 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 9, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 9, 269067)}}
+2026-03-12 13:49:09,271 - INFO - ID: bdc7c016-d391-4bb2-b78d-3d4f9b4ab353 | Path: /users/register | Status: 201 | Time: 0.2097s
+**********************************************************
+
+2026-03-12 13:49:09,272 - INFO - 
+**********************************************************
+ID: 4ffc98fe-cb19-48da-9e1d-c8007d2cf739 | Method: POST | Path: /users/login
+2026-03-12 13:49:09,478 - INFO - ID: 4ffc98fe-cb19-48da-9e1d-c8007d2cf739 | Path: /users/login | Status: 200 | Time: 0.2063s
+**********************************************************
+
+2026-03-12 13:49:09,479 - INFO - 
+**********************************************************
+ID: e3100cce-d142-4554-9435-e1df59cb0889 | Method: POST | Path: /users/refresh
+2026-03-12 13:49:09,481 - INFO - ID: e3100cce-d142-4554-9435-e1df59cb0889 | Path: /users/refresh | Status: 200 | Time: 0.0015s
+**********************************************************
+
+2026-03-12 13:49:09,482 - INFO - 
+**********************************************************
+ID: 5feb4fbc-420d-4447-8e16-4d230ddfc9bd | Method: POST | Path: /users/refresh
+2026-03-12 13:49:09,483 - INFO - ID: 5feb4fbc-420d-4447-8e16-4d230ddfc9bd | Path: /users/refresh | Status: 401 | Time: 0.0012s
+**********************************************************
+
+2026-03-12 13:49:16,527 - INFO - 
+**********************************************************
+ID: ef69449c-0b66-43c4-850d-65aa87a0e0bd | Method: POST | Path: /users/register
+2026-03-12 13:49:16,535 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:16,770 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 16, 767858)}}
+2026-03-12 13:49:16,771 - INFO - ID: ef69449c-0b66-43c4-850d-65aa87a0e0bd | Path: /users/register | Status: 201 | Time: 0.2442s
+**********************************************************
+
+2026-03-12 13:49:16,773 - INFO - 
+**********************************************************
+ID: b9c35595-ce35-474a-8b70-fabe7eb8319f | Method: POST | Path: /items/
+2026-03-12 13:49:16,777 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:49:16,782 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-12 13:49:16,782 - INFO - ID: b9c35595-ce35-474a-8b70-fabe7eb8319f | Path: /items/ | Status: 201 | Time: 0.0095s
+**********************************************************
+
+2026-03-12 13:49:16,786 - INFO - 
+**********************************************************
+ID: db52613f-e5b8-4257-8a08-d9c7566e4aa4 | Method: POST | Path: /users/register
+2026-03-12 13:49:16,788 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:16,996 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 2, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 16, 994768)}}
+2026-03-12 13:49:16,997 - INFO - ID: db52613f-e5b8-4257-8a08-d9c7566e4aa4 | Path: /users/register | Status: 201 | Time: 0.2108s
+**********************************************************
+
+2026-03-12 13:49:16,999 - INFO - 
+**********************************************************
+ID: 6c000cfd-cd27-4981-9a1a-d1a7b004dddb | Method: POST | Path: /items/
+2026-03-12 13:49:17,003 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:49:17,006 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-12 13:49:17,007 - INFO - ID: 6c000cfd-cd27-4981-9a1a-d1a7b004dddb | Path: /items/ | Status: 201 | Time: 0.0081s
+**********************************************************
+
+2026-03-12 13:49:17,008 - INFO - 
+**********************************************************
+ID: 42d6a682-e59c-4374-b069-896f660e2365 | Method: POST | Path: /items/
+2026-03-12 13:49:17,011 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'different desc', 'active': True}}
+2026-03-12 13:49:17,012 - ERROR - Function Error: create_item | Exception: 409: Item already exists
+2026-03-12 13:49:17,012 - INFO - ID: 42d6a682-e59c-4374-b069-896f660e2365 | Path: /items/ | Status: 409 | Time: 0.0041s
+**********************************************************
+
+2026-03-12 13:49:17,016 - INFO - 
+**********************************************************
+ID: 21b9025c-8de2-44f2-8c20-96b197922d6d | Method: POST | Path: /users/register
+2026-03-12 13:49:17,017 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:17,233 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 3, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 17, 231729)}}
+2026-03-12 13:49:17,233 - INFO - ID: 21b9025c-8de2-44f2-8c20-96b197922d6d | Path: /users/register | Status: 201 | Time: 0.2178s
+**********************************************************
+
+2026-03-12 13:49:17,236 - INFO - 
+**********************************************************
+ID: 4450b2d7-b58e-4e25-9946-40553f6c91bc | Method: POST | Path: /items/
+2026-03-12 13:49:17,240 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:49:17,243 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:49:17,244 - INFO - ID: 4450b2d7-b58e-4e25-9946-40553f6c91bc | Path: /items/ | Status: 201 | Time: 0.0078s
+**********************************************************
+
+2026-03-12 13:49:17,245 - INFO - 
+**********************************************************
+ID: dbad37e1-2419-4869-b667-56f9d15088d4 | Method: PATCH | Path: /items/3
+2026-03-12 13:49:17,249 - INFO - Function Start: update_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 3, 'item': {'title': 'item title x', 'desc': None, 'active': None}}
+2026-03-12 13:49:17,255 - INFO - Function Success: update_item | Result: {'success': True, 'message': 'Item updated successfully.', 'data': {'title': 'item title x', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:49:17,256 - INFO - ID: dbad37e1-2419-4869-b667-56f9d15088d4 | Path: /items/3 | Status: 200 | Time: 0.0108s
+**********************************************************
+
+2026-03-12 13:49:17,260 - INFO - 
+**********************************************************
+ID: fe7cdec9-565e-4c8b-905c-41a6c044650f | Method: POST | Path: /users/register
+2026-03-12 13:49:17,262 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:17,475 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 4, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 17, 474197)}}
+2026-03-12 13:49:17,476 - INFO - ID: fe7cdec9-565e-4c8b-905c-41a6c044650f | Path: /users/register | Status: 201 | Time: 0.2157s
+**********************************************************
+
+2026-03-12 13:49:17,477 - INFO - 
+**********************************************************
+ID: da3a888f-6533-4597-9af8-8c903990e9f8 | Method: POST | Path: /items/
+2026-03-12 13:49:17,480 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:49:17,483 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:49:17,483 - INFO - ID: da3a888f-6533-4597-9af8-8c903990e9f8 | Path: /items/ | Status: 201 | Time: 0.0059s
+**********************************************************
+
+2026-03-12 13:49:17,484 - INFO - 
+**********************************************************
+ID: df351b68-2db9-42f6-b207-8cc29517fbd8 | Method: DELETE | Path: /items/4
+2026-03-12 13:49:17,489 - INFO - Function Start: delete_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 4}
+2026-03-12 13:49:17,491 - INFO - Function Success: delete_item | Result: {'success': True, 'message': 'Item removed successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:49:17,491 - INFO - ID: df351b68-2db9-42f6-b207-8cc29517fbd8 | Path: /items/4 | Status: 200 | Time: 0.0074s
+**********************************************************
+
+2026-03-12 13:49:17,495 - INFO - 
+**********************************************************
+ID: 63ac0ff5-7476-459a-9540-f17719c308ab | Method: GET | Path: /
+2026-03-12 13:49:17,496 - INFO - ID: 63ac0ff5-7476-459a-9540-f17719c308ab | Path: / | Status: 200 | Time: 0.0009s
+**********************************************************
+
+2026-03-12 13:49:17,500 - INFO - 
+**********************************************************
+ID: 1d6b99bc-6d05-4a47-ad30-dd8a6f59538f | Method: POST | Path: /users/register
+2026-03-12 13:49:17,502 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:17,712 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 5, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 17, 710796)}}
+2026-03-12 13:49:17,712 - INFO - ID: 1d6b99bc-6d05-4a47-ad30-dd8a6f59538f | Path: /users/register | Status: 201 | Time: 0.2124s
+**********************************************************
+
+2026-03-12 13:49:17,717 - INFO - 
+**********************************************************
+ID: 9893f04a-916b-4a02-9e67-641da23ba16b | Method: POST | Path: /users/register
+2026-03-12 13:49:17,719 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:17,929 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 6, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 17, 927585)}}
+2026-03-12 13:49:17,929 - INFO - ID: 9893f04a-916b-4a02-9e67-641da23ba16b | Path: /users/register | Status: 201 | Time: 0.2118s
+**********************************************************
+
+2026-03-12 13:49:17,931 - INFO - 
+**********************************************************
+ID: c9e97f5d-3737-42df-a211-c9b393eb9531 | Method: POST | Path: /users/register
+2026-03-12 13:49:17,932 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:17,933 - ERROR - Function Error: register | Exception: 400: Email already registered
+2026-03-12 13:49:17,933 - INFO - ID: c9e97f5d-3737-42df-a211-c9b393eb9531 | Path: /users/register | Status: 400 | Time: 0.0028s
+**********************************************************
+
+2026-03-12 13:49:17,938 - INFO - 
+**********************************************************
+ID: e5106332-747f-4030-a8df-05949649915e | Method: POST | Path: /users/register
+2026-03-12 13:49:17,940 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:18,153 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 7, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 18, 150944)}}
+2026-03-12 13:49:18,154 - INFO - ID: e5106332-747f-4030-a8df-05949649915e | Path: /users/register | Status: 201 | Time: 0.2157s
+**********************************************************
+
+2026-03-12 13:49:18,155 - INFO - 
+**********************************************************
+ID: 107243ea-af8c-448a-81e8-b419d6e102df | Method: POST | Path: /users/login
+2026-03-12 13:49:18,369 - INFO - ID: 107243ea-af8c-448a-81e8-b419d6e102df | Path: /users/login | Status: 200 | Time: 0.2140s
+**********************************************************
+
+2026-03-12 13:49:18,374 - INFO - 
+**********************************************************
+ID: a4dac332-3cab-4acd-a99e-0643db665294 | Method: POST | Path: /users/login
+2026-03-12 13:49:18,378 - INFO - ID: a4dac332-3cab-4acd-a99e-0643db665294 | Path: /users/login | Status: 401 | Time: 0.0033s
+**********************************************************
+
+2026-03-12 13:49:18,382 - INFO - 
+**********************************************************
+ID: c8d648ed-32be-4839-8a68-70932d1a4ccf | Method: POST | Path: /users/register
+2026-03-12 13:49:18,383 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:18,596 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 8, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 18, 594721)}}
+2026-03-12 13:49:18,596 - INFO - ID: c8d648ed-32be-4839-8a68-70932d1a4ccf | Path: /users/register | Status: 201 | Time: 0.2148s
+**********************************************************
+
+2026-03-12 13:49:18,597 - INFO - 
+**********************************************************
+ID: 21ea70c9-2ff9-4664-9823-dab13a78b543 | Method: POST | Path: /users/login
+2026-03-12 13:49:18,809 - INFO - ID: 21ea70c9-2ff9-4664-9823-dab13a78b543 | Path: /users/login | Status: 200 | Time: 0.2118s
+**********************************************************
+
+2026-03-12 13:49:18,810 - INFO - 
+**********************************************************
+ID: e49a8c5f-e933-43f2-91f9-7912e8925c04 | Method: POST | Path: /users/refresh
+2026-03-12 13:49:22,349 - INFO - 
+**********************************************************
+ID: a02b79ae-5afb-4a6a-b1a5-0fc765988ddf | Method: POST | Path: /users/refresh
+2026-03-12 13:49:22,351 - INFO - ID: a02b79ae-5afb-4a6a-b1a5-0fc765988ddf | Path: /users/refresh | Status: 401 | Time: 0.0022s
+**********************************************************
+
+2026-03-12 13:49:22,357 - INFO - 
+**********************************************************
+ID: 6fe7fdb1-85ac-4e19-be04-abd7c00baa80 | Method: POST | Path: /users/register
+2026-03-12 13:49:22,359 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:49:22,572 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 9, 'created_at': datetime.datetime(2026, 3, 12, 13, 49, 22, 571041)}}
+2026-03-12 13:49:22,573 - INFO - ID: 6fe7fdb1-85ac-4e19-be04-abd7c00baa80 | Path: /users/register | Status: 201 | Time: 0.2160s
+**********************************************************
+
+2026-03-12 13:49:22,574 - INFO - 
+**********************************************************
+ID: 0496ee1b-5f59-4b67-8dbc-9814177a8f7b | Method: POST | Path: /users/login
+2026-03-12 13:49:22,781 - INFO - ID: 0496ee1b-5f59-4b67-8dbc-9814177a8f7b | Path: /users/login | Status: 200 | Time: 0.2068s
+**********************************************************
+
+2026-03-12 13:49:22,782 - INFO - 
+**********************************************************
+ID: d1eb0492-693a-42cb-98d1-a3b1d18cb0de | Method: POST | Path: /users/refresh
+2026-03-12 13:50:08,334 - INFO - 
+**********************************************************
+ID: 8ebee4b6-6ca2-43d5-8208-d3a9f41b37cf | Method: POST | Path: /users/register
+2026-03-12 13:50:08,344 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:50:08,579 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 12, 13, 50, 8, 575984)}}
+2026-03-12 13:50:08,579 - INFO - ID: 8ebee4b6-6ca2-43d5-8208-d3a9f41b37cf | Path: /users/register | Status: 201 | Time: 0.2455s
+**********************************************************
+
+2026-03-12 13:50:08,581 - INFO - 
+**********************************************************
+ID: b4e5f08d-8e44-4edc-b36d-9158f95542a5 | Method: POST | Path: /items/
+2026-03-12 13:50:08,585 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:50:08,589 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-12 13:50:08,590 - INFO - ID: b4e5f08d-8e44-4edc-b36d-9158f95542a5 | Path: /items/ | Status: 201 | Time: 0.0090s
+**********************************************************
+
+2026-03-12 13:50:08,594 - INFO - 
+**********************************************************
+ID: 4bb4ff93-2a03-4598-8f51-946c8ef37591 | Method: POST | Path: /users/register
+2026-03-12 13:50:08,595 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:50:08,804 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 2, 'created_at': datetime.datetime(2026, 3, 12, 13, 50, 8, 802648)}}
+2026-03-12 13:50:08,804 - INFO - ID: 4bb4ff93-2a03-4598-8f51-946c8ef37591 | Path: /users/register | Status: 201 | Time: 0.2109s
+**********************************************************
+
+2026-03-12 13:50:08,806 - INFO - 
+**********************************************************
+ID: fdd63a30-d33a-4673-b454-1ada6c43e94b | Method: POST | Path: /items/
+2026-03-12 13:50:08,810 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:50:08,812 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-12 13:50:08,812 - INFO - ID: fdd63a30-d33a-4673-b454-1ada6c43e94b | Path: /items/ | Status: 201 | Time: 0.0059s
+**********************************************************
+
+2026-03-12 13:50:08,813 - INFO - 
+**********************************************************
+ID: b4b5d16f-f09b-4799-8abc-785735a86f43 | Method: POST | Path: /items/
+2026-03-12 13:50:08,816 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'different desc', 'active': True}}
+2026-03-12 13:50:08,817 - ERROR - Function Error: create_item | Exception: 409: Item already exists
+2026-03-12 13:50:08,817 - INFO - ID: b4b5d16f-f09b-4799-8abc-785735a86f43 | Path: /items/ | Status: 409 | Time: 0.0041s
+**********************************************************
+
+2026-03-12 13:50:08,822 - INFO - 
+**********************************************************
+ID: 71be3cdd-54df-47de-b7d9-5f12101cabdd | Method: POST | Path: /users/register
+2026-03-12 13:50:08,825 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:50:09,036 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 3, 'created_at': datetime.datetime(2026, 3, 12, 13, 50, 9, 34865)}}
+2026-03-12 13:50:09,037 - INFO - ID: 71be3cdd-54df-47de-b7d9-5f12101cabdd | Path: /users/register | Status: 201 | Time: 0.2148s
+**********************************************************
+
+2026-03-12 13:50:09,039 - INFO - 
+**********************************************************
+ID: cc08f9d7-9c66-40f7-945d-7eb74b160e3b | Method: POST | Path: /items/
+2026-03-12 13:50:09,043 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:50:09,045 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:50:09,046 - INFO - ID: cc08f9d7-9c66-40f7-945d-7eb74b160e3b | Path: /items/ | Status: 201 | Time: 0.0068s
+**********************************************************
+
+2026-03-12 13:50:09,047 - INFO - 
+**********************************************************
+ID: fed094d2-beab-4bde-9af7-a91734a0671b | Method: PATCH | Path: /items/3
+2026-03-12 13:50:09,051 - INFO - Function Start: update_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 3, 'item': {'title': 'item title x', 'desc': None, 'active': None}}
+2026-03-12 13:50:09,057 - INFO - Function Success: update_item | Result: {'success': True, 'message': 'Item updated successfully.', 'data': {'title': 'item title x', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-12 13:50:09,057 - INFO - ID: fed094d2-beab-4bde-9af7-a91734a0671b | Path: /items/3 | Status: 200 | Time: 0.0100s
+**********************************************************
+
+2026-03-12 13:50:09,061 - INFO - 
+**********************************************************
+ID: 820e540f-8741-4e1c-96c2-42e83648d72e | Method: POST | Path: /users/register
+2026-03-12 13:50:09,062 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:50:09,275 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'item-tester@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 4, 'created_at': datetime.datetime(2026, 3, 12, 13, 50, 9, 273508)}}
+2026-03-12 13:50:09,275 - INFO - ID: 820e540f-8741-4e1c-96c2-42e83648d72e | Path: /users/register | Status: 201 | Time: 0.2143s
+**********************************************************
+
+2026-03-12 13:50:09,277 - INFO - 
+**********************************************************
+ID: 239f2807-d948-494e-a335-2d555119dfa4 | Method: POST | Path: /items/
+2026-03-12 13:50:09,280 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-12 13:50:09,282 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:50:09,282 - INFO - ID: 239f2807-d948-494e-a335-2d555119dfa4 | Path: /items/ | Status: 201 | Time: 0.0056s
+**********************************************************
+
+2026-03-12 13:50:09,284 - INFO - 
+**********************************************************
+ID: 10b4e6f1-f9a3-483e-a84b-29b01db30db4 | Method: DELETE | Path: /items/4
+2026-03-12 13:50:09,288 - INFO - Function Start: delete_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 4}
+2026-03-12 13:50:09,291 - INFO - Function Success: delete_item | Result: {'success': True, 'message': 'Item removed successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-12 13:50:09,291 - INFO - ID: 10b4e6f1-f9a3-483e-a84b-29b01db30db4 | Path: /items/4 | Status: 200 | Time: 0.0077s
+**********************************************************
+
+2026-03-12 13:50:09,295 - INFO - 
+**********************************************************
+ID: 2eafb3c0-b344-4a01-a669-3de8bf98b38d | Method: GET | Path: /
+2026-03-12 13:50:09,296 - INFO - ID: 2eafb3c0-b344-4a01-a669-3de8bf98b38d | Path: / | Status: 200 | Time: 0.0009s
+**********************************************************
+
+2026-03-12 13:50:09,302 - INFO - 
+**********************************************************
+ID: 3540eb60-fcc1-4a2e-83ba-d719feccd7e8 | Method: POST | Path: /users/register
+2026-03-12 13:50:09,308 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:50:09,522 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'test-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 5, 'created_at': datetime.datetime(2026, 3, 12, 13, 50, 9, 520746)}}
+2026-03-12 13:50:09,522 - INFO - ID: 3540eb60-fcc1-4a2e-83ba-d719feccd7e8 | Path: /users/register | Status: 201 | Time: 0.2206s
+**********************************************************
+
+2026-03-12 13:50:09,527 - INFO - 
+**********************************************************
+ID: a962e59e-20fd-4d43-a0c0-b1a0951acae7 | Method: POST | Path: /users/register
+2026-03-12 13:50:09,528 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:50:09,736 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 6, 'created_at': datetime.datetime(2026, 3, 12, 13, 50, 9, 735109)}}
+2026-03-12 13:50:09,737 - INFO - ID: a962e59e-20fd-4d43-a0c0-b1a0951acae7 | Path: /users/register | Status: 201 | Time: 0.2102s
+**********************************************************
+
+2026-03-12 13:50:09,738 - INFO - 
+**********************************************************
+ID: 29506bb2-cc99-41fd-bc3d-9f6a16d1af11 | Method: POST | Path: /users/register
+2026-03-12 13:50:09,739 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:50:09,740 - ERROR - Function Error: register | Exception: 400: Email already registered
+2026-03-12 13:50:09,741 - INFO - ID: 29506bb2-cc99-41fd-bc3d-9f6a16d1af11 | Path: /users/register | Status: 400 | Time: 0.0028s
+**********************************************************
+
+2026-03-12 13:50:09,744 - INFO - 
+**********************************************************
+ID: cc9dce75-cfa9-467b-b04e-ffb90830b2f9 | Method: POST | Path: /users/register
+2026-03-12 13:50:09,746 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:50:09,958 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 7, 'created_at': datetime.datetime(2026, 3, 12, 13, 50, 9, 956675)}}
+2026-03-12 13:50:09,958 - INFO - ID: cc9dce75-cfa9-467b-b04e-ffb90830b2f9 | Path: /users/register | Status: 201 | Time: 0.2138s
+**********************************************************
+
+2026-03-12 13:50:09,959 - INFO - 
+**********************************************************
+ID: 6be489d0-7e5e-4ce8-ae4b-ad84ee732870 | Method: POST | Path: /users/login
+2026-03-12 13:50:10,174 - INFO - ID: 6be489d0-7e5e-4ce8-ae4b-ad84ee732870 | Path: /users/login | Status: 200 | Time: 0.2142s
+**********************************************************
+
+2026-03-12 13:50:10,177 - INFO - 
+**********************************************************
+ID: b0a6b914-3f0f-47c9-a653-1c970d847c65 | Method: POST | Path: /users/login
+2026-03-12 13:50:10,180 - INFO - ID: b0a6b914-3f0f-47c9-a653-1c970d847c65 | Path: /users/login | Status: 401 | Time: 0.0030s
+**********************************************************
+
+2026-03-12 13:50:10,184 - INFO - 
+**********************************************************
+ID: cd292e60-a338-43b3-9c85-d0b80cfcec88 | Method: POST | Path: /users/register
+2026-03-12 13:50:10,187 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:50:10,400 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 8, 'created_at': datetime.datetime(2026, 3, 12, 13, 50, 10, 398988)}}
+2026-03-12 13:50:10,401 - INFO - ID: cd292e60-a338-43b3-9c85-d0b80cfcec88 | Path: /users/register | Status: 201 | Time: 0.2165s
+**********************************************************
+
+2026-03-12 13:50:10,402 - INFO - 
+**********************************************************
+ID: d1fb2a6c-920b-457f-925b-e793a61150a8 | Method: POST | Path: /users/login
+2026-03-12 13:50:10,614 - INFO - ID: d1fb2a6c-920b-457f-925b-e793a61150a8 | Path: /users/login | Status: 200 | Time: 0.2125s
+**********************************************************
+
+2026-03-12 13:50:10,616 - INFO - 
+**********************************************************
+ID: 1f4e2c90-fb88-4234-b310-98124aee3434 | Method: POST | Path: /users/refresh
+2026-03-12 13:50:10,619 - INFO - ID: 1f4e2c90-fb88-4234-b310-98124aee3434 | Path: /users/refresh | Status: 200 | Time: 0.0030s
+**********************************************************
+
+2026-03-12 13:50:10,624 - INFO - 
+**********************************************************
+ID: b367f498-cccc-4779-97bf-2b25188ee0ad | Method: POST | Path: /users/refresh
+2026-03-12 13:50:10,627 - INFO - ID: b367f498-cccc-4779-97bf-2b25188ee0ad | Path: /users/refresh | Status: 401 | Time: 0.0028s
+**********************************************************
+
+2026-03-12 13:50:10,631 - INFO - 
+**********************************************************
+ID: bd723680-b703-41c4-89db-da90b3cac607 | Method: POST | Path: /users/register
+2026-03-12 13:50:10,633 - INFO - Function Start: register | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}}
+2026-03-12 13:50:10,843 - INFO - Function Success: register | Result: {'success': True, 'message': 'User registered successfully.', 'data': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 9, 'created_at': datetime.datetime(2026, 3, 12, 13, 50, 10, 841271)}}
+2026-03-12 13:50:10,843 - INFO - ID: bd723680-b703-41c4-89db-da90b3cac607 | Path: /users/register | Status: 201 | Time: 0.2120s
+**********************************************************
+
+2026-03-12 13:50:10,844 - INFO - 
+**********************************************************
+ID: 45749817-9ac3-46d2-aa5b-28f7924f392b | Method: POST | Path: /users/login
+2026-03-12 13:50:11,052 - INFO - ID: 45749817-9ac3-46d2-aa5b-28f7924f392b | Path: /users/login | Status: 200 | Time: 0.2080s
+**********************************************************
+
+2026-03-12 13:50:11,054 - INFO - 
+**********************************************************
+ID: e0e90ff1-7b26-4b10-9aea-1ea338303b42 | Method: POST | Path: /users/refresh
+2026-03-12 13:50:11,055 - INFO - ID: e0e90ff1-7b26-4b10-9aea-1ea338303b42 | Path: /users/refresh | Status: 200 | Time: 0.0015s
+**********************************************************
+
+2026-03-12 13:50:11,056 - INFO - 
+**********************************************************
+ID: a48e216a-8dde-4262-be91-291f0a2e391b | Method: POST | Path: /users/refresh
+2026-03-12 13:50:11,057 - INFO - ID: a48e216a-8dde-4262-be91-291f0a2e391b | Path: /users/refresh | Status: 401 | Time: 0.0012s
+**********************************************************
+

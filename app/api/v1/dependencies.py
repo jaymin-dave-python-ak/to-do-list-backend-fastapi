@@ -2,8 +2,10 @@ from typing import Annotated
 from fastapi import HTTPException, status, Depends
 from sqlalchemy.orm import Session
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
+import redis 
 
 from app.db.database import get_db
+from app.core.redis import get_redis
 from app.service.auth_service import AuthService
 from app.repositories.users_repo import UserRepository
 from app.repositories.item_repo import ItemRepository
@@ -43,6 +45,7 @@ def get_admin_repo() -> AdminRepository:
 
 
 db_dep = Annotated[Session, Depends(get_db)]
+redis_dep = Annotated[redis.Redis, Depends(get_redis)]
 auth_service = Annotated[AuthService, Depends(get_auth_service)]
 user_repo_dep = Annotated[UserRepository, Depends(get_user_repo)]
 item_repo_dep = Annotated[ItemRepository, Depends(get_item_repo)]

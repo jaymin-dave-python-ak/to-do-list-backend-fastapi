@@ -82,3 +82,20 @@ class TestUser:
         
         assert response.status_code == status.HTTP_401_UNAUTHORIZED
         assert response.json()["detail"] == "Invalid or expired refresh token"
+
+    def test_refresh_token_reuse_failure(self, client):
+        """Test that a refresh token cannot be used twice (Blacklist check)."""
+        user_details = create_user_data(email="reuser@gmail.com")
+        client.post("/users/register", json=user_details)
+        
+        login_payload = {"email": user_details["email"], "password": user_details["password"]}
+        login_response = client.post("/users/login", json=login_payload)
+        refresh_token = login_response.json()["data"]["refresh_token"]
+
+        first_refresh = client.post(f"/users/refresh?refresh_token={refresh_token}")
+        assert first_refresh.status_code == status.HTTP_200_OK
+
+        second_refresh = client.post(f"/users/refresh?refresh_token={refresh_token}")
+        
+        assert second_refresh.status_code == status.HTTP_401_UNAUTHORIZED
+        assert second_refresh.json()["detail"] == "Token has already been used"
