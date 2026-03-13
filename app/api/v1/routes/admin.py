@@ -1,8 +1,10 @@
-from fastapi import APIRouter, status, HTTPException
+from fastapi import APIRouter, status, HTTPException, Query
+from typing import Annotated
 from app.api.v1.dependencies import db_dep, admin_dep, admin_repo_dep
 from app.api.v1.schemas.response import create_response, ResponseSchema
 from app.api.v1.schemas.item import ItemOutSchema, ItemSchema, ItemUpdateSchema
 from app.api.v1.schemas.user import UserOutSchema, UserUpdateSchema
+from app.api.v1.schemas.pagination import PaginationSchema
 from app.core.logger import log_func
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
@@ -18,9 +20,10 @@ def get_all_items(
     db: db_dep,
     admin_repo: admin_repo_dep,
     admin_dep: admin_dep,
+    pagination: Annotated[PaginationSchema, Query()],
 ):
     """Get all items."""
-    items = admin_repo.get_all_items(db)
+    items = admin_repo.get_all_items(db=db, page=pagination.page, size=pagination.size)
     items_data = [ItemOutSchema.model_validate(item).model_dump() for item in items]
     return create_response(items_data, "Successfully retrieved all items.")
 
@@ -35,9 +38,10 @@ def get_all_users(
     db: db_dep,
     admin_repo: admin_repo_dep,
     admin_dep: admin_dep,
+    pagination: Annotated[PaginationSchema, Query()],
 ):
     """Get all users."""
-    users = admin_repo.get_all_users(db)
+    users = admin_repo.get_all_users(db=db, page=pagination.page, size=pagination.size)
     users_data = [UserOutSchema.model_validate(user).model_dump() for user in users]
     return create_response(users_data, "Successfully retrieved all users.")
 

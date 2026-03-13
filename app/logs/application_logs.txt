@@ -1,0 +1,525 @@
+2026-03-13 11:37:14,195 - INFO - 
+**********************************************************
+ID: b9cfb828-bd1f-4b8f-905c-7ed3fbd8871a | Method: GET | Path: /docs
+2026-03-13 11:37:14,196 - INFO - ID: b9cfb828-bd1f-4b8f-905c-7ed3fbd8871a | Path: /docs | Status: 200 | Time: 0.0008s
+**********************************************************
+
+2026-03-13 11:37:15,025 - INFO - 
+**********************************************************
+ID: fa58c43e-a449-4bc9-8146-5165d74d0941 | Method: GET | Path: /openapi.json
+2026-03-13 11:37:15,058 - INFO - ID: fa58c43e-a449-4bc9-8146-5165d74d0941 | Path: /openapi.json | Status: 200 | Time: 0.0327s
+**********************************************************
+
+2026-03-13 11:37:34,510 - INFO - 
+**********************************************************
+ID: e73a7cf8-b390-4ddf-8f31-c54f9827c4b8 | Method: POST | Path: /users/login
+2026-03-13 11:37:34,555 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-13 11:37:34,804 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-13 11:37:34,804 - INFO - ID: e73a7cf8-b390-4ddf-8f31-c54f9827c4b8 | Path: /users/login | Status: 200 | Time: 0.2945s
+**********************************************************
+
+2026-03-13 11:37:49,627 - INFO - 
+**********************************************************
+ID: 7629be60-c970-4d69-a798-507b967f3dc4 | Method: GET | Path: /items/
+2026-03-13 11:37:49,632 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-13 11:37:49,632 - ERROR - Function Error: get_items | Exception: ItemRepository.get_all() got an unexpected keyword argument 'user_id'
+2026-03-13 11:39:24,521 - INFO - 
+**********************************************************
+ID: 1c6ee5e1-5abd-488f-8fa9-1e7aa875560f | Method: GET | Path: /items/
+2026-03-13 11:39:24,588 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-13 11:39:24,592 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': []}
+2026-03-13 11:39:24,592 - INFO - ID: 1c6ee5e1-5abd-488f-8fa9-1e7aa875560f | Path: /items/ | Status: 200 | Time: 0.0714s
+**********************************************************
+
+2026-03-13 11:39:50,348 - INFO - 
+**********************************************************
+ID: 3a00bbc1-be24-4986-ad1e-ff08ac795f0e | Method: POST | Path: /items/
+2026-03-13 11:39:50,351 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item a', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:39:50,362 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item a', 'desc': 'item desc alphabets', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-13 11:39:50,362 - INFO - ID: 3a00bbc1-be24-4986-ad1e-ff08ac795f0e | Path: /items/ | Status: 201 | Time: 0.0145s
+**********************************************************
+
+2026-03-13 11:39:54,914 - INFO - 
+**********************************************************
+ID: de52de34-6d58-4811-93e7-3f11d5791a0e | Method: POST | Path: /items/
+2026-03-13 11:39:54,917 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item b', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:39:54,921 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item b', 'desc': 'item desc alphabets', 'active': True, 'id': 2, 'owner_id': 1}}
+2026-03-13 11:39:54,921 - INFO - ID: de52de34-6d58-4811-93e7-3f11d5791a0e | Path: /items/ | Status: 201 | Time: 0.0074s
+**********************************************************
+
+2026-03-13 11:39:58,020 - INFO - 
+**********************************************************
+ID: 1d1d5612-01d1-4196-98ba-7c10be041d22 | Method: POST | Path: /items/
+2026-03-13 11:39:58,023 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item c', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:39:58,032 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item c', 'desc': 'item desc alphabets', 'active': True, 'id': 3, 'owner_id': 1}}
+2026-03-13 11:39:58,032 - INFO - ID: 1d1d5612-01d1-4196-98ba-7c10be041d22 | Path: /items/ | Status: 201 | Time: 0.0124s
+**********************************************************
+
+2026-03-13 11:40:01,717 - INFO - 
+**********************************************************
+ID: 124010d3-de00-479c-9127-a6e14457e13b | Method: POST | Path: /items/
+2026-03-13 11:40:01,720 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item d', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:01,725 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item d', 'desc': 'item desc alphabets', 'active': True, 'id': 4, 'owner_id': 1}}
+2026-03-13 11:40:01,725 - INFO - ID: 124010d3-de00-479c-9127-a6e14457e13b | Path: /items/ | Status: 201 | Time: 0.0081s
+**********************************************************
+
+2026-03-13 11:40:04,828 - INFO - 
+**********************************************************
+ID: df674f91-7240-4672-bfeb-615e9cb92a96 | Method: POST | Path: /items/
+2026-03-13 11:40:04,831 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item e', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:04,836 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item e', 'desc': 'item desc alphabets', 'active': True, 'id': 5, 'owner_id': 1}}
+2026-03-13 11:40:04,836 - INFO - ID: df674f91-7240-4672-bfeb-615e9cb92a96 | Path: /items/ | Status: 201 | Time: 0.0083s
+**********************************************************
+
+2026-03-13 11:40:08,645 - INFO - 
+**********************************************************
+ID: 0976fcda-0f34-485c-bbb5-e087f8f89824 | Method: POST | Path: /items/
+2026-03-13 11:40:08,647 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item f', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:08,651 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item f', 'desc': 'item desc alphabets', 'active': True, 'id': 6, 'owner_id': 1}}
+2026-03-13 11:40:08,652 - INFO - ID: 0976fcda-0f34-485c-bbb5-e087f8f89824 | Path: /items/ | Status: 201 | Time: 0.0070s
+**********************************************************
+
+2026-03-13 11:40:13,143 - INFO - 
+**********************************************************
+ID: 81db8d96-06eb-4f8f-93b3-925bbeb208e6 | Method: POST | Path: /items/
+2026-03-13 11:40:13,145 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item g', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:13,149 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item g', 'desc': 'item desc alphabets', 'active': True, 'id': 7, 'owner_id': 1}}
+2026-03-13 11:40:13,150 - INFO - ID: 81db8d96-06eb-4f8f-93b3-925bbeb208e6 | Path: /items/ | Status: 201 | Time: 0.0071s
+**********************************************************
+
+2026-03-13 11:40:15,996 - INFO - 
+**********************************************************
+ID: 5a638a30-33ee-4e6f-b8c8-f3d2e6a00612 | Method: POST | Path: /items/
+2026-03-13 11:40:15,999 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item h', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:16,002 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item h', 'desc': 'item desc alphabets', 'active': True, 'id': 8, 'owner_id': 1}}
+2026-03-13 11:40:16,003 - INFO - ID: 5a638a30-33ee-4e6f-b8c8-f3d2e6a00612 | Path: /items/ | Status: 201 | Time: 0.0066s
+**********************************************************
+
+2026-03-13 11:40:20,497 - INFO - 
+**********************************************************
+ID: a5705b05-8edf-40ea-b3ed-864ba305f474 | Method: POST | Path: /items/
+2026-03-13 11:40:20,500 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item hi', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:20,507 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item hi', 'desc': 'item desc alphabets', 'active': True, 'id': 9, 'owner_id': 1}}
+2026-03-13 11:40:20,507 - INFO - ID: a5705b05-8edf-40ea-b3ed-864ba305f474 | Path: /items/ | Status: 201 | Time: 0.0104s
+**********************************************************
+
+2026-03-13 11:40:25,555 - INFO - 
+**********************************************************
+ID: 6d71f502-e9f2-4093-8c03-c76fcc8cb7af | Method: POST | Path: /items/
+2026-03-13 11:40:25,558 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item j', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:25,562 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item j', 'desc': 'item desc alphabets', 'active': True, 'id': 10, 'owner_id': 1}}
+2026-03-13 11:40:25,562 - INFO - ID: 6d71f502-e9f2-4093-8c03-c76fcc8cb7af | Path: /items/ | Status: 201 | Time: 0.0072s
+**********************************************************
+
+2026-03-13 11:40:29,710 - INFO - 
+**********************************************************
+ID: 9d967422-16aa-4a88-a6fa-8c2c9f632278 | Method: POST | Path: /items/
+2026-03-13 11:40:29,712 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item k', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:29,717 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item k', 'desc': 'item desc alphabets', 'active': True, 'id': 11, 'owner_id': 1}}
+2026-03-13 11:40:29,718 - INFO - ID: 9d967422-16aa-4a88-a6fa-8c2c9f632278 | Path: /items/ | Status: 201 | Time: 0.0080s
+**********************************************************
+
+2026-03-13 11:40:33,707 - INFO - 
+**********************************************************
+ID: be030059-040e-465b-bc41-9a31ddf63d65 | Method: POST | Path: /items/
+2026-03-13 11:40:33,710 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item l', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:33,714 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item l', 'desc': 'item desc alphabets', 'active': True, 'id': 12, 'owner_id': 1}}
+2026-03-13 11:40:33,714 - INFO - ID: be030059-040e-465b-bc41-9a31ddf63d65 | Path: /items/ | Status: 201 | Time: 0.0073s
+**********************************************************
+
+2026-03-13 11:40:36,636 - INFO - 
+**********************************************************
+ID: dc518135-cf36-413f-9fe4-c9189324cf30 | Method: POST | Path: /items/
+2026-03-13 11:40:36,639 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item m', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:36,643 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item m', 'desc': 'item desc alphabets', 'active': True, 'id': 13, 'owner_id': 1}}
+2026-03-13 11:40:36,643 - INFO - ID: dc518135-cf36-413f-9fe4-c9189324cf30 | Path: /items/ | Status: 201 | Time: 0.0072s
+**********************************************************
+
+2026-03-13 11:40:39,507 - INFO - 
+**********************************************************
+ID: 83e7d698-fef1-4dad-81fc-a16c4a5d7ac6 | Method: POST | Path: /items/
+2026-03-13 11:40:39,510 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item n', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:39,513 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item n', 'desc': 'item desc alphabets', 'active': True, 'id': 14, 'owner_id': 1}}
+2026-03-13 11:40:39,514 - INFO - ID: 83e7d698-fef1-4dad-81fc-a16c4a5d7ac6 | Path: /items/ | Status: 201 | Time: 0.0068s
+**********************************************************
+
+2026-03-13 11:40:42,901 - INFO - 
+**********************************************************
+ID: f25cbe53-d30f-4c29-b7ff-be06986ff8ba | Method: POST | Path: /items/
+2026-03-13 11:40:42,904 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item o', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:42,908 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item o', 'desc': 'item desc alphabets', 'active': True, 'id': 15, 'owner_id': 1}}
+2026-03-13 11:40:42,908 - INFO - ID: f25cbe53-d30f-4c29-b7ff-be06986ff8ba | Path: /items/ | Status: 201 | Time: 0.0070s
+**********************************************************
+
+2026-03-13 11:40:46,445 - INFO - 
+**********************************************************
+ID: 5d8496cf-e0b5-40dd-9170-9fd4389be6f4 | Method: POST | Path: /items/
+2026-03-13 11:40:46,448 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item p', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:46,452 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item p', 'desc': 'item desc alphabets', 'active': True, 'id': 16, 'owner_id': 1}}
+2026-03-13 11:40:46,452 - INFO - ID: 5d8496cf-e0b5-40dd-9170-9fd4389be6f4 | Path: /items/ | Status: 201 | Time: 0.0075s
+**********************************************************
+
+2026-03-13 11:40:48,965 - INFO - 
+**********************************************************
+ID: 0b3b0ae6-77d6-4381-9ea7-267a7adfc2f2 | Method: POST | Path: /items/
+2026-03-13 11:40:48,967 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item q', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:48,971 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item q', 'desc': 'item desc alphabets', 'active': True, 'id': 17, 'owner_id': 1}}
+2026-03-13 11:40:48,972 - INFO - ID: 0b3b0ae6-77d6-4381-9ea7-267a7adfc2f2 | Path: /items/ | Status: 201 | Time: 0.0068s
+**********************************************************
+
+2026-03-13 11:40:51,883 - INFO - 
+**********************************************************
+ID: afbe8413-dca4-43e4-b717-ce7e29c43482 | Method: POST | Path: /items/
+2026-03-13 11:40:51,886 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item r', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:51,893 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item r', 'desc': 'item desc alphabets', 'active': True, 'id': 18, 'owner_id': 1}}
+2026-03-13 11:40:51,894 - INFO - ID: afbe8413-dca4-43e4-b717-ce7e29c43482 | Path: /items/ | Status: 201 | Time: 0.0102s
+**********************************************************
+
+2026-03-13 11:40:54,411 - INFO - 
+**********************************************************
+ID: f3af5fd4-ab27-4fc8-b9fd-fe4e0e88d9d2 | Method: POST | Path: /items/
+2026-03-13 11:40:54,414 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item s', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:54,418 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item s', 'desc': 'item desc alphabets', 'active': True, 'id': 19, 'owner_id': 1}}
+2026-03-13 11:40:54,418 - INFO - ID: f3af5fd4-ab27-4fc8-b9fd-fe4e0e88d9d2 | Path: /items/ | Status: 201 | Time: 0.0070s
+**********************************************************
+
+2026-03-13 11:40:57,101 - INFO - 
+**********************************************************
+ID: f62a53bf-6030-47ba-bf3b-7ec2025c1536 | Method: POST | Path: /items/
+2026-03-13 11:40:57,104 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item t', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:40:57,108 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item t', 'desc': 'item desc alphabets', 'active': True, 'id': 20, 'owner_id': 1}}
+2026-03-13 11:40:57,108 - INFO - ID: f62a53bf-6030-47ba-bf3b-7ec2025c1536 | Path: /items/ | Status: 201 | Time: 0.0067s
+**********************************************************
+
+2026-03-13 11:41:00,914 - INFO - 
+**********************************************************
+ID: 45253b05-7a30-4cdb-94a1-dc9b43d7a2e3 | Method: POST | Path: /items/
+2026-03-13 11:41:00,917 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item u', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:41:00,922 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item u', 'desc': 'item desc alphabets', 'active': True, 'id': 21, 'owner_id': 1}}
+2026-03-13 11:41:00,922 - INFO - ID: 45253b05-7a30-4cdb-94a1-dc9b43d7a2e3 | Path: /items/ | Status: 201 | Time: 0.0076s
+**********************************************************
+
+2026-03-13 11:41:04,178 - INFO - 
+**********************************************************
+ID: 533c4f2d-4503-4416-b2aa-6ccedb276bdd | Method: POST | Path: /items/
+2026-03-13 11:41:04,181 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item v', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:41:04,185 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item v', 'desc': 'item desc alphabets', 'active': True, 'id': 22, 'owner_id': 1}}
+2026-03-13 11:41:04,185 - INFO - ID: 533c4f2d-4503-4416-b2aa-6ccedb276bdd | Path: /items/ | Status: 201 | Time: 0.0078s
+**********************************************************
+
+2026-03-13 11:41:08,611 - INFO - 
+**********************************************************
+ID: b1ceb48c-fd6e-4a13-ba72-8a7ed41bfc45 | Method: POST | Path: /items/
+2026-03-13 11:41:08,614 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item w', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:41:08,617 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item w', 'desc': 'item desc alphabets', 'active': True, 'id': 23, 'owner_id': 1}}
+2026-03-13 11:41:08,618 - INFO - ID: b1ceb48c-fd6e-4a13-ba72-8a7ed41bfc45 | Path: /items/ | Status: 201 | Time: 0.0071s
+**********************************************************
+
+2026-03-13 11:41:11,562 - INFO - 
+**********************************************************
+ID: ef97296b-b7fd-46e0-9eef-56acc16a8df7 | Method: POST | Path: /items/
+2026-03-13 11:41:11,565 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item x', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:41:11,569 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item x', 'desc': 'item desc alphabets', 'active': True, 'id': 24, 'owner_id': 1}}
+2026-03-13 11:41:11,569 - INFO - ID: ef97296b-b7fd-46e0-9eef-56acc16a8df7 | Path: /items/ | Status: 201 | Time: 0.0074s
+**********************************************************
+
+2026-03-13 11:41:15,469 - INFO - 
+**********************************************************
+ID: 60d01319-fc52-413c-b360-132dabc6f274 | Method: POST | Path: /items/
+2026-03-13 11:41:15,471 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item y', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:41:15,475 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item y', 'desc': 'item desc alphabets', 'active': True, 'id': 25, 'owner_id': 1}}
+2026-03-13 11:41:15,475 - INFO - ID: 60d01319-fc52-413c-b360-132dabc6f274 | Path: /items/ | Status: 201 | Time: 0.0068s
+**********************************************************
+
+2026-03-13 11:41:18,941 - INFO - 
+**********************************************************
+ID: 951851b3-664d-4ef2-b1d5-1e5783e03951 | Method: POST | Path: /items/
+2026-03-13 11:41:18,944 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item z', 'desc': 'item desc alphabets', 'active': True}}
+2026-03-13 11:41:18,954 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item z', 'desc': 'item desc alphabets', 'active': True, 'id': 26, 'owner_id': 1}}
+2026-03-13 11:41:18,954 - INFO - ID: 951851b3-664d-4ef2-b1d5-1e5783e03951 | Path: /items/ | Status: 201 | Time: 0.0134s
+**********************************************************
+
+2026-03-13 11:41:27,915 - INFO - 
+**********************************************************
+ID: 95b17516-c49a-484b-bf89-673cc5c1d915 | Method: GET | Path: /items/
+2026-03-13 11:41:27,918 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 5}}
+2026-03-13 11:41:27,919 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'item a', 'desc': 'item desc alphabets', 'active': True, 'id': 1, 'owner_id': 1}, {'title': 'item b', 'desc': 'item desc alphabets', 'active': True, 'id': 2, 'owner_id': 1}, {'title': 'item c', 'desc': 'item desc alphabets', 'active': True, 'id': 3, 'owner_id': 1}, {'title': 'item d', 'desc': 'item desc alphabets', 'active': True, 'id': 4, 'owner_id': 1}, {'title': 'item e', 'desc': 'item desc alphabets', 'active': True, 'id': 5, 'owner_id': 1}]}
+2026-03-13 11:41:27,919 - INFO - ID: 95b17516-c49a-484b-bf89-673cc5c1d915 | Path: /items/ | Status: 200 | Time: 0.0044s
+**********************************************************
+
+2026-03-13 11:41:35,789 - INFO - 
+**********************************************************
+ID: c8bb34d9-0973-4a8d-b515-f7bbb3ddd071 | Method: GET | Path: /items/
+2026-03-13 11:41:35,792 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-13 11:41:35,793 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'item a', 'desc': 'item desc alphabets', 'active': True, 'id': 1, 'owner_id': 1}, {'title': 'item b', 'desc': 'item desc alphabets', 'active': True, 'id': 2, 'owner_id': 1}, {'title': 'item c', 'desc': 'item desc alphabets', 'active': True, 'id': 3, 'owner_id': 1}, {'title': 'item d', 'desc': 'item desc alphabets', 'active': True, 'id': 4, 'owner_id': 1}, {'title': 'item e', 'desc': 'item desc alphabets', 'active': True, 'id': 5, 'owner_id': 1}, {'title': 'item f', 'desc': 'item desc alphabets', 'active': True, 'id': 6, 'owner_id': 1}, {'title': 'item g', 'desc': 'item desc alphabets', 'active': True, 'id': 7, 'owner_id': 1}, {'title': 'item h', 'desc': 'item desc alphabets', 'active': True, 'id': 8, 'owner_id': 1}, {'title': 'item hi', 'desc': 'item desc alphabets', 'active': True, 'id': 9, 'owner_id': 1}, {'title': 'item j', 'desc': 'item desc alphabets', 'active': True, 'id': 10, 'owner_id': 1}]}
+2026-03-13 11:41:35,794 - INFO - ID: c8bb34d9-0973-4a8d-b515-f7bbb3ddd071 | Path: /items/ | Status: 200 | Time: 0.0042s
+**********************************************************
+
+2026-03-13 11:41:42,808 - INFO - 
+**********************************************************
+ID: 62eff298-5565-4307-bb91-de18e4e6a520 | Method: GET | Path: /items/
+2026-03-13 11:41:42,810 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 100}}
+2026-03-13 11:41:42,812 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'item a', 'desc': 'item desc alphabets', 'active': True, 'id': 1, 'owner_id': 1}, {'title': 'item b', 'desc': 'item desc alphabets', 'active': True, 'id': 2, 'owner_id': 1}, {'title': 'item c', 'desc': 'item desc alphabets', 'active': True, 'id': 3, 'owner_id': 1}, {'title': 'item d', 'desc': 'item desc alphabets', 'active': True, 'id': 4, 'owner_id': 1}, {'title': 'item e', 'desc': 'item desc alphabets', 'active': True, 'id': 5, 'owner_id': 1}, {'title': 'item f', 'desc': 'item desc alphabets', 'active': True, 'id': 6, 'owner_id': 1}, {'title': 'item g', 'desc': 'item desc alphabets', 'active': True, 'id': 7, 'owner_id': 1}, {'title': 'item h', 'desc': 'item desc alphabets', 'active': True, 'id': 8, 'owner_id': 1}, {'title': 'item hi', 'desc': 'item desc alphabets', 'active': True, 'id': 9, 'owner_id': 1}, {'title': 'item j', 'desc': 'item desc alphabets', 'active': True, 'id': 10, 'owner_id': 1}, {'title': 'item k', 'desc': 'item desc alphabets', 'active': True, 'id': 11, 'owner_id': 1}, {'title': 'item l', 'desc': 'item desc alphabets', 'active': True, 'id': 12, 'owner_id': 1}, {'title': 'item m', 'desc': 'item desc alphabets', 'active': True, 'id': 13, 'owner_id': 1}, {'title': 'item n', 'desc': 'item desc alphabets', 'active': True, 'id': 14, 'owner_id': 1}, {'title': 'item o', 'desc': 'item desc alphabets', 'active': True, 'id': 15, 'owner_id': 1}, {'title': 'item p', 'desc': 'item desc alphabets', 'active': True, 'id': 16, 'owner_id': 1}, {'title': 'item q', 'desc': 'item desc alphabets', 'active': True, 'id': 17, 'owner_id': 1}, {'title': 'item r', 'desc': 'item desc alphabets', 'active': True, 'id': 18, 'owner_id': 1}, {'title': 'item s', 'desc': 'item desc alphabets', 'active': True, 'id': 19, 'owner_id': 1}, {'title': 'item t', 'desc': 'item desc alphabets', 'active': True, 'id': 20, 'owner_id': 1}, {'title': 'item u', 'desc': 'item desc alphabets', 'active': True, 'id': 21, 'owner_id': 1}, {'title': 'item v', 'desc': 'item desc alphabets', 'active': True, 'id': 22, 'owner_id': 1}, {'title': 'item w', 'desc': 'item desc alphabets', 'active': True, 'id': 23, 'owner_id': 1}, {'title': 'item x', 'desc': 'item desc alphabets', 'active': True, 'id': 24, 'owner_id': 1}, {'title': 'item y', 'desc': 'item desc alphabets', 'active': True, 'id': 25, 'owner_id': 1}, {'title': 'item z', 'desc': 'item desc alphabets', 'active': True, 'id': 26, 'owner_id': 1}]}
+2026-03-13 11:41:42,813 - INFO - ID: 62eff298-5565-4307-bb91-de18e4e6a520 | Path: /items/ | Status: 200 | Time: 0.0049s
+**********************************************************
+
+2026-03-13 11:41:57,947 - INFO - 
+**********************************************************
+ID: c1b8e164-5657-48a8-b74a-593ee1b41d27 | Method: GET | Path: /items/
+2026-03-13 11:41:57,950 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 2, 'size': 10}}
+2026-03-13 11:41:57,951 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'item k', 'desc': 'item desc alphabets', 'active': True, 'id': 11, 'owner_id': 1}, {'title': 'item l', 'desc': 'item desc alphabets', 'active': True, 'id': 12, 'owner_id': 1}, {'title': 'item m', 'desc': 'item desc alphabets', 'active': True, 'id': 13, 'owner_id': 1}, {'title': 'item n', 'desc': 'item desc alphabets', 'active': True, 'id': 14, 'owner_id': 1}, {'title': 'item o', 'desc': 'item desc alphabets', 'active': True, 'id': 15, 'owner_id': 1}, {'title': 'item p', 'desc': 'item desc alphabets', 'active': True, 'id': 16, 'owner_id': 1}, {'title': 'item q', 'desc': 'item desc alphabets', 'active': True, 'id': 17, 'owner_id': 1}, {'title': 'item r', 'desc': 'item desc alphabets', 'active': True, 'id': 18, 'owner_id': 1}, {'title': 'item s', 'desc': 'item desc alphabets', 'active': True, 'id': 19, 'owner_id': 1}, {'title': 'item t', 'desc': 'item desc alphabets', 'active': True, 'id': 20, 'owner_id': 1}]}
+2026-03-13 11:41:57,951 - INFO - ID: c1b8e164-5657-48a8-b74a-593ee1b41d27 | Path: /items/ | Status: 200 | Time: 0.0039s
+**********************************************************
+
+2026-03-13 11:42:05,325 - INFO - 
+**********************************************************
+ID: 27a1dadb-8593-4c1a-a9b6-8ce09aa77118 | Method: GET | Path: /items/
+2026-03-13 11:42:05,328 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 2, 'size': 10}}
+2026-03-13 11:42:05,329 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'item k', 'desc': 'item desc alphabets', 'active': True, 'id': 11, 'owner_id': 1}, {'title': 'item l', 'desc': 'item desc alphabets', 'active': True, 'id': 12, 'owner_id': 1}, {'title': 'item m', 'desc': 'item desc alphabets', 'active': True, 'id': 13, 'owner_id': 1}, {'title': 'item n', 'desc': 'item desc alphabets', 'active': True, 'id': 14, 'owner_id': 1}, {'title': 'item o', 'desc': 'item desc alphabets', 'active': True, 'id': 15, 'owner_id': 1}, {'title': 'item p', 'desc': 'item desc alphabets', 'active': True, 'id': 16, 'owner_id': 1}, {'title': 'item q', 'desc': 'item desc alphabets', 'active': True, 'id': 17, 'owner_id': 1}, {'title': 'item r', 'desc': 'item desc alphabets', 'active': True, 'id': 18, 'owner_id': 1}, {'title': 'item s', 'desc': 'item desc alphabets', 'active': True, 'id': 19, 'owner_id': 1}, {'title': 'item t', 'desc': 'item desc alphabets', 'active': True, 'id': 20, 'owner_id': 1}]}
+2026-03-13 11:42:05,330 - INFO - ID: 27a1dadb-8593-4c1a-a9b6-8ce09aa77118 | Path: /items/ | Status: 200 | Time: 0.0050s
+**********************************************************
+
+2026-03-13 11:42:11,061 - INFO - 
+**********************************************************
+ID: f172a87b-35fb-43e3-9af1-59989f35039f | Method: GET | Path: /items/
+2026-03-13 11:42:11,063 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 3, 'size': 10}}
+2026-03-13 11:42:11,065 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'item u', 'desc': 'item desc alphabets', 'active': True, 'id': 21, 'owner_id': 1}, {'title': 'item v', 'desc': 'item desc alphabets', 'active': True, 'id': 22, 'owner_id': 1}, {'title': 'item w', 'desc': 'item desc alphabets', 'active': True, 'id': 23, 'owner_id': 1}, {'title': 'item x', 'desc': 'item desc alphabets', 'active': True, 'id': 24, 'owner_id': 1}, {'title': 'item y', 'desc': 'item desc alphabets', 'active': True, 'id': 25, 'owner_id': 1}, {'title': 'item z', 'desc': 'item desc alphabets', 'active': True, 'id': 26, 'owner_id': 1}]}
+2026-03-13 11:42:11,065 - INFO - ID: f172a87b-35fb-43e3-9af1-59989f35039f | Path: /items/ | Status: 200 | Time: 0.0040s
+**********************************************************
+
+2026-03-13 12:03:58,190 - INFO - 
+**********************************************************
+ID: f4fb5e7b-2720-4433-89ad-5fdf4502fe07 | Method: GET | Path: /docs
+2026-03-13 12:03:58,191 - INFO - ID: f4fb5e7b-2720-4433-89ad-5fdf4502fe07 | Path: /docs | Status: 200 | Time: 0.0008s
+**********************************************************
+
+2026-03-13 12:03:58,389 - INFO - 
+**********************************************************
+ID: 5e71ab21-518f-4be3-bc34-acd1b7fafb1b | Method: GET | Path: /openapi.json
+2026-03-13 12:03:58,426 - INFO - ID: 5e71ab21-518f-4be3-bc34-acd1b7fafb1b | Path: /openapi.json | Status: 200 | Time: 0.0381s
+**********************************************************
+
+2026-03-13 12:04:28,740 - INFO - 
+**********************************************************
+ID: e7d289f0-af0c-416c-accf-68da88c47846 | Method: POST | Path: /users/register
+2026-03-13 12:04:28,789 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin.dave@armakuni.com', 'username': 'jaymin-armakuni', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-13 12:04:29,041 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-13 12:04:29,041 - INFO - ID: e7d289f0-af0c-416c-accf-68da88c47846 | Path: /users/register | Status: 200 | Time: 0.3012s
+**********************************************************
+
+2026-03-13 12:04:56,436 - INFO - 
+**********************************************************
+ID: d8533894-d703-4b4e-8093-6b2e764967e9 | Method: POST | Path: /users/verify-otp
+2026-03-13 12:04:56,438 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin.dave@armakuni.com', 'otp': '484804'}
+2026-03-13 12:04:56,448 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin.dave@armakuni.com', 'username': 'jaymin-armakuni', 'is_active': True, 'is_admin': False, 'id': 2, 'created_at': datetime.datetime(2026, 3, 13, 12, 4, 56, 440933)}}
+2026-03-13 12:04:56,449 - INFO - ID: d8533894-d703-4b4e-8093-6b2e764967e9 | Path: /users/verify-otp | Status: 200 | Time: 0.0124s
+**********************************************************
+
+2026-03-13 12:06:12,674 - INFO - 
+**********************************************************
+ID: 83f42c8e-61b3-45a7-95a5-d311f61c7266 | Method: POST | Path: /users/login
+2026-03-13 12:06:12,676 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin.dave@armakuni.com', 'password': '*******'}}
+2026-03-13 12:06:12,889 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-13 12:06:12,889 - INFO - ID: 83f42c8e-61b3-45a7-95a5-d311f61c7266 | Path: /users/login | Status: 200 | Time: 0.2157s
+**********************************************************
+
+2026-03-13 12:06:43,485 - INFO - 
+**********************************************************
+ID: 3ba6aa43-552a-4b54-a3d5-4358191cbb1e | Method: GET | Path: /admin/users
+2026-03-13 12:06:43,489 - INFO - Function Start: get_all_users | Args: () Kwargs: {'db': 'obj', 'admin_repo': 'obj', 'admin_dep': 'obj', 'pagination': {'page': 1, 'size': 1}}
+2026-03-13 12:06:43,491 - INFO - Function Success: get_all_users | Result: {'success': True, 'message': 'Successfully retrieved all users.', 'data': [{'email': 'jaymin4724@gmail.com', 'username': 'jaymin4724', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 13, 9, 59, 12, 730661)}]}
+2026-03-13 12:06:43,492 - INFO - ID: 3ba6aa43-552a-4b54-a3d5-4358191cbb1e | Path: /admin/users | Status: 200 | Time: 0.0066s
+**********************************************************
+
+2026-03-13 12:06:47,890 - INFO - 
+**********************************************************
+ID: 88accb1d-02b3-4ab8-88ff-02a80d145031 | Method: GET | Path: /admin/users
+2026-03-13 12:06:47,893 - INFO - Function Start: get_all_users | Args: () Kwargs: {'db': 'obj', 'admin_repo': 'obj', 'admin_dep': 'obj', 'pagination': {'page': 2, 'size': 1}}
+2026-03-13 12:06:47,894 - INFO - Function Success: get_all_users | Result: {'success': True, 'message': 'Successfully retrieved all users.', 'data': [{'email': 'jaymin.dave@armakuni.com', 'username': 'jaymin-armakuni', 'is_active': True, 'is_admin': True, 'id': 2, 'created_at': datetime.datetime(2026, 3, 13, 12, 4, 56, 440933)}]}
+2026-03-13 12:06:47,895 - INFO - ID: 88accb1d-02b3-4ab8-88ff-02a80d145031 | Path: /admin/users | Status: 200 | Time: 0.0044s
+**********************************************************
+
+2026-03-13 12:06:53,964 - INFO - 
+**********************************************************
+ID: b204c8f6-257b-4308-ac61-983e7a87ecc9 | Method: GET | Path: /admin/users
+2026-03-13 12:06:53,967 - INFO - Function Start: get_all_users | Args: () Kwargs: {'db': 'obj', 'admin_repo': 'obj', 'admin_dep': 'obj', 'pagination': {'page': 2, 'size': 11}}
+2026-03-13 12:06:53,968 - INFO - Function Success: get_all_users | Result: {'success': True, 'message': 'Successfully retrieved all users.', 'data': []}
+2026-03-13 12:06:53,968 - INFO - ID: b204c8f6-257b-4308-ac61-983e7a87ecc9 | Path: /admin/users | Status: 200 | Time: 0.0043s
+**********************************************************
+
+2026-03-13 12:07:00,517 - INFO - 
+**********************************************************
+ID: 0454150b-6119-4991-9ce9-8e277aca84ad | Method: GET | Path: /admin/users
+2026-03-13 12:07:00,520 - INFO - Function Start: get_all_users | Args: () Kwargs: {'db': 'obj', 'admin_repo': 'obj', 'admin_dep': 'obj', 'pagination': {'page': 1, 'size': 11}}
+2026-03-13 12:07:00,521 - INFO - Function Success: get_all_users | Result: {'success': True, 'message': 'Successfully retrieved all users.', 'data': [{'email': 'jaymin4724@gmail.com', 'username': 'jaymin4724', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 13, 9, 59, 12, 730661)}, {'email': 'jaymin.dave@armakuni.com', 'username': 'jaymin-armakuni', 'is_active': True, 'is_admin': True, 'id': 2, 'created_at': datetime.datetime(2026, 3, 13, 12, 4, 56, 440933)}]}
+2026-03-13 12:07:00,521 - INFO - ID: 0454150b-6119-4991-9ce9-8e277aca84ad | Path: /admin/users | Status: 200 | Time: 0.0045s
+**********************************************************
+
+2026-03-13 12:07:05,781 - INFO - 
+**********************************************************
+ID: 6e897284-e4fa-49a7-b6b4-8c0635d91e75 | Method: GET | Path: /admin/users
+2026-03-13 12:07:05,784 - INFO - Function Start: get_all_users | Args: () Kwargs: {'db': 'obj', 'admin_repo': 'obj', 'admin_dep': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-13 12:07:05,786 - INFO - Function Success: get_all_users | Result: {'success': True, 'message': 'Successfully retrieved all users.', 'data': [{'email': 'jaymin4724@gmail.com', 'username': 'jaymin4724', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 13, 9, 59, 12, 730661)}, {'email': 'jaymin.dave@armakuni.com', 'username': 'jaymin-armakuni', 'is_active': True, 'is_admin': True, 'id': 2, 'created_at': datetime.datetime(2026, 3, 13, 12, 4, 56, 440933)}]}
+2026-03-13 12:07:05,786 - INFO - ID: 6e897284-e4fa-49a7-b6b4-8c0635d91e75 | Path: /admin/users | Status: 200 | Time: 0.0050s
+**********************************************************
+
+2026-03-13 12:07:44,454 - INFO - 
+**********************************************************
+ID: e95facdf-da8a-4163-b8ee-7f5f7801ff64 | Method: POST | Path: /admin/items
+2026-03-13 12:07:44,459 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 1 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:07:44,467 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 1 by admin', 'desc': "string's description", 'active': True, 'id': 27, 'owner_id': 2}}
+2026-03-13 12:07:44,468 - INFO - ID: e95facdf-da8a-4163-b8ee-7f5f7801ff64 | Path: /admin/items | Status: 201 | Time: 0.0135s
+**********************************************************
+
+2026-03-13 12:07:48,087 - INFO - 
+**********************************************************
+ID: bf8c19a9-16fc-4306-9590-9900c4413fe7 | Method: POST | Path: /admin/items
+2026-03-13 12:07:48,090 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 2 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:07:48,093 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 2 by admin', 'desc': "string's description", 'active': True, 'id': 28, 'owner_id': 2}}
+2026-03-13 12:07:48,094 - INFO - ID: bf8c19a9-16fc-4306-9590-9900c4413fe7 | Path: /admin/items | Status: 201 | Time: 0.0069s
+**********************************************************
+
+2026-03-13 12:07:50,542 - INFO - 
+**********************************************************
+ID: 42428672-68f1-4028-8f99-7e5b95737b74 | Method: POST | Path: /admin/items
+2026-03-13 12:07:50,545 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 3 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:07:50,549 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 3 by admin', 'desc': "string's description", 'active': True, 'id': 29, 'owner_id': 2}}
+2026-03-13 12:07:50,550 - INFO - ID: 42428672-68f1-4028-8f99-7e5b95737b74 | Path: /admin/items | Status: 201 | Time: 0.0077s
+**********************************************************
+
+2026-03-13 12:07:53,640 - INFO - 
+**********************************************************
+ID: d7d59dce-d344-444b-9d09-bd577508ae9f | Method: POST | Path: /admin/items
+2026-03-13 12:07:53,643 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 4 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:07:53,648 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 4 by admin', 'desc': "string's description", 'active': True, 'id': 30, 'owner_id': 2}}
+2026-03-13 12:07:53,651 - INFO - ID: d7d59dce-d344-444b-9d09-bd577508ae9f | Path: /admin/items | Status: 201 | Time: 0.0109s
+**********************************************************
+
+2026-03-13 12:07:56,430 - INFO - 
+**********************************************************
+ID: be97b58d-b0ea-4aa7-80f8-3d292f067622 | Method: POST | Path: /admin/items
+2026-03-13 12:07:56,433 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 5 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:07:56,437 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 5 by admin', 'desc': "string's description", 'active': True, 'id': 31, 'owner_id': 2}}
+2026-03-13 12:07:56,437 - INFO - ID: be97b58d-b0ea-4aa7-80f8-3d292f067622 | Path: /admin/items | Status: 201 | Time: 0.0072s
+**********************************************************
+
+2026-03-13 12:07:58,893 - INFO - 
+**********************************************************
+ID: a4e97819-393b-4457-bf72-11f091145f47 | Method: POST | Path: /admin/items
+2026-03-13 12:07:58,896 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 6 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:07:58,900 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 6 by admin', 'desc': "string's description", 'active': True, 'id': 32, 'owner_id': 2}}
+2026-03-13 12:07:58,900 - INFO - ID: a4e97819-393b-4457-bf72-11f091145f47 | Path: /admin/items | Status: 201 | Time: 0.0071s
+**********************************************************
+
+2026-03-13 12:08:02,153 - INFO - 
+**********************************************************
+ID: 7861600b-70f4-43fb-acd1-67d6e764cf42 | Method: POST | Path: /admin/items
+2026-03-13 12:08:02,156 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 7 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:08:02,162 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 7 by admin', 'desc': "string's description", 'active': True, 'id': 33, 'owner_id': 2}}
+2026-03-13 12:08:02,162 - INFO - ID: 7861600b-70f4-43fb-acd1-67d6e764cf42 | Path: /admin/items | Status: 201 | Time: 0.0090s
+**********************************************************
+
+2026-03-13 12:08:07,044 - INFO - 
+**********************************************************
+ID: fcfc6c34-290a-46b4-85bc-7e4b8a95f4da | Method: POST | Path: /admin/items
+2026-03-13 12:08:07,047 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 8 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:08:07,051 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 8 by admin', 'desc': "string's description", 'active': True, 'id': 34, 'owner_id': 2}}
+2026-03-13 12:08:07,052 - INFO - ID: fcfc6c34-290a-46b4-85bc-7e4b8a95f4da | Path: /admin/items | Status: 201 | Time: 0.0074s
+**********************************************************
+
+2026-03-13 12:08:11,032 - INFO - 
+**********************************************************
+ID: 1188e4d0-7000-41d9-b892-7d308ab5fbae | Method: POST | Path: /admin/items
+2026-03-13 12:08:11,035 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 9 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:08:11,039 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 9 by admin', 'desc': "string's description", 'active': True, 'id': 35, 'owner_id': 2}}
+2026-03-13 12:08:11,039 - INFO - ID: 1188e4d0-7000-41d9-b892-7d308ab5fbae | Path: /admin/items | Status: 201 | Time: 0.0071s
+**********************************************************
+
+2026-03-13 12:08:13,677 - INFO - 
+**********************************************************
+ID: d68a0267-1d8a-4a07-88a5-492b22196c51 | Method: POST | Path: /admin/items
+2026-03-13 12:08:13,680 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 10 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:08:13,684 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 10 by admin', 'desc': "string's description", 'active': True, 'id': 36, 'owner_id': 2}}
+2026-03-13 12:08:13,685 - INFO - ID: d68a0267-1d8a-4a07-88a5-492b22196c51 | Path: /admin/items | Status: 201 | Time: 0.0072s
+**********************************************************
+
+2026-03-13 12:08:16,966 - INFO - 
+**********************************************************
+ID: 1048439c-c718-4ed6-8149-f1ad52d78463 | Method: POST | Path: /admin/items
+2026-03-13 12:08:16,969 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 11 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:08:16,973 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 11 by admin', 'desc': "string's description", 'active': True, 'id': 37, 'owner_id': 2}}
+2026-03-13 12:08:16,973 - INFO - ID: 1048439c-c718-4ed6-8149-f1ad52d78463 | Path: /admin/items | Status: 201 | Time: 0.0079s
+**********************************************************
+
+2026-03-13 12:08:19,762 - INFO - 
+**********************************************************
+ID: 51d4e151-3627-4586-8af4-cee538437b24 | Method: POST | Path: /admin/items
+2026-03-13 12:08:19,765 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 12 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:08:19,769 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 12 by admin', 'desc': "string's description", 'active': True, 'id': 38, 'owner_id': 2}}
+2026-03-13 12:08:19,770 - INFO - ID: 51d4e151-3627-4586-8af4-cee538437b24 | Path: /admin/items | Status: 201 | Time: 0.0073s
+**********************************************************
+
+2026-03-13 12:08:22,254 - INFO - 
+**********************************************************
+ID: 4c7e893f-1076-44c4-a8de-afccb822718c | Method: POST | Path: /admin/items
+2026-03-13 12:08:22,256 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 13 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:08:22,261 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 13 by admin', 'desc': "string's description", 'active': True, 'id': 39, 'owner_id': 2}}
+2026-03-13 12:08:22,261 - INFO - ID: 4c7e893f-1076-44c4-a8de-afccb822718c | Path: /admin/items | Status: 201 | Time: 0.0077s
+**********************************************************
+
+2026-03-13 12:08:24,744 - INFO - 
+**********************************************************
+ID: dab5d3a0-3358-4424-aed9-a3df64e35a67 | Method: POST | Path: /admin/items
+2026-03-13 12:08:24,747 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 14 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:08:24,751 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 14 by admin', 'desc': "string's description", 'active': True, 'id': 40, 'owner_id': 2}}
+2026-03-13 12:08:24,752 - INFO - ID: dab5d3a0-3358-4424-aed9-a3df64e35a67 | Path: /admin/items | Status: 201 | Time: 0.0072s
+**********************************************************
+
+2026-03-13 12:08:28,600 - INFO - 
+**********************************************************
+ID: bf79ecff-717e-4a95-96c4-0dafdbde0cd9 | Method: POST | Path: /admin/items
+2026-03-13 12:08:28,603 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'string 15 by admin', 'desc': "string's description", 'active': True}}
+2026-03-13 12:08:28,607 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 15 by admin', 'desc': "string's description", 'active': True, 'id': 41, 'owner_id': 2}}
+2026-03-13 12:08:28,607 - INFO - ID: bf79ecff-717e-4a95-96c4-0dafdbde0cd9 | Path: /admin/items | Status: 201 | Time: 0.0070s
+**********************************************************
+
+2026-03-13 12:08:33,041 - INFO - 
+**********************************************************
+ID: ee2c4d98-6397-41cd-9ea4-240fc6a721b4 | Method: GET | Path: /admin/users
+2026-03-13 12:08:33,043 - INFO - Function Start: get_all_users | Args: () Kwargs: {'db': 'obj', 'admin_repo': 'obj', 'admin_dep': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-13 12:08:33,044 - INFO - Function Success: get_all_users | Result: {'success': True, 'message': 'Successfully retrieved all users.', 'data': [{'email': 'jaymin4724@gmail.com', 'username': 'jaymin4724', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 13, 9, 59, 12, 730661)}, {'email': 'jaymin.dave@armakuni.com', 'username': 'jaymin-armakuni', 'is_active': True, 'is_admin': True, 'id': 2, 'created_at': datetime.datetime(2026, 3, 13, 12, 4, 56, 440933)}]}
+2026-03-13 12:08:33,045 - INFO - ID: ee2c4d98-6397-41cd-9ea4-240fc6a721b4 | Path: /admin/users | Status: 200 | Time: 0.0042s
+**********************************************************
+
+2026-03-13 12:08:43,166 - INFO - 
+**********************************************************
+ID: 59ac380b-f0d5-48c4-8f40-b9c8d033299d | Method: GET | Path: /admin/items
+2026-03-13 12:08:43,169 - INFO - Function Start: get_all_items | Args: () Kwargs: {'db': 'obj', 'admin_repo': 'obj', 'admin_dep': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-13 12:08:43,171 - INFO - Function Success: get_all_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'item a', 'desc': 'item desc alphabets', 'active': True, 'id': 1, 'owner_id': 1}, {'title': 'item b', 'desc': 'item desc alphabets', 'active': True, 'id': 2, 'owner_id': 1}, {'title': 'item c', 'desc': 'item desc alphabets', 'active': True, 'id': 3, 'owner_id': 1}, {'title': 'item d', 'desc': 'item desc alphabets', 'active': True, 'id': 4, 'owner_id': 1}, {'title': 'item e', 'desc': 'item desc alphabets', 'active': True, 'id': 5, 'owner_id': 1}, {'title': 'item f', 'desc': 'item desc alphabets', 'active': True, 'id': 6, 'owner_id': 1}, {'title': 'item g', 'desc': 'item desc alphabets', 'active': True, 'id': 7, 'owner_id': 1}, {'title': 'item h', 'desc': 'item desc alphabets', 'active': True, 'id': 8, 'owner_id': 1}, {'title': 'item hi', 'desc': 'item desc alphabets', 'active': True, 'id': 9, 'owner_id': 1}, {'title': 'item j', 'desc': 'item desc alphabets', 'active': True, 'id': 10, 'owner_id': 1}]}
+2026-03-13 12:08:43,172 - INFO - ID: 59ac380b-f0d5-48c4-8f40-b9c8d033299d | Path: /admin/items | Status: 200 | Time: 0.0055s
+**********************************************************
+
+2026-03-13 12:08:55,998 - INFO - 
+**********************************************************
+ID: c0ce6b4d-35f3-469c-a863-43fa6492e44c | Method: GET | Path: /items/
+2026-03-13 12:08:56,002 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-13 12:08:56,005 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'string 1 by admin', 'desc': "string's description", 'active': True, 'id': 27, 'owner_id': 2}, {'title': 'string 2 by admin', 'desc': "string's description", 'active': True, 'id': 28, 'owner_id': 2}, {'title': 'string 3 by admin', 'desc': "string's description", 'active': True, 'id': 29, 'owner_id': 2}, {'title': 'string 4 by admin', 'desc': "string's description", 'active': True, 'id': 30, 'owner_id': 2}, {'title': 'string 5 by admin', 'desc': "string's description", 'active': True, 'id': 31, 'owner_id': 2}, {'title': 'string 6 by admin', 'desc': "string's description", 'active': True, 'id': 32, 'owner_id': 2}, {'title': 'string 7 by admin', 'desc': "string's description", 'active': True, 'id': 33, 'owner_id': 2}, {'title': 'string 8 by admin', 'desc': "string's description", 'active': True, 'id': 34, 'owner_id': 2}, {'title': 'string 9 by admin', 'desc': "string's description", 'active': True, 'id': 35, 'owner_id': 2}, {'title': 'string 10 by admin', 'desc': "string's description", 'active': True, 'id': 36, 'owner_id': 2}]}
+2026-03-13 12:08:56,006 - INFO - ID: c0ce6b4d-35f3-469c-a863-43fa6492e44c | Path: /items/ | Status: 200 | Time: 0.0080s
+**********************************************************
+
+2026-03-13 12:09:14,739 - INFO - 
+**********************************************************
+ID: 0bbd2a9d-b9b1-4fc3-911f-bc81e00e762b | Method: GET | Path: /admin/items
+2026-03-13 12:09:14,741 - INFO - Function Start: get_all_items | Args: () Kwargs: {'db': 'obj', 'admin_repo': 'obj', 'admin_dep': 'obj', 'pagination': {'page': 3, 'size': 10}}
+2026-03-13 12:09:14,742 - INFO - Function Success: get_all_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'item u', 'desc': 'item desc alphabets', 'active': True, 'id': 21, 'owner_id': 1}, {'title': 'item v', 'desc': 'item desc alphabets', 'active': True, 'id': 22, 'owner_id': 1}, {'title': 'item w', 'desc': 'item desc alphabets', 'active': True, 'id': 23, 'owner_id': 1}, {'title': 'item x', 'desc': 'item desc alphabets', 'active': True, 'id': 24, 'owner_id': 1}, {'title': 'item y', 'desc': 'item desc alphabets', 'active': True, 'id': 25, 'owner_id': 1}, {'title': 'item z', 'desc': 'item desc alphabets', 'active': True, 'id': 26, 'owner_id': 1}, {'title': 'string 1 by admin', 'desc': "string's description", 'active': True, 'id': 27, 'owner_id': 2}, {'title': 'string 2 by admin', 'desc': "string's description", 'active': True, 'id': 28, 'owner_id': 2}, {'title': 'string 3 by admin', 'desc': "string's description", 'active': True, 'id': 29, 'owner_id': 2}, {'title': 'string 4 by admin', 'desc': "string's description", 'active': True, 'id': 30, 'owner_id': 2}]}
+2026-03-13 12:09:14,743 - INFO - ID: 0bbd2a9d-b9b1-4fc3-911f-bc81e00e762b | Path: /admin/items | Status: 200 | Time: 0.0038s
+**********************************************************
+
+2026-03-13 12:09:20,156 - INFO - 
+**********************************************************
+ID: 3cb50b6f-219b-4d2d-90e1-281e6950e431 | Method: GET | Path: /admin/items
+2026-03-13 12:09:20,159 - INFO - Function Start: get_all_items | Args: () Kwargs: {'db': 'obj', 'admin_repo': 'obj', 'admin_dep': 'obj', 'pagination': {'page': 4, 'size': 10}}
+2026-03-13 12:09:20,160 - INFO - Function Success: get_all_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'string 5 by admin', 'desc': "string's description", 'active': True, 'id': 31, 'owner_id': 2}, {'title': 'string 6 by admin', 'desc': "string's description", 'active': True, 'id': 32, 'owner_id': 2}, {'title': 'string 7 by admin', 'desc': "string's description", 'active': True, 'id': 33, 'owner_id': 2}, {'title': 'string 8 by admin', 'desc': "string's description", 'active': True, 'id': 34, 'owner_id': 2}, {'title': 'string 9 by admin', 'desc': "string's description", 'active': True, 'id': 35, 'owner_id': 2}, {'title': 'string 10 by admin', 'desc': "string's description", 'active': True, 'id': 36, 'owner_id': 2}, {'title': 'string 11 by admin', 'desc': "string's description", 'active': True, 'id': 37, 'owner_id': 2}, {'title': 'string 12 by admin', 'desc': "string's description", 'active': True, 'id': 38, 'owner_id': 2}, {'title': 'string 13 by admin', 'desc': "string's description", 'active': True, 'id': 39, 'owner_id': 2}, {'title': 'string 14 by admin', 'desc': "string's description", 'active': True, 'id': 40, 'owner_id': 2}]}
+2026-03-13 12:09:20,161 - INFO - ID: 3cb50b6f-219b-4d2d-90e1-281e6950e431 | Path: /admin/items | Status: 200 | Time: 0.0043s
+**********************************************************
+

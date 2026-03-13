@@ -8,9 +8,16 @@ class ItemRepository:
         """Fetch a single item by ID."""
         return db.get(ItemModel, item_id)
 
-    def get_all(self, owner_id: int, db: Session):
-        """Fetch all items with current user's owner_id."""
-        return db.scalars(select(ItemModel).where(ItemModel.owner_id == owner_id)).all()
+    def get_all(self, owner_id: int, db: Session, page: int = 1, size: int = 10):
+        """Fetch paginated items with current user's owner_id."""
+        skip = (page - 1) * size
+
+        return db.scalars(
+            select(ItemModel)
+            .where(ItemModel.owner_id == owner_id)
+            .offset(skip)
+            .limit(size)
+        ).all()
 
     def get_by_title(self, title: str, owner_id: int, db: Session):
         """Fetch a single item by Title."""

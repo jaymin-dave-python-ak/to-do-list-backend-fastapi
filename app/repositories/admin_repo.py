@@ -5,13 +5,25 @@ from app.db.models.user import UserModel
 
 
 class AdminRepository:
-    def get_all_items(self, db: Session):
-        """Fetch all items."""
-        return db.scalars(select(ItemModel)).all()
+    def get_all_items(self, db: Session, page: int = 1, size: int = 10):
+        """Fetch paginated items."""
+        skip = (page - 1) * size
 
-    def get_all_users(self, db: Session):
-        """Fetch all users."""
-        return db.scalars(select(UserModel)).all()
+        return db.scalars(
+            select(ItemModel)
+            .offset(skip)
+            .limit(size)
+        ).all()
+
+    def get_all_users(self, db: Session, page: int = 1, size: int = 10):
+        """Fetch paginated users."""
+        skip = (page - 1) * size
+
+        return db.scalars(
+            select(UserModel)
+            .offset(skip)
+            .limit(size)
+        ).all()
 
     def get_item_by_id(self, item_id: int, db: Session):
         return db.get(ItemModel, item_id)

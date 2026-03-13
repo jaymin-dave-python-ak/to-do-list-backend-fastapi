@@ -1,7 +1,9 @@
-from fastapi import APIRouter, status, HTTPException
+from fastapi import APIRouter, status, HTTPException, Query
+from typing import Annotated
 from app.api.v1.dependencies import db_dep, item_repo_dep, current_user_dep
 from app.api.v1.schemas.response import ResponseSchema, create_response
 from app.api.v1.schemas.item import ItemOutSchema, ItemSchema, ItemUpdateSchema
+from app.api.v1.schemas.pagination import PaginationSchema
 from app.core.logger import log_func
 
 router = APIRouter(prefix="/items", tags=["Items"])
@@ -9,9 +11,16 @@ router = APIRouter(prefix="/items", tags=["Items"])
 
 @router.get("/", status_code=status.HTTP_200_OK, response_model=ResponseSchema)
 @log_func
-def get_items(db: db_dep, current_user: current_user_dep, item_repo: item_repo_dep):
+def get_items(
+    db: db_dep,
+    current_user: current_user_dep,
+    item_repo: item_repo_dep,
+    pagination: Annotated[PaginationSchema, Query()],
+):
     """Get all the items of current user."""
-    items = item_repo.get_all(current_user.id, db)
+    items = item_repo.get_all(
+        owner_id=current_user.id, db=db, page=pagination.page, size=pagination.size
+    )
     items_data = [ItemOutSchema.model_validate(item).model_dump() for item in items]
     return create_response(items_data, "Successfully retrieved all items.")
 

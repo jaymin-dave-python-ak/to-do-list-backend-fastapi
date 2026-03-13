@@ -25,8 +25,7 @@ admin_exception = HTTPException(
     status_code=status.HTTP_401_UNAUTHORIZED,
     detail="Could not validate admin credentials",
 )
-
-
+ 
 def get_auth_service() -> AuthService:
     """Provide AuthService instance used for password hashing and JWT token operations."""
     return AuthService()
@@ -59,7 +58,6 @@ email_service = Annotated[EmailService, Depends(get_email_service)]
 user_repo_dep = Annotated[UserRepository, Depends(get_user_repo)]
 item_repo_dep = Annotated[ItemRepository, Depends(get_item_repo)]
 admin_repo_dep = Annotated[AdminRepository, Depends(get_admin_repo)]
-
 
 def get_current_user(
     token_data: Annotated[HTTPAuthorizationCredentials, Depends(security)],
