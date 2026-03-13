@@ -1,6 +1,6 @@
 import pytest
 from fastapi import status
-from app.api.v1.dependencies import auth_service
+from unittest.mock import patch
 from tests.test_utils import (
     assert_response_structure,
     create_user_data,
@@ -10,17 +10,25 @@ from tests.test_utils import (
 
 @pytest.fixture
 def auth_client(client):
-    """Creates a user and authenticates the client for item tests."""
-    user_details = create_user_data(email="item-tester@gmail.com")
-    response = client.post("/users/register", json=user_details)
-    user_id = response.json()["data"]["id"]
+    """
+    Automates the full 2-step flow:
+    1. Register (Mocking OTP) -> 2. Verify OTP -> 3. Login -> 4. Set Headers
+    """
+    fixed_otp = "123456"
 
-    token = auth_service.create_access_token(data={"sub": str(user_id)})
+    user_data = create_user_data()
+    with patch("app.service.auth_service.AuthService.generate_otp", return_value=fixed_otp):
+        client.post("/users/register", json=user_data)
 
-    client.headers.update({"Authorization": f"Bearer {token}"})
+    client.post(f"/users/verify-otp?email={user_data['email']}&otp={fixed_otp}")
 
+    login_data = {"email": user_data["email"], "password": user_data["password"]}
+    response = client.post("/users/login", json=login_data)
+    tokens = response.json()["data"]
+
+    client.headers.update({"Authorization": f"Bearer {tokens['access_token']}"})
+    
     return client
-
 
 class TestItem:
     def test_create_item_success(self, auth_client):
