@@ -1,6 +1,6 @@
 from fastapi import APIRouter, status, HTTPException, Query
 from typing import Annotated
-from app.api.v1.dependencies import db_dep, item_repo_dep, current_user_dep
+from app.api.v1.dependencies import DBDep, ItemRepoDep, CurrentUserDep
 from app.api.v1.schemas.response import ResponseSchema, create_response
 from app.api.v1.schemas.item import ItemOutSchema, ItemSchema, ItemUpdateSchema
 from app.api.v1.schemas.pagination import PaginationSchema
@@ -12,9 +12,9 @@ router = APIRouter(prefix="/items", tags=["Items"])
 @router.get("/", status_code=status.HTTP_200_OK, response_model=ResponseSchema)
 @log_func
 def get_items(
-    db: db_dep,
-    current_user: current_user_dep,
-    item_repo: item_repo_dep,
+    db: DBDep,
+    current_user: CurrentUserDep,
+    item_repo: ItemRepoDep,
     pagination: Annotated[PaginationSchema, Query()],
 ):
     """Get all the items of current user."""
@@ -29,9 +29,9 @@ def get_items(
 @log_func
 def create_item(
     item: ItemSchema,
-    db: db_dep,
-    current_user: current_user_dep,
-    item_repo: item_repo_dep,
+    db: DBDep,
+    current_user: CurrentUserDep,
+    item_repo: ItemRepoDep,
 ):
     """Create a new item and check it doesn't already exist."""
     if item_repo.get_by_title(item.title, current_user.id, db):
@@ -50,9 +50,9 @@ def create_item(
 def update_item(
     item_id: int,
     item: ItemUpdateSchema,
-    db: db_dep,
-    item_repo: item_repo_dep,
-    current_user: current_user_dep,
+    db: DBDep,
+    item_repo: ItemRepoDep,
+    current_user: CurrentUserDep,
 ):
     """Update specific fields of an item (Partial update)."""
     existing_item = item_repo.get_by_id(item_id, db)
@@ -78,7 +78,7 @@ def update_item(
 )
 @log_func
 def delete_item(
-    item_id: int, db: db_dep, item_repo: item_repo_dep, current_user: current_user_dep
+    item_id: int, db: DBDep, item_repo: ItemRepoDep, current_user: CurrentUserDep
 ):
     """Delete an item if it exists."""
     item = item_repo.get_by_id(item_id, db)

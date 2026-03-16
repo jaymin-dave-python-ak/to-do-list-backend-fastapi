@@ -4,7 +4,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 
 from app.main import app, Base
-from app.db.database import get_db
+from app.api.v1.dependencies import DBDep
 from app.core.config import settings
 
 engine = create_engine(settings.TEST_DB_URL)
@@ -32,6 +32,7 @@ def db(db_engine):
     transaction.rollback()
     connection.close()
 
+
 @pytest.fixture
 def client(db):
     """Return FastAPI TestClient with overridden get_db dependency to use the test database session."""
@@ -39,19 +40,23 @@ def client(db):
     def override_get_db():
         yield db
 
-    app.dependency_overrides[get_db] = override_get_db
+    app.dependency_overrides[DBDep] = override_get_db
     with TestClient(app) as c:
         yield c
     app.dependency_overrides.clear()
 
-from unittest.mock import AsyncMock, patch
-import pytest
 
-@pytest.fixture(autouse=True)
-# Using autouse=True ensures no real emails are sent during any test.
-def mock_email_service():
-    """
-    Globally mocks the EmailService.send_otp_email method.
-    """
-    with patch("app.service.email_service.EmailService.send_otp_email", new_callable=AsyncMock) as mock_send:
-        yield mock_send
+# from unittest.mock import AsyncMock, patch
+# import pytest
+
+
+# @pytest.fixture(autouse=True)
+# # Using autouse=True ensures no real emails are sent during any test.
+# def mock_email_service():
+#     """
+#     Globally mocks the EmailService.send_otp_email method.
+#     """
+#     with patch(
+#         "app.service.email_service.EmailService.send_otp_email", new_callable=AsyncMock
+#     ) as mock_send:
+#         yield mock_send

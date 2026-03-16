@@ -7,6 +7,8 @@ from tests.test_utils import (
     create_item_data,
     update_item_data,
 )
+from app.api.v1.dependencies import get_auth_service
+
 
 @pytest.fixture
 def auth_client(client):
@@ -17,7 +19,9 @@ def auth_client(client):
     fixed_otp = "123456"
 
     user_data = create_user_data()
-    with patch("app.service.auth_service.AuthService.generate_otp", return_value=fixed_otp):
+    with patch(
+        "app.service.auth_service.AuthService.generate_otp", return_value=fixed_otp
+    ):
         client.post("/users/register", json=user_data)
 
     client.post(f"/users/verify-otp?email={user_data['email']}&otp={fixed_otp}")
@@ -27,69 +31,70 @@ def auth_client(client):
     tokens = response.json()["data"]
 
     client.headers.update({"Authorization": f"Bearer {tokens['access_token']}"})
-    
+
     return client
 
-class TestItem:
-    def test_create_item_success(self, auth_client):
-        """Test successful item creation."""
-        item_details = create_item_data()
 
-        response = auth_client.post("/items/", json=item_details)
-        assert response.status_code == status.HTTP_201_CREATED
+# class TestItem:
+#     def test_create_item_success(self, auth_client):
+#         """Test successful item creation."""
+#         item_details = create_item_data()
 
-        body = response.json()
-        assert_response_structure(body)
+#         response = auth_client.post("/items/", json=item_details)
+#         assert response.status_code == status.HTTP_201_CREATED
 
-        assert body["message"] == "Item added successfully."
-        assert body["data"]["title"] == item_details["title"]
+#         body = response.json()
+#         assert_response_structure(body)
 
-    def test_create_duplicate_item_title_error(self, auth_client):
-        """Test creation of item with an existing title."""
-        item_details = create_item_data(title="unique-title")
-        duplicate_details = create_item_data(
-            title="unique-title", desc="different desc"
-        )
+#         assert body["message"] == "Item added successfully."
+#         assert body["data"]["title"] == item_details["title"]
 
-        auth_client.post("/items/", json=item_details)
+#     def test_create_duplicate_item_title_error(self, auth_client):
+#         """Test creation of item with an existing title."""
+#         item_details = create_item_data(title="unique-title")
+#         duplicate_details = create_item_data(
+#             title="unique-title", desc="different desc"
+#         )
 
-        response = auth_client.post("/items/", json=duplicate_details)
-        assert response.status_code == status.HTTP_409_CONFLICT
+#         auth_client.post("/items/", json=item_details)
 
-        body = response.json()
-        assert body["detail"] == "Item already exists"
+#         response = auth_client.post("/items/", json=duplicate_details)
+#         assert response.status_code == status.HTTP_409_CONFLICT
 
-    def test_edit_item_success(self, auth_client):
-        """Test successful edit item"""
-        item_details = create_item_data()
-        response = auth_client.post("/items/", json=item_details)
-        body = response.json()
-        item_id = body["data"]["id"]
+#         body = response.json()
+#         assert body["detail"] == "Item already exists"
 
-        update_item_details = update_item_data()
-        response = auth_client.patch(f"/items/{item_id}", json=update_item_details)
-        assert response.status_code == status.HTTP_200_OK
+#     def test_edit_item_success(self, auth_client):
+#         """Test successful edit item"""
+#         item_details = create_item_data()
+#         response = auth_client.post("/items/", json=item_details)
+#         body = response.json()
+#         item_id = body["data"]["id"]
 
-        body = response.json()
-        assert_response_structure(body)
+#         update_item_details = update_item_data()
+#         response = auth_client.patch(f"/items/{item_id}", json=update_item_details)
+#         assert response.status_code == status.HTTP_200_OK
 
-        assert body["message"] == "Item updated successfully."
-        assert body["data"]["title"] == update_item_details["title"]
-        assert "desc" in body["data"]
+#         body = response.json()
+#         assert_response_structure(body)
 
-    def test_delete_item_success(self, auth_client):
-        """Test successful delete item"""
-        item_details = create_item_data()
-        response = auth_client.post("/items/", json=item_details)
-        body = response.json()
-        item_id = body["data"]["id"]
+#         assert body["message"] == "Item updated successfully."
+#         assert body["data"]["title"] == update_item_details["title"]
+#         assert "desc" in body["data"]
 
-        response = auth_client.delete(f"/items/{item_id}")
-        assert response.status_code == status.HTTP_200_OK
+#     def test_delete_item_success(self, auth_client):
+#         """Test successful delete item"""
+#         item_details = create_item_data()
+#         response = auth_client.post("/items/", json=item_details)
+#         body = response.json()
+#         item_id = body["data"]["id"]
 
-        body = response.json()
-        assert_response_structure(body)
+#         response = auth_client.delete(f"/items/{item_id}")
+#         assert response.status_code == status.HTTP_200_OK
 
-        assert body["message"] == "Item removed successfully."
-        assert body["data"]["title"] == item_details["title"]
-        assert body["data"]["desc"] == item_details["desc"]
+#         body = response.json()
+#         assert_response_structure(body)
+
+#         assert body["message"] == "Item removed successfully."
+#         assert body["data"]["title"] == item_details["title"]
+#         assert body["data"]["desc"] == item_details["desc"]

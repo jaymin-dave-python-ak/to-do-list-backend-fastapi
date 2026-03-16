@@ -1,6 +1,6 @@
 from fastapi import APIRouter, status, HTTPException, Query
 from typing import Annotated
-from app.api.v1.dependencies import db_dep, admin_dep, admin_repo_dep
+from app.api.v1.dependencies import DBDep, AdminDep, AdminRepoDep
 from app.api.v1.schemas.response import create_response, ResponseSchema
 from app.api.v1.schemas.item import ItemOutSchema, ItemSchema, ItemUpdateSchema
 from app.api.v1.schemas.user import UserOutSchema, UserUpdateSchema
@@ -17,9 +17,9 @@ router = APIRouter(prefix="/admin", tags=["Admin"])
 )
 @log_func
 def get_all_items(
-    db: db_dep,
-    admin_repo: admin_repo_dep,
-    admin_dep: admin_dep,
+    db: DBDep,
+    admin_repo: AdminRepoDep,
+    admin_dep: AdminDep,
     pagination: Annotated[PaginationSchema, Query()],
 ):
     """Get all items."""
@@ -35,9 +35,9 @@ def get_all_items(
 )
 @log_func
 def get_all_users(
-    db: db_dep,
-    admin_repo: admin_repo_dep,
-    admin_dep: admin_dep,
+    db: DBDep,
+    admin_repo: AdminRepoDep,
+    admin_dep: AdminDep,
     pagination: Annotated[PaginationSchema, Query()],
 ):
     """Get all users."""
@@ -54,9 +54,9 @@ def get_all_users(
 @log_func
 def create_item(
     item: ItemSchema,
-    db: db_dep,
-    admin_dep: admin_dep,
-    admin_repo: admin_repo_dep,
+    db: DBDep,
+    admin_dep: AdminDep,
+    admin_repo: AdminRepoDep,
 ):
     """Create a new item and check it doesn't already exist."""
     if admin_repo.get_item_by_title(item.title, admin_dep.id, db):
@@ -77,9 +77,9 @@ def create_item(
 def update_item(
     item_id: int,
     item: ItemUpdateSchema,
-    db: db_dep,
-    admin_repo: admin_repo_dep,
-    admin_dep: admin_dep,
+    db: DBDep,
+    admin_repo: AdminRepoDep,
+    admin_dep: AdminDep,
 ):
     """Update specific fields of an item (Partial update)."""
     existing_item = admin_repo.get_item_by_id(item_id, db)
@@ -104,9 +104,9 @@ def update_item(
 def update_user(
     user_id: int,
     user: UserUpdateSchema,
-    db: db_dep,
-    admin_repo: admin_repo_dep,
-    admin_dep: admin_dep,
+    db: DBDep,
+    admin_repo: AdminRepoDep,
+    admin_dep: AdminDep,
 ):
     """Update specific fields of user (Partial Update)."""
     existing_user = admin_repo.get_user_by_id(user_id, db)
@@ -130,9 +130,9 @@ def update_user(
 @log_func
 def delete_item(
     item_id: int,
-    db: db_dep,
-    admin_repo: admin_repo_dep,
-    admin_dep: admin_dep,
+    db: DBDep,
+    admin_repo: AdminRepoDep,
+    admin_dep: AdminDep,
 ):
     """Delete an item if it exists."""
     item = admin_repo.get_item_by_id(item_id, db)

@@ -1,11 +1,11 @@
 from datetime import datetime, timezone
 from fastapi import APIRouter, status, HTTPException
 from app.api.v1.dependencies import (
-    db_dep,
-    redis_dep,
-    user_repo_dep,
-    auth_service,
-    email_service,
+    DBDep,
+    RedisDep,
+    UserRepoDep,
+    AuthDep,
+    EmailDep,
 )
 from app.api.v1.schemas.user import UserCreateSchema, UserInSchema, UserOutSchema
 from app.api.v1.schemas.response import ResponseSchema, create_response
@@ -20,11 +20,11 @@ router = APIRouter(prefix="/users", tags=["Users"])
 @log_func
 async def register_initiate(
     user_in: UserCreateSchema,
-    db: db_dep,
-    redis: redis_dep,
-    user_repo: user_repo_dep,
-    auth_service: auth_service,
-    email_service: email_service,
+    db: DBDep,
+    redis: RedisDep,
+    user_repo: UserRepoDep,
+    auth_service: AuthDep,
+    email_service: EmailDep,
     background_tasks: BackgroundTasks
 ):
     if user_repo.get_by_email(db, user_in.email):
@@ -51,9 +51,9 @@ async def register_initiate(
 def verify_otp(
     email: str,
     otp: str,
-    db: db_dep,
-    redis: redis_dep,
-    user_repo: user_repo_dep,
+    db: DBDep,
+    redis: RedisDep,
+    user_repo: UserRepoDep,
 ):
     raw_data = redis.get(f"pending_user:{email}")
     if not raw_data:
@@ -83,9 +83,9 @@ def verify_otp(
 @log_func
 def login(
     user_in: UserInSchema,
-    db: db_dep,
-    user_repo: user_repo_dep,
-    auth_service: auth_service,
+    db: DBDep,
+    user_repo: UserRepoDep,
+    auth_service: AuthDep,
 ):
     """Authenticate user credentials and generate a JWT access and refresh token for successful login."""
     user = user_repo.get_by_email(db, user_in.email)
@@ -111,7 +111,7 @@ def login(
 
 @router.post("/refresh", response_model=ResponseSchema)
 @log_func
-def refresh_token(refresh_token: str, auth_service: auth_service, redis: redis_dep):
+def refresh_token(refresh_token: str, auth_service: AuthDep, redis: RedisDep):
     """Swap an old refresh token for a brand-new access AND refresh token."""
 
     payload = auth_service.decode_token(refresh_token, is_refresh=True)

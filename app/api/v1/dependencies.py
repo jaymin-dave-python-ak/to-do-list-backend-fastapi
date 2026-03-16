@@ -25,45 +25,21 @@ admin_exception = HTTPException(
     status_code=status.HTTP_401_UNAUTHORIZED,
     detail="Could not validate admin credentials",
 )
- 
-def get_auth_service() -> AuthService:
-    """Provide AuthService instance used for password hashing and JWT token operations."""
-    return AuthService()
 
+DBDep = Annotated[Session, Depends(get_db)]
+RedisDep = Annotated[redis.Redis, Depends(get_redis)]
+AuthDep = Annotated[AuthService, Depends(AuthService)]
+EmailDep = Annotated[EmailService, Depends(EmailService)]
+UserRepoDep = Annotated[UserRepository, Depends(UserRepository)]
+ItemRepoDep = Annotated[ItemRepository, Depends(ItemRepository)]
+AdminRepoDep = Annotated[AdminRepository, Depends(AdminRepository)]
 
-def get_email_service() -> EmailService:
-    """Provide EmailService instance used for sending an email for OTP verification."""
-    return EmailService()
-
-
-def get_user_repo() -> UserRepository:
-    """Provide UserRepository instance to perform database operations related to users."""
-    return UserRepository()
-
-
-def get_item_repo() -> ItemRepository:
-    """Provide ItemRepository instance to handle item CRUD operations."""
-    return ItemRepository()
-
-
-def get_admin_repo() -> AdminRepository:
-    """Provide AdminRepository instance to manage admin related database operations."""
-    return AdminRepository()
-
-
-db_dep = Annotated[Session, Depends(get_db)]
-redis_dep = Annotated[redis.Redis, Depends(get_redis)]
-auth_service = Annotated[AuthService, Depends(get_auth_service)]
-email_service = Annotated[EmailService, Depends(get_email_service)]
-user_repo_dep = Annotated[UserRepository, Depends(get_user_repo)]
-item_repo_dep = Annotated[ItemRepository, Depends(get_item_repo)]
-admin_repo_dep = Annotated[AdminRepository, Depends(get_admin_repo)]
 
 def get_current_user(
     token_data: Annotated[HTTPAuthorizationCredentials, Depends(security)],
-    db: db_dep,
-    auth_service: auth_service,
-    user_repo: user_repo_dep,
+    db: DBDep,
+    auth_service: AuthDep,
+    user_repo: UserRepoDep,
 ) -> UserModel:
     """Extract user from JWT token, validate credentials, and return the authenticated user model."""
 
@@ -96,11 +72,11 @@ def get_current_user(
     return user
 
 
-current_user_dep = Annotated[UserModel, Depends(get_current_user)]
+CurrentUserDep = Annotated[UserModel, Depends(get_current_user)]
 
 
-def get_admin(
-    current_user: current_user_dep,
+def get_admin_user(
+    current_user: CurrentUserDep,
 ) -> UserModel:
     """Verify that the authenticated user has admin privileges before allowing access."""
     if not getattr(current_user, "is_admin", False):
@@ -108,4 +84,4 @@ def get_admin(
     return current_user
 
 
-admin_dep = Annotated[UserModel, Depends(get_admin)]
+AdminDep = Annotated[UserModel, Depends(get_admin_user)]
