@@ -25,10 +25,12 @@ async def register_initiate(
     user_repo: UserRepoDep,
     auth_service: AuthDep,
     email_service: EmailDep,
-    background_tasks: BackgroundTasks
+    background_tasks: BackgroundTasks,
 ):
     if user_repo.get_by_email(db, user_in.email):
-        raise HTTPException(status_code=400, detail="Email already registered")
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST, detail="Email already registered"
+        )
 
     hashed = auth_service.hash_password(user_in.password)
     otp = auth_service.generate_otp()
@@ -74,7 +76,7 @@ def verify_otp(
     new_user = user_repo.create(db, pending_user)
 
     redis.delete(f"pending_user:{email}")
-    
+
     user_out = UserOutSchema.model_validate(new_user).model_dump()
     return create_response(user_out, "Email verified and user registered successfully.")
 

@@ -1,50 +1,1016 @@
-2026-03-16 11:50:39,524 - INFO - 
+2026-03-16 13:39:01,354 - INFO - 
 **********************************************************
-ID: 46984d6e-12e0-4d72-831f-48de66be60e6 | Method: GET | Path: /docs
-2026-03-16 11:50:39,525 - INFO - ID: 46984d6e-12e0-4d72-831f-48de66be60e6 | Path: /docs | Status: 200 | Time: 0.0005s
-**********************************************************
-
-2026-03-16 11:50:39,837 - INFO - 
-**********************************************************
-ID: 199cfa86-b3bb-4def-9793-9f8bf2b2ed15 | Method: GET | Path: /openapi.json
-2026-03-16 11:50:39,871 - INFO - ID: 199cfa86-b3bb-4def-9793-9f8bf2b2ed15 | Path: /openapi.json | Status: 200 | Time: 0.0344s
+ID: 4152d50a-5a55-415a-86b4-287c67649aaf | Method: GET | Path: /
+2026-03-16 13:39:01,355 - INFO - ID: 4152d50a-5a55-415a-86b4-287c67649aaf | Path: / | Status: 200 | Time: 0.0013s
 **********************************************************
 
-2026-03-16 11:50:56,745 - INFO - 
+2026-03-16 13:41:12,350 - INFO - 
 **********************************************************
-ID: 69eebb37-7d84-4506-8730-557afbe5acd9 | Method: POST | Path: /users/register
-2026-03-16 11:50:56,803 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'jaymin4724', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
-2026-03-16 11:50:56,851 - ERROR - Function Error: register_initiate | Exception: 400: Email already registered
-2026-03-16 11:50:56,852 - INFO - ID: 69eebb37-7d84-4506-8730-557afbe5acd9 | Path: /users/register | Status: 400 | Time: 0.1063s
+ID: da1a6983-c419-4f54-b291-ce4842226b8f | Method: GET | Path: /
+2026-03-16 13:41:12,352 - INFO - ID: da1a6983-c419-4f54-b291-ce4842226b8f | Path: / | Status: 200 | Time: 0.0014s
 **********************************************************
 
-2026-03-16 11:51:20,978 - INFO - 
+2026-03-16 13:41:17,182 - INFO - 
 **********************************************************
-ID: f2a48ffe-18b5-48cc-82a0-14d1febba115 | Method: POST | Path: /users/register
-2026-03-16 11:51:20,982 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'kuldeep.patel@armakuni.com', 'username': 'kuldeep', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
-2026-03-16 11:51:21,223 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
-2026-03-16 11:51:21,223 - INFO - ID: f2a48ffe-18b5-48cc-82a0-14d1febba115 | Path: /users/register | Status: 200 | Time: 0.2448s
+ID: 1da74bcb-bd50-4d15-b9ba-47368b19a57f | Method: GET | Path: /
+2026-03-16 13:41:17,184 - INFO - ID: 1da74bcb-bd50-4d15-b9ba-47368b19a57f | Path: / | Status: 200 | Time: 0.0015s
 **********************************************************
 
-2026-03-16 11:52:21,365 - INFO - 
+2026-03-16 13:41:47,421 - INFO - 
 **********************************************************
-ID: d9b60066-a15b-46fc-a8b5-d5da555c81f7 | Method: POST | Path: /users/verify-otp
-2026-03-16 11:52:21,367 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'kuld.patel@armakuni.com', 'otp': '560042'}
-2026-03-16 11:52:21,367 - ERROR - Function Error: verify_otp | Exception: 400: OTP expired or email not found
-2026-03-16 11:52:21,369 - INFO - ID: d9b60066-a15b-46fc-a8b5-d5da555c81f7 | Path: /users/verify-otp | Status: 400 | Time: 0.0041s
-**********************************************************
-
-2026-03-16 11:52:44,354 - INFO - 
-**********************************************************
-ID: 79b3e208-78e2-4c59-af28-2e0e42b9f842 | Method: POST | Path: /users/register
-2026-03-16 11:52:44,357 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'kulde.patel@armakuni.com', 'username': 'kuldeep', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
-2026-03-16 11:52:44,573 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
-2026-03-16 11:52:44,573 - INFO - ID: 79b3e208-78e2-4c59-af28-2e0e42b9f842 | Path: /users/register | Status: 200 | Time: 0.2192s
+ID: a571db33-f20b-403b-968b-380fde592492 | Method: POST | Path: /users/register
+2026-03-16 13:41:47,426 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 13:41:47,692 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 13:41:47,692 - INFO - ID: a571db33-f20b-403b-968b-380fde592492 | Path: /users/register | Status: 200 | Time: 0.2716s
 **********************************************************
 
-2026-03-16 13:15:13,297 - INFO - 
+2026-03-16 13:41:52,642 - INFO - 
 **********************************************************
-ID: fa93f24b-8940-41c2-adbc-29d855e6c5d3 | Method: GET | Path: /
-2026-03-16 13:15:13,301 - INFO - ID: fa93f24b-8940-41c2-adbc-29d855e6c5d3 | Path: / | Status: 200 | Time: 0.0033s
+ID: abbdf513-497f-4413-9e73-a5bc9aae3fc7 | Method: POST | Path: /users/verify-otp
+2026-03-16 13:41:52,643 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '123456'}
+2026-03-16 13:41:52,649 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 16, 13, 41, 52, 645543)}}
+2026-03-16 13:41:52,649 - INFO - ID: abbdf513-497f-4413-9e73-a5bc9aae3fc7 | Path: /users/verify-otp | Status: 200 | Time: 0.0073s
+**********************************************************
+
+2026-03-16 13:41:52,650 - INFO - 
+**********************************************************
+ID: e5b3d1a9-7248-4ad9-a573-1f24eadaced5 | Method: POST | Path: /users/login
+2026-03-16 13:41:52,652 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 13:41:52,856 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 13:41:52,856 - INFO - ID: e5b3d1a9-7248-4ad9-a573-1f24eadaced5 | Path: /users/login | Status: 200 | Time: 0.2063s
+**********************************************************
+
+2026-03-16 13:41:52,858 - INFO - 
+**********************************************************
+ID: 910611b7-279a-4419-b0af-43eeaa3dc3a7 | Method: POST | Path: /items/
+2026-03-16 13:41:52,862 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 13:41:52,867 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-16 13:41:52,867 - INFO - ID: 910611b7-279a-4419-b0af-43eeaa3dc3a7 | Path: /items/ | Status: 201 | Time: 0.0095s
+**********************************************************
+
+2026-03-16 13:42:16,112 - INFO - 
+**********************************************************
+ID: d9d8e303-f459-4837-a9fb-9194c5ad5de5 | Method: POST | Path: /users/register
+2026-03-16 13:42:16,116 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 13:42:16,389 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 13:42:16,389 - INFO - ID: d9d8e303-f459-4837-a9fb-9194c5ad5de5 | Path: /users/register | Status: 200 | Time: 0.2773s
+**********************************************************
+
+2026-03-16 13:42:21,253 - INFO - 
+**********************************************************
+ID: 4debdbe0-0096-4b6b-83c7-eb1ac8348ef1 | Method: POST | Path: /users/verify-otp
+2026-03-16 13:42:21,255 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '123456'}
+2026-03-16 13:42:21,260 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 16, 13, 42, 21, 256994)}}
+2026-03-16 13:42:21,261 - INFO - ID: 4debdbe0-0096-4b6b-83c7-eb1ac8348ef1 | Path: /users/verify-otp | Status: 200 | Time: 0.0072s
+**********************************************************
+
+2026-03-16 13:42:21,262 - INFO - 
+**********************************************************
+ID: 76fb535b-031b-4394-9425-e376f7943b1f | Method: POST | Path: /users/login
+2026-03-16 13:42:21,264 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 13:42:21,475 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 13:42:21,475 - INFO - ID: 76fb535b-031b-4394-9425-e376f7943b1f | Path: /users/login | Status: 200 | Time: 0.2137s
+**********************************************************
+
+2026-03-16 13:42:21,477 - INFO - 
+**********************************************************
+ID: b70463c1-511c-4e90-8b27-38be4db8685d | Method: POST | Path: /items/
+2026-03-16 13:42:21,481 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 13:42:21,486 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-16 13:42:21,487 - INFO - ID: b70463c1-511c-4e90-8b27-38be4db8685d | Path: /items/ | Status: 201 | Time: 0.0102s
+**********************************************************
+
+2026-03-16 13:42:58,707 - INFO - 
+**********************************************************
+ID: 64c89c7d-1575-40ac-98f9-66f01652faab | Method: POST | Path: /users/register
+2026-03-16 13:42:58,712 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 13:42:58,983 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 13:42:58,984 - INFO - ID: 64c89c7d-1575-40ac-98f9-66f01652faab | Path: /users/register | Status: 200 | Time: 0.2769s
+**********************************************************
+
+2026-03-16 13:43:03,643 - INFO - 
+**********************************************************
+ID: da9903f7-8755-4512-9ac4-599170d64b24 | Method: POST | Path: /users/verify-otp
+2026-03-16 13:43:03,645 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '123456'}
+2026-03-16 13:43:03,651 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 16, 13, 43, 3, 647463)}}
+2026-03-16 13:43:03,652 - INFO - ID: da9903f7-8755-4512-9ac4-599170d64b24 | Path: /users/verify-otp | Status: 200 | Time: 0.0083s
+**********************************************************
+
+2026-03-16 13:43:03,653 - INFO - 
+**********************************************************
+ID: 7f279a97-bcb9-4ae0-85ce-ec13e5afbd6e | Method: POST | Path: /users/login
+2026-03-16 13:43:03,655 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 13:43:03,863 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 13:43:03,864 - INFO - ID: 7f279a97-bcb9-4ae0-85ce-ec13e5afbd6e | Path: /users/login | Status: 200 | Time: 0.2107s
+**********************************************************
+
+2026-03-16 13:43:03,865 - INFO - 
+**********************************************************
+ID: 2186c503-fcd5-461f-9609-3613c83814d6 | Method: POST | Path: /items/
+2026-03-16 13:43:03,870 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 13:43:03,874 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-16 13:43:03,875 - INFO - ID: 2186c503-fcd5-461f-9609-3613c83814d6 | Path: /items/ | Status: 201 | Time: 0.0098s
+**********************************************************
+
+2026-03-16 13:55:15,917 - INFO - 
+**********************************************************
+ID: 7f0f555e-9902-4192-a957-1296098735f1 | Method: GET | Path: /docs
+2026-03-16 13:55:15,918 - INFO - ID: 7f0f555e-9902-4192-a957-1296098735f1 | Path: /docs | Status: 200 | Time: 0.0008s
+**********************************************************
+
+2026-03-16 13:55:16,103 - INFO - 
+**********************************************************
+ID: 15cbdcf8-ba7d-4492-b202-69303e0a98aa | Method: GET | Path: /openapi.json
+2026-03-16 13:55:16,181 - INFO - ID: 15cbdcf8-ba7d-4492-b202-69303e0a98aa | Path: /openapi.json | Status: 200 | Time: 0.0784s
+**********************************************************
+
+2026-03-16 13:57:05,132 - INFO - 
+**********************************************************
+ID: 14879d23-7413-40e4-8a85-3f4cf09f0794 | Method: POST | Path: /users/register
+2026-03-16 13:57:05,138 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 13:57:05,370 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 13:57:05,371 - INFO - ID: 14879d23-7413-40e4-8a85-3f4cf09f0794 | Path: /users/register | Status: 200 | Time: 0.2382s
+**********************************************************
+
+2026-03-16 13:57:10,242 - INFO - 
+**********************************************************
+ID: 48471daa-761e-44d3-9ca3-d9f8cb3c1dea | Method: POST | Path: /users/verify-otp
+2026-03-16 13:57:10,243 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '123456'}
+2026-03-16 13:57:10,248 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 16, 13, 57, 10, 245423)}}
+2026-03-16 13:57:10,248 - INFO - ID: 48471daa-761e-44d3-9ca3-d9f8cb3c1dea | Path: /users/verify-otp | Status: 200 | Time: 0.0069s
+**********************************************************
+
+2026-03-16 13:57:10,250 - INFO - 
+**********************************************************
+ID: 27b27843-e63d-4aff-a70f-3ff49f48f5f5 | Method: POST | Path: /users/login
+2026-03-16 13:57:10,252 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 13:57:10,456 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 13:57:10,457 - INFO - ID: 27b27843-e63d-4aff-a70f-3ff49f48f5f5 | Path: /users/login | Status: 200 | Time: 0.2072s
+**********************************************************
+
+2026-03-16 13:57:10,458 - INFO - 
+**********************************************************
+ID: 5799ff6f-08c2-4439-b601-9f9420d64d6e | Method: POST | Path: /items/
+2026-03-16 13:57:10,463 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 13:57:10,467 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-16 13:57:10,468 - INFO - ID: 5799ff6f-08c2-4439-b601-9f9420d64d6e | Path: /items/ | Status: 201 | Time: 0.0097s
+**********************************************************
+
+2026-03-16 13:57:10,473 - INFO - 
+**********************************************************
+ID: 9cbfe0f0-42c1-481a-af36-5ef38c34ff33 | Method: GET | Path: /
+2026-03-16 13:57:10,474 - INFO - ID: 9cbfe0f0-42c1-481a-af36-5ef38c34ff33 | Path: / | Status: 200 | Time: 0.0011s
+**********************************************************
+
+2026-03-16 13:59:03,944 - INFO - 
+**********************************************************
+ID: 13f98167-6355-4e10-8de3-6d92a6bc1bff | Method: POST | Path: /users/register
+2026-03-16 13:59:03,949 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 13:59:04,177 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 13:59:04,178 - INFO - ID: 13f98167-6355-4e10-8de3-6d92a6bc1bff | Path: /users/register | Status: 200 | Time: 0.2342s
+**********************************************************
+
+2026-03-16 13:59:08,818 - INFO - 
+**********************************************************
+ID: ed874cde-e90c-47d3-9c01-a27fa22399ff | Method: POST | Path: /users/verify-otp
+2026-03-16 13:59:08,820 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '123456'}
+2026-03-16 13:59:08,824 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 16, 13, 59, 8, 821665)}}
+2026-03-16 13:59:08,825 - INFO - ID: ed874cde-e90c-47d3-9c01-a27fa22399ff | Path: /users/verify-otp | Status: 200 | Time: 0.0069s
+**********************************************************
+
+2026-03-16 13:59:08,826 - INFO - 
+**********************************************************
+ID: 6974687e-6bfd-456f-8aa3-8eae45bba750 | Method: POST | Path: /users/login
+2026-03-16 13:59:08,828 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 13:59:09,033 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 13:59:09,033 - INFO - ID: 6974687e-6bfd-456f-8aa3-8eae45bba750 | Path: /users/login | Status: 200 | Time: 0.2071s
+**********************************************************
+
+2026-03-16 13:59:09,034 - INFO - 
+**********************************************************
+ID: 19199416-e11c-4f30-8259-92ab0c89eeb1 | Method: POST | Path: /items/
+2026-03-16 13:59:09,039 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 13:59:09,044 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-16 13:59:09,044 - INFO - ID: 19199416-e11c-4f30-8259-92ab0c89eeb1 | Path: /items/ | Status: 201 | Time: 0.0096s
+**********************************************************
+
+2026-03-16 13:59:09,049 - INFO - 
+**********************************************************
+ID: cc19b5f4-5cfc-45f6-984d-a4fa59630346 | Method: GET | Path: /
+2026-03-16 13:59:09,050 - INFO - ID: cc19b5f4-5cfc-45f6-984d-a4fa59630346 | Path: / | Status: 200 | Time: 0.0012s
+**********************************************************
+
+2026-03-16 14:03:56,368 - INFO - 
+**********************************************************
+ID: 5aa626f4-db43-4537-89d3-8a117cf659bf | Method: POST | Path: /users/register
+2026-03-16 14:03:56,374 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:03:56,603 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:03:56,603 - INFO - ID: 5aa626f4-db43-4537-89d3-8a117cf659bf | Path: /users/register | Status: 200 | Time: 0.2351s
+**********************************************************
+
+2026-03-16 14:04:01,201 - INFO - 
+**********************************************************
+ID: 774d3045-91f3-41fb-8211-b976545c88bf | Method: POST | Path: /users/verify-otp
+2026-03-16 14:04:01,203 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '918323'}
+2026-03-16 14:04:01,209 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 16, 14, 4, 1, 205722)}}
+2026-03-16 14:04:01,209 - INFO - ID: 774d3045-91f3-41fb-8211-b976545c88bf | Path: /users/verify-otp | Status: 200 | Time: 0.0079s
+**********************************************************
+
+2026-03-16 14:04:01,210 - INFO - 
+**********************************************************
+ID: cdcc68fa-4400-4582-92af-0fce8a6ae13d | Method: POST | Path: /users/login
+2026-03-16 14:04:01,212 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:04:01,415 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:04:01,415 - INFO - ID: cdcc68fa-4400-4582-92af-0fce8a6ae13d | Path: /users/login | Status: 200 | Time: 0.2054s
+**********************************************************
+
+2026-03-16 14:04:01,417 - INFO - 
+**********************************************************
+ID: 972f27b1-6207-4f0d-8936-951407f3bbf9 | Method: POST | Path: /items/
+2026-03-16 14:04:01,423 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:04:01,428 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-16 14:04:01,428 - INFO - ID: 972f27b1-6207-4f0d-8936-951407f3bbf9 | Path: /items/ | Status: 201 | Time: 0.0110s
+**********************************************************
+
+2026-03-16 14:04:01,433 - INFO - 
+**********************************************************
+ID: 0c703884-1615-45af-8df1-387a41a13c97 | Method: GET | Path: /
+2026-03-16 14:04:01,434 - INFO - ID: 0c703884-1615-45af-8df1-387a41a13c97 | Path: / | Status: 200 | Time: 0.0011s
+**********************************************************
+
+2026-03-16 14:09:24,929 - INFO - 
+**********************************************************
+ID: 31f78f1f-b056-4ecd-abc4-4101a6b82886 | Method: POST | Path: /users/register
+2026-03-16 14:09:24,933 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:09:25,163 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:09:25,163 - INFO - ID: 31f78f1f-b056-4ecd-abc4-4101a6b82886 | Path: /users/register | Status: 200 | Time: 0.2339s
+**********************************************************
+
+2026-03-16 14:09:25,165 - INFO - 
+**********************************************************
+ID: 5d747eaf-0a8c-452a-bd7d-87ae0f062e5b | Method: POST | Path: /users/verify-otp
+2026-03-16 14:09:25,166 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '150625'}
+2026-03-16 14:09:25,171 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 16, 14, 9, 25, 168404)}}
+2026-03-16 14:09:25,171 - INFO - ID: 5d747eaf-0a8c-452a-bd7d-87ae0f062e5b | Path: /users/verify-otp | Status: 200 | Time: 0.0067s
+**********************************************************
+
+2026-03-16 14:09:25,173 - INFO - 
+**********************************************************
+ID: bcabc0e2-1856-42f1-980d-9742e66ab3ca | Method: POST | Path: /users/login
+2026-03-16 14:09:25,175 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:09:25,378 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:09:25,379 - INFO - ID: bcabc0e2-1856-42f1-980d-9742e66ab3ca | Path: /users/login | Status: 200 | Time: 0.2063s
+**********************************************************
+
+2026-03-16 14:09:25,380 - INFO - 
+**********************************************************
+ID: a7439264-2b0d-4aac-b0ca-4a2b1c9c7fe6 | Method: POST | Path: /items/
+2026-03-16 14:09:25,385 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:09:25,389 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-16 14:09:25,390 - INFO - ID: a7439264-2b0d-4aac-b0ca-4a2b1c9c7fe6 | Path: /items/ | Status: 201 | Time: 0.0094s
+**********************************************************
+
+2026-03-16 14:09:25,396 - INFO - 
+**********************************************************
+ID: 64a2d90f-61b9-44a4-a780-51ce39f5bbfa | Method: POST | Path: /users/register
+2026-03-16 14:09:25,398 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:09:25,607 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:09:25,607 - INFO - ID: 64a2d90f-61b9-44a4-a780-51ce39f5bbfa | Path: /users/register | Status: 200 | Time: 0.2117s
+**********************************************************
+
+2026-03-16 14:09:25,609 - INFO - 
+**********************************************************
+ID: 4e5a55e8-6967-4e1d-96a6-cf0e31641c99 | Method: POST | Path: /users/verify-otp
+2026-03-16 14:09:25,610 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '921734'}
+2026-03-16 14:09:25,612 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 2, 'created_at': datetime.datetime(2026, 3, 16, 14, 9, 25, 610864)}}
+2026-03-16 14:09:25,613 - INFO - ID: 4e5a55e8-6967-4e1d-96a6-cf0e31641c99 | Path: /users/verify-otp | Status: 200 | Time: 0.0039s
+**********************************************************
+
+2026-03-16 14:09:25,614 - INFO - 
+**********************************************************
+ID: 041d7ddf-5a28-409f-aed4-8eb17792ddf0 | Method: POST | Path: /users/login
+2026-03-16 14:09:25,615 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:09:25,819 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:09:25,819 - INFO - ID: 041d7ddf-5a28-409f-aed4-8eb17792ddf0 | Path: /users/login | Status: 200 | Time: 0.2055s
+**********************************************************
+
+2026-03-16 14:09:25,821 - INFO - 
+**********************************************************
+ID: baef4852-0e6a-4b28-8d7d-4b07b0b68e09 | Method: POST | Path: /items/
+2026-03-16 14:09:25,824 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:09:25,826 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-16 14:09:25,827 - INFO - ID: baef4852-0e6a-4b28-8d7d-4b07b0b68e09 | Path: /items/ | Status: 201 | Time: 0.0063s
+**********************************************************
+
+2026-03-16 14:09:25,828 - INFO - 
+**********************************************************
+ID: a428bc11-84ee-40cf-971b-a3c6dead559f | Method: POST | Path: /items/
+2026-03-16 14:09:25,832 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'different desc', 'active': True}}
+2026-03-16 14:09:25,833 - ERROR - Function Error: create_item | Exception: 409: Item already exists
+2026-03-16 14:09:25,833 - INFO - ID: a428bc11-84ee-40cf-971b-a3c6dead559f | Path: /items/ | Status: 409 | Time: 0.0051s
+**********************************************************
+
+2026-03-16 14:09:25,839 - INFO - 
+**********************************************************
+ID: 1960678b-4f04-4401-899f-2127b49688cf | Method: POST | Path: /users/register
+2026-03-16 14:09:25,841 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:09:26,047 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:09:26,047 - INFO - ID: 1960678b-4f04-4401-899f-2127b49688cf | Path: /users/register | Status: 200 | Time: 0.2082s
+**********************************************************
+
+2026-03-16 14:09:26,048 - INFO - 
+**********************************************************
+ID: f391a6c4-81a6-49fb-8d77-efbf22d52cd8 | Method: POST | Path: /users/verify-otp
+2026-03-16 14:09:26,049 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '856435'}
+2026-03-16 14:09:26,052 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 3, 'created_at': datetime.datetime(2026, 3, 16, 14, 9, 26, 50443)}}
+2026-03-16 14:09:26,052 - INFO - ID: f391a6c4-81a6-49fb-8d77-efbf22d52cd8 | Path: /users/verify-otp | Status: 200 | Time: 0.0038s
+**********************************************************
+
+2026-03-16 14:09:26,053 - INFO - 
+**********************************************************
+ID: 2b7faf34-ed8f-44b5-93c3-b0c493b804a7 | Method: POST | Path: /users/login
+2026-03-16 14:09:26,054 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:09:26,260 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:09:26,260 - INFO - ID: 2b7faf34-ed8f-44b5-93c3-b0c493b804a7 | Path: /users/login | Status: 200 | Time: 0.2074s
+**********************************************************
+
+2026-03-16 14:09:26,262 - INFO - 
+**********************************************************
+ID: f48d991b-1e08-4204-b77c-6f6e5fe8ccc2 | Method: POST | Path: /items/
+2026-03-16 14:09:26,266 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:09:26,268 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-16 14:09:26,268 - INFO - ID: f48d991b-1e08-4204-b77c-6f6e5fe8ccc2 | Path: /items/ | Status: 201 | Time: 0.0066s
+**********************************************************
+
+2026-03-16 14:09:26,269 - INFO - 
+**********************************************************
+ID: 7871da74-ea55-4a2b-bce2-e3304dfcc07a | Method: PATCH | Path: /items/3
+2026-03-16 14:09:26,273 - INFO - Function Start: update_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 3, 'item': {'title': 'item title x', 'desc': None, 'active': None}}
+2026-03-16 14:09:26,277 - INFO - Function Success: update_item | Result: {'success': True, 'message': 'Item updated successfully.', 'data': {'title': 'item title x', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-16 14:09:26,277 - INFO - ID: 7871da74-ea55-4a2b-bce2-e3304dfcc07a | Path: /items/3 | Status: 200 | Time: 0.0078s
+**********************************************************
+
+2026-03-16 14:09:26,284 - INFO - 
+**********************************************************
+ID: b6d551c9-d0bc-4972-87ec-46bb4ffd1c4d | Method: POST | Path: /users/register
+2026-03-16 14:09:26,287 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:09:26,491 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:09:26,491 - INFO - ID: b6d551c9-d0bc-4972-87ec-46bb4ffd1c4d | Path: /users/register | Status: 200 | Time: 0.2078s
+**********************************************************
+
+2026-03-16 14:09:26,493 - INFO - 
+**********************************************************
+ID: 239eeb27-5879-4d27-bcfc-dab014d070a9 | Method: POST | Path: /users/verify-otp
+2026-03-16 14:09:26,494 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '142968'}
+2026-03-16 14:09:26,496 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 4, 'created_at': datetime.datetime(2026, 3, 16, 14, 9, 26, 494896)}}
+2026-03-16 14:09:26,496 - INFO - ID: 239eeb27-5879-4d27-bcfc-dab014d070a9 | Path: /users/verify-otp | Status: 200 | Time: 0.0038s
+**********************************************************
+
+2026-03-16 14:09:26,498 - INFO - 
+**********************************************************
+ID: 50f3ef7c-272d-4ba4-a781-539540cca0dd | Method: POST | Path: /users/login
+2026-03-16 14:09:26,499 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:09:26,702 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:09:26,702 - INFO - ID: 50f3ef7c-272d-4ba4-a781-539540cca0dd | Path: /users/login | Status: 200 | Time: 0.2046s
+**********************************************************
+
+2026-03-16 14:09:26,704 - INFO - 
+**********************************************************
+ID: e5fc04e4-080f-4e18-bd95-3f4c8c98b8ed | Method: POST | Path: /items/
+2026-03-16 14:09:26,707 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:09:26,709 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-16 14:09:26,710 - INFO - ID: e5fc04e4-080f-4e18-bd95-3f4c8c98b8ed | Path: /items/ | Status: 201 | Time: 0.0062s
+**********************************************************
+
+2026-03-16 14:09:26,711 - INFO - 
+**********************************************************
+ID: fe373cd3-0b41-4030-8000-f05336758a7a | Method: DELETE | Path: /items/4
+2026-03-16 14:09:26,715 - INFO - Function Start: delete_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 4}
+2026-03-16 14:09:26,717 - INFO - Function Success: delete_item | Result: {'success': True, 'message': 'Item removed successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-16 14:09:26,717 - INFO - ID: fe373cd3-0b41-4030-8000-f05336758a7a | Path: /items/4 | Status: 200 | Time: 0.0063s
+**********************************************************
+
+2026-03-16 14:09:26,724 - INFO - 
+**********************************************************
+ID: a54df730-e36f-4183-8789-c2163af64989 | Method: GET | Path: /
+2026-03-16 14:09:26,725 - INFO - ID: a54df730-e36f-4183-8789-c2163af64989 | Path: / | Status: 200 | Time: 0.0015s
+**********************************************************
+
+2026-03-16 14:15:11,397 - INFO - 
+**********************************************************
+ID: d1cbdcf3-5c24-40f3-a7a8-aff4f70f82e4 | Method: POST | Path: /users/register
+2026-03-16 14:15:11,400 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:15:11,633 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:15:11,633 - INFO - ID: d1cbdcf3-5c24-40f3-a7a8-aff4f70f82e4 | Path: /users/register | Status: 200 | Time: 0.2368s
+**********************************************************
+
+2026-03-16 14:15:11,635 - INFO - 
+**********************************************************
+ID: 24a64aca-c4d9-4a3b-a0ad-e6d303617f51 | Method: POST | Path: /users/verify-otp
+2026-03-16 14:15:11,637 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '392470'}
+2026-03-16 14:15:11,641 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 16, 14, 15, 11, 638517)}}
+2026-03-16 14:15:11,642 - INFO - ID: 24a64aca-c4d9-4a3b-a0ad-e6d303617f51 | Path: /users/verify-otp | Status: 200 | Time: 0.0067s
+**********************************************************
+
+2026-03-16 14:15:11,643 - INFO - 
+**********************************************************
+ID: 4e99533f-9dad-4f15-9842-7214b955b477 | Method: POST | Path: /users/login
+2026-03-16 14:15:11,645 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:15:11,851 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:15:11,851 - INFO - ID: 4e99533f-9dad-4f15-9842-7214b955b477 | Path: /users/login | Status: 200 | Time: 0.2084s
+**********************************************************
+
+2026-03-16 14:15:11,853 - INFO - 
+**********************************************************
+ID: 3b079f12-f5d4-4e65-acf7-820f25c1d2fe | Method: POST | Path: /items/
+2026-03-16 14:15:11,858 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:15:11,862 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-16 14:15:11,862 - INFO - ID: 3b079f12-f5d4-4e65-acf7-820f25c1d2fe | Path: /items/ | Status: 201 | Time: 0.0095s
+**********************************************************
+
+2026-03-16 14:15:11,869 - INFO - 
+**********************************************************
+ID: 258e5307-1a37-4bf8-a160-dbc9d5f03de8 | Method: POST | Path: /users/register
+2026-03-16 14:15:11,871 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:15:12,078 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:15:12,078 - INFO - ID: 258e5307-1a37-4bf8-a160-dbc9d5f03de8 | Path: /users/register | Status: 200 | Time: 0.2097s
+**********************************************************
+
+2026-03-16 14:15:12,080 - INFO - 
+**********************************************************
+ID: e25d7557-f0f3-4228-a72c-882a9c58f6de | Method: POST | Path: /users/verify-otp
+2026-03-16 14:15:12,081 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '411783'}
+2026-03-16 14:15:12,083 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 2, 'created_at': datetime.datetime(2026, 3, 16, 14, 15, 12, 82013)}}
+2026-03-16 14:15:12,084 - INFO - ID: e25d7557-f0f3-4228-a72c-882a9c58f6de | Path: /users/verify-otp | Status: 200 | Time: 0.0041s
+**********************************************************
+
+2026-03-16 14:15:12,085 - INFO - 
+**********************************************************
+ID: ac6b3824-a2a7-44e4-aaae-b7d5045e18b0 | Method: POST | Path: /users/login
+2026-03-16 14:15:12,087 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:15:12,290 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:15:12,291 - INFO - ID: ac6b3824-a2a7-44e4-aaae-b7d5045e18b0 | Path: /users/login | Status: 200 | Time: 0.2056s
+**********************************************************
+
+2026-03-16 14:15:12,292 - INFO - 
+**********************************************************
+ID: fea34f03-b716-4402-8a3b-d51047e22adb | Method: POST | Path: /items/
+2026-03-16 14:15:12,296 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:15:12,298 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-16 14:15:12,298 - INFO - ID: fea34f03-b716-4402-8a3b-d51047e22adb | Path: /items/ | Status: 201 | Time: 0.0062s
+**********************************************************
+
+2026-03-16 14:15:12,299 - INFO - 
+**********************************************************
+ID: 5cc62eb3-438d-48c7-832f-275714da4af5 | Method: POST | Path: /items/
+2026-03-16 14:15:12,303 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'different desc', 'active': True}}
+2026-03-16 14:15:12,304 - ERROR - Function Error: create_item | Exception: 409: Item already exists
+2026-03-16 14:15:12,304 - INFO - ID: 5cc62eb3-438d-48c7-832f-275714da4af5 | Path: /items/ | Status: 409 | Time: 0.0051s
+**********************************************************
+
+2026-03-16 14:15:12,310 - INFO - 
+**********************************************************
+ID: 23bb5f57-c855-4328-b559-5a26f83db91c | Method: POST | Path: /users/register
+2026-03-16 14:15:12,313 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:15:12,519 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:15:12,519 - INFO - ID: 23bb5f57-c855-4328-b559-5a26f83db91c | Path: /users/register | Status: 200 | Time: 0.2087s
+**********************************************************
+
+2026-03-16 14:15:12,520 - INFO - 
+**********************************************************
+ID: 95f10494-7938-4863-955b-9d14f6847605 | Method: POST | Path: /users/verify-otp
+2026-03-16 14:15:12,521 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '938109'}
+2026-03-16 14:15:12,524 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 3, 'created_at': datetime.datetime(2026, 3, 16, 14, 15, 12, 522520)}}
+2026-03-16 14:15:12,524 - INFO - ID: 95f10494-7938-4863-955b-9d14f6847605 | Path: /users/verify-otp | Status: 200 | Time: 0.0038s
+**********************************************************
+
+2026-03-16 14:15:12,525 - INFO - 
+**********************************************************
+ID: 2a53a256-d7df-429d-8aba-4be2f01fdeb5 | Method: POST | Path: /users/login
+2026-03-16 14:15:12,527 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:15:12,731 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:15:12,732 - INFO - ID: 2a53a256-d7df-429d-8aba-4be2f01fdeb5 | Path: /users/login | Status: 200 | Time: 0.2067s
+**********************************************************
+
+2026-03-16 14:15:12,733 - INFO - 
+**********************************************************
+ID: 9bf289fd-ca0a-4a88-9ee9-a9ac4716f3fd | Method: POST | Path: /items/
+2026-03-16 14:15:12,737 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:15:12,739 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-16 14:15:12,740 - INFO - ID: 9bf289fd-ca0a-4a88-9ee9-a9ac4716f3fd | Path: /items/ | Status: 201 | Time: 0.0064s
+**********************************************************
+
+2026-03-16 14:15:12,741 - INFO - 
+**********************************************************
+ID: 3d0a04ec-8b5f-43c1-8246-9a05f53f635a | Method: PATCH | Path: /items/3
+2026-03-16 14:15:12,745 - INFO - Function Start: update_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 3, 'item': {'title': 'item title x', 'desc': None, 'active': None}}
+2026-03-16 14:15:12,748 - INFO - Function Success: update_item | Result: {'success': True, 'message': 'Item updated successfully.', 'data': {'title': 'item title x', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-16 14:15:12,749 - INFO - ID: 3d0a04ec-8b5f-43c1-8246-9a05f53f635a | Path: /items/3 | Status: 200 | Time: 0.0078s
+**********************************************************
+
+2026-03-16 14:15:12,755 - INFO - 
+**********************************************************
+ID: 2b35f68b-e40f-43cf-a6aa-79b46052719f | Method: POST | Path: /users/register
+2026-03-16 14:15:12,757 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:15:12,961 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:15:12,961 - INFO - ID: 2b35f68b-e40f-43cf-a6aa-79b46052719f | Path: /users/register | Status: 200 | Time: 0.2062s
+**********************************************************
+
+2026-03-16 14:15:12,962 - INFO - 
+**********************************************************
+ID: 619a067a-a152-42d1-972f-de2fa2391b17 | Method: POST | Path: /users/verify-otp
+2026-03-16 14:15:12,964 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '158135'}
+2026-03-16 14:15:12,966 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 4, 'created_at': datetime.datetime(2026, 3, 16, 14, 15, 12, 964771)}}
+2026-03-16 14:15:12,966 - INFO - ID: 619a067a-a152-42d1-972f-de2fa2391b17 | Path: /users/verify-otp | Status: 200 | Time: 0.0039s
+**********************************************************
+
+2026-03-16 14:15:12,968 - INFO - 
+**********************************************************
+ID: cfffc40a-4a1c-49ef-80f9-cdabbb898b84 | Method: POST | Path: /users/login
+2026-03-16 14:15:12,969 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:15:13,172 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:15:13,173 - INFO - ID: cfffc40a-4a1c-49ef-80f9-cdabbb898b84 | Path: /users/login | Status: 200 | Time: 0.2050s
+**********************************************************
+
+2026-03-16 14:15:13,174 - INFO - 
+**********************************************************
+ID: e8c51bcb-9430-4d2f-8df9-f3f6ae0e62b6 | Method: POST | Path: /items/
+2026-03-16 14:15:13,177 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:15:13,180 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-16 14:15:13,180 - INFO - ID: e8c51bcb-9430-4d2f-8df9-f3f6ae0e62b6 | Path: /items/ | Status: 201 | Time: 0.0059s
+**********************************************************
+
+2026-03-16 14:15:13,181 - INFO - 
+**********************************************************
+ID: a42b232b-35eb-4bdd-96af-85c7e383b2c9 | Method: DELETE | Path: /items/4
+2026-03-16 14:15:13,185 - INFO - Function Start: delete_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 4}
+2026-03-16 14:15:13,187 - INFO - Function Success: delete_item | Result: {'success': True, 'message': 'Item removed successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-16 14:15:13,188 - INFO - ID: a42b232b-35eb-4bdd-96af-85c7e383b2c9 | Path: /items/4 | Status: 200 | Time: 0.0068s
+**********************************************************
+
+2026-03-16 14:15:13,194 - INFO - 
+**********************************************************
+ID: 90ee48e8-8716-4700-80a5-c5b13913a7a5 | Method: GET | Path: /
+2026-03-16 14:15:13,195 - INFO - ID: 90ee48e8-8716-4700-80a5-c5b13913a7a5 | Path: / | Status: 200 | Time: 0.0014s
+**********************************************************
+
+2026-03-16 14:57:32,394 - INFO - 
+**********************************************************
+ID: 38733d30-b68a-4472-becd-82c9d15b220e | Method: POST | Path: /users/register
+2026-03-16 14:57:32,397 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:57:32,626 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:57:32,627 - INFO - ID: 38733d30-b68a-4472-becd-82c9d15b220e | Path: /users/register | Status: 200 | Time: 0.2321s
+**********************************************************
+
+2026-03-16 14:57:32,628 - INFO - 
+**********************************************************
+ID: 587a1a03-da1e-4e26-b582-c1dc0313f892 | Method: POST | Path: /users/verify-otp
+2026-03-16 14:57:32,630 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '341997'}
+2026-03-16 14:57:32,634 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 16, 14, 57, 32, 631724)}}
+2026-03-16 14:57:32,635 - INFO - ID: 587a1a03-da1e-4e26-b582-c1dc0313f892 | Path: /users/verify-otp | Status: 200 | Time: 0.0065s
+**********************************************************
+
+2026-03-16 14:57:32,636 - INFO - 
+**********************************************************
+ID: 9fc46a26-2710-42d5-b1c5-b13dab65502b | Method: POST | Path: /users/login
+2026-03-16 14:57:32,638 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:57:32,841 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:57:32,842 - INFO - ID: 9fc46a26-2710-42d5-b1c5-b13dab65502b | Path: /users/login | Status: 200 | Time: 0.2064s
+**********************************************************
+
+2026-03-16 14:57:32,843 - INFO - 
+**********************************************************
+ID: e71b7f82-a608-4e35-a28e-ed91295fe819 | Method: POST | Path: /items/
+2026-03-16 14:57:32,848 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:57:32,852 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-16 14:57:32,853 - INFO - ID: e71b7f82-a608-4e35-a28e-ed91295fe819 | Path: /items/ | Status: 201 | Time: 0.0095s
+**********************************************************
+
+2026-03-16 14:57:32,859 - INFO - 
+**********************************************************
+ID: 2f1a39c1-b771-4bcc-b188-29d48f1d45e7 | Method: POST | Path: /users/register
+2026-03-16 14:57:32,861 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:57:33,072 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:57:33,072 - INFO - ID: 2f1a39c1-b771-4bcc-b188-29d48f1d45e7 | Path: /users/register | Status: 200 | Time: 0.2132s
+**********************************************************
+
+2026-03-16 14:57:33,073 - INFO - 
+**********************************************************
+ID: c526bb35-4ea8-4396-956d-230018d9c410 | Method: POST | Path: /users/verify-otp
+2026-03-16 14:57:33,074 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '993956'}
+2026-03-16 14:57:33,077 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 2, 'created_at': datetime.datetime(2026, 3, 16, 14, 57, 33, 75457)}}
+2026-03-16 14:57:33,077 - INFO - ID: c526bb35-4ea8-4396-956d-230018d9c410 | Path: /users/verify-otp | Status: 200 | Time: 0.0040s
+**********************************************************
+
+2026-03-16 14:57:33,078 - INFO - 
+**********************************************************
+ID: 50e499b4-19df-4e40-9a3a-acac64581e76 | Method: POST | Path: /users/login
+2026-03-16 14:57:33,080 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:57:33,284 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:57:33,285 - INFO - ID: 50e499b4-19df-4e40-9a3a-acac64581e76 | Path: /users/login | Status: 200 | Time: 0.2065s
+**********************************************************
+
+2026-03-16 14:57:33,286 - INFO - 
+**********************************************************
+ID: b8f27ada-da02-40dc-93a5-614238fcb75a | Method: POST | Path: /items/
+2026-03-16 14:57:33,290 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:57:33,292 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-16 14:57:33,292 - INFO - ID: b8f27ada-da02-40dc-93a5-614238fcb75a | Path: /items/ | Status: 201 | Time: 0.0060s
+**********************************************************
+
+2026-03-16 14:57:33,293 - INFO - 
+**********************************************************
+ID: 873c6715-ab77-45c0-9091-44652b5d5768 | Method: POST | Path: /items/
+2026-03-16 14:57:33,297 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'different desc', 'active': True}}
+2026-03-16 14:57:33,298 - ERROR - Function Error: create_item | Exception: 409: Item already exists
+2026-03-16 14:57:33,298 - INFO - ID: 873c6715-ab77-45c0-9091-44652b5d5768 | Path: /items/ | Status: 409 | Time: 0.0049s
+**********************************************************
+
+2026-03-16 14:57:33,304 - INFO - 
+**********************************************************
+ID: 4b308bc6-97c7-4a11-814b-f32989edaac5 | Method: POST | Path: /users/register
+2026-03-16 14:57:33,306 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:57:33,511 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:57:33,511 - INFO - ID: 4b308bc6-97c7-4a11-814b-f32989edaac5 | Path: /users/register | Status: 200 | Time: 0.2073s
+**********************************************************
+
+2026-03-16 14:57:33,512 - INFO - 
+**********************************************************
+ID: deefc5ef-a7da-469f-9ef6-8b83e3410cf5 | Method: POST | Path: /users/verify-otp
+2026-03-16 14:57:33,513 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '131469'}
+2026-03-16 14:57:33,515 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 3, 'created_at': datetime.datetime(2026, 3, 16, 14, 57, 33, 514135)}}
+2026-03-16 14:57:33,516 - INFO - ID: deefc5ef-a7da-469f-9ef6-8b83e3410cf5 | Path: /users/verify-otp | Status: 200 | Time: 0.0037s
+**********************************************************
+
+2026-03-16 14:57:33,517 - INFO - 
+**********************************************************
+ID: f39a1ead-5047-42cd-b5a7-7b8493d59a7b | Method: POST | Path: /users/login
+2026-03-16 14:57:33,518 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:57:33,720 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:57:33,721 - INFO - ID: f39a1ead-5047-42cd-b5a7-7b8493d59a7b | Path: /users/login | Status: 200 | Time: 0.2043s
+**********************************************************
+
+2026-03-16 14:57:33,722 - INFO - 
+**********************************************************
+ID: 95d7e72f-ce38-4a82-a1ff-f62429105f4e | Method: POST | Path: /items/
+2026-03-16 14:57:33,726 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:57:33,728 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-16 14:57:33,729 - INFO - ID: 95d7e72f-ce38-4a82-a1ff-f62429105f4e | Path: /items/ | Status: 201 | Time: 0.0062s
+**********************************************************
+
+2026-03-16 14:57:33,730 - INFO - 
+**********************************************************
+ID: 505e31ac-4fdf-413c-b767-08d57c81c8f3 | Method: PATCH | Path: /items/3
+2026-03-16 14:57:33,733 - INFO - Function Start: update_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 3, 'item': {'title': 'item title x', 'desc': None, 'active': None}}
+2026-03-16 14:57:33,737 - INFO - Function Success: update_item | Result: {'success': True, 'message': 'Item updated successfully.', 'data': {'title': 'item title x', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-16 14:57:33,738 - INFO - ID: 505e31ac-4fdf-413c-b767-08d57c81c8f3 | Path: /items/3 | Status: 200 | Time: 0.0080s
+**********************************************************
+
+2026-03-16 14:57:33,743 - INFO - 
+**********************************************************
+ID: e441f65d-b46f-42d4-ab42-e245490fa41d | Method: POST | Path: /users/register
+2026-03-16 14:57:33,745 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 14:57:33,951 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 14:57:33,951 - INFO - ID: e441f65d-b46f-42d4-ab42-e245490fa41d | Path: /users/register | Status: 200 | Time: 0.2077s
+**********************************************************
+
+2026-03-16 14:57:33,952 - INFO - 
+**********************************************************
+ID: 631b2f8e-8a93-4145-9d0f-3fbef31a764f | Method: POST | Path: /users/verify-otp
+2026-03-16 14:57:33,953 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '596671'}
+2026-03-16 14:57:33,955 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 4, 'created_at': datetime.datetime(2026, 3, 16, 14, 57, 33, 954360)}}
+2026-03-16 14:57:33,956 - INFO - ID: 631b2f8e-8a93-4145-9d0f-3fbef31a764f | Path: /users/verify-otp | Status: 200 | Time: 0.0037s
+**********************************************************
+
+2026-03-16 14:57:33,957 - INFO - 
+**********************************************************
+ID: 698fbd75-10fa-4c09-a9e3-22be28dc1f50 | Method: POST | Path: /users/login
+2026-03-16 14:57:33,958 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 14:57:34,163 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 14:57:34,164 - INFO - ID: 698fbd75-10fa-4c09-a9e3-22be28dc1f50 | Path: /users/login | Status: 200 | Time: 0.2067s
+**********************************************************
+
+2026-03-16 14:57:34,165 - INFO - 
+**********************************************************
+ID: aa23c1b0-4ee6-485c-9a90-dace9fc15290 | Method: POST | Path: /items/
+2026-03-16 14:57:34,169 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 14:57:34,172 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-16 14:57:34,172 - INFO - ID: aa23c1b0-4ee6-485c-9a90-dace9fc15290 | Path: /items/ | Status: 201 | Time: 0.0075s
+**********************************************************
+
+2026-03-16 14:57:34,174 - INFO - 
+**********************************************************
+ID: 59e10cf2-a0e2-4309-9784-630f8e97aaf7 | Method: DELETE | Path: /items/4
+2026-03-16 14:57:34,177 - INFO - Function Start: delete_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 4}
+2026-03-16 14:57:34,179 - INFO - Function Success: delete_item | Result: {'success': True, 'message': 'Item removed successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-16 14:57:34,180 - INFO - ID: 59e10cf2-a0e2-4309-9784-630f8e97aaf7 | Path: /items/4 | Status: 200 | Time: 0.0060s
+**********************************************************
+
+2026-03-16 14:57:34,185 - INFO - 
+**********************************************************
+ID: 5fcd2f77-bed6-4c27-a246-e4ea2e8e1d3d | Method: GET | Path: /
+2026-03-16 14:57:34,186 - INFO - ID: 5fcd2f77-bed6-4c27-a246-e4ea2e8e1d3d | Path: / | Status: 200 | Time: 0.0014s
+**********************************************************
+
+2026-03-16 15:07:59,866 - INFO - 
+**********************************************************
+ID: e61491f4-db72-4456-891e-36b291f2b9bd | Method: POST | Path: /users/register
+2026-03-16 15:07:59,869 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 15:08:00,100 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 15:08:00,100 - INFO - ID: e61491f4-db72-4456-891e-36b291f2b9bd | Path: /users/register | Status: 200 | Time: 0.2338s
+**********************************************************
+
+2026-03-16 15:08:00,101 - INFO - 
+**********************************************************
+ID: 05aa69ce-c4a7-4ef3-b8f6-b5766ca33d47 | Method: POST | Path: /users/verify-otp
+2026-03-16 15:08:00,103 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '818329'}
+2026-03-16 15:08:00,107 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 1, 'created_at': datetime.datetime(2026, 3, 16, 15, 8, 0, 104629)}}
+2026-03-16 15:08:00,107 - INFO - ID: 05aa69ce-c4a7-4ef3-b8f6-b5766ca33d47 | Path: /users/verify-otp | Status: 200 | Time: 0.0063s
+**********************************************************
+
+2026-03-16 15:08:00,109 - INFO - 
+**********************************************************
+ID: 1c44d5b1-3f01-4ab5-b91c-e351ad915793 | Method: POST | Path: /users/login
+2026-03-16 15:08:00,111 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 15:08:00,314 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 15:08:00,314 - INFO - ID: 1c44d5b1-3f01-4ab5-b91c-e351ad915793 | Path: /users/login | Status: 200 | Time: 0.2059s
+**********************************************************
+
+2026-03-16 15:08:00,316 - INFO - 
+**********************************************************
+ID: f812dbfd-f895-4324-97fb-49bd05e2db1b | Method: POST | Path: /items/
+2026-03-16 15:08:00,321 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 15:08:00,325 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-16 15:08:00,325 - INFO - ID: f812dbfd-f895-4324-97fb-49bd05e2db1b | Path: /items/ | Status: 201 | Time: 0.0095s
+**********************************************************
+
+2026-03-16 15:08:00,332 - INFO - 
+**********************************************************
+ID: f7573ae4-2fcd-41fa-9526-b9db5ae3183f | Method: POST | Path: /users/register
+2026-03-16 15:08:00,334 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 15:08:00,539 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 15:08:00,539 - INFO - ID: f7573ae4-2fcd-41fa-9526-b9db5ae3183f | Path: /users/register | Status: 200 | Time: 0.2079s
+**********************************************************
+
+2026-03-16 15:08:00,541 - INFO - 
+**********************************************************
+ID: 6a3e418a-7257-450b-9f29-87c5c660394d | Method: POST | Path: /users/verify-otp
+2026-03-16 15:08:00,542 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '249747'}
+2026-03-16 15:08:00,544 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 2, 'created_at': datetime.datetime(2026, 3, 16, 15, 8, 0, 543040)}}
+2026-03-16 15:08:00,545 - INFO - ID: 6a3e418a-7257-450b-9f29-87c5c660394d | Path: /users/verify-otp | Status: 200 | Time: 0.0043s
+**********************************************************
+
+2026-03-16 15:08:00,546 - INFO - 
+**********************************************************
+ID: b7499468-8c71-4be3-977c-1d6faa7f9119 | Method: POST | Path: /users/login
+2026-03-16 15:08:00,548 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 15:08:00,750 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 15:08:00,750 - INFO - ID: b7499468-8c71-4be3-977c-1d6faa7f9119 | Path: /users/login | Status: 200 | Time: 0.2043s
+**********************************************************
+
+2026-03-16 15:08:00,752 - INFO - 
+**********************************************************
+ID: 1a3f3946-9e91-4158-9af7-df62285546e7 | Method: POST | Path: /items/
+2026-03-16 15:08:00,755 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-16 15:08:00,757 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-16 15:08:00,758 - INFO - ID: 1a3f3946-9e91-4158-9af7-df62285546e7 | Path: /items/ | Status: 201 | Time: 0.0061s
+**********************************************************
+
+2026-03-16 15:08:00,759 - INFO - 
+**********************************************************
+ID: d4fa8a56-3a44-48ad-8627-3a5640058cf8 | Method: POST | Path: /items/
+2026-03-16 15:08:00,763 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'different desc', 'active': True}}
+2026-03-16 15:08:00,764 - ERROR - Function Error: create_item | Exception: 409: Item already exists
+2026-03-16 15:08:00,764 - INFO - ID: d4fa8a56-3a44-48ad-8627-3a5640058cf8 | Path: /items/ | Status: 409 | Time: 0.0052s
+**********************************************************
+
+2026-03-16 15:08:00,770 - INFO - 
+**********************************************************
+ID: 7b6c81a5-78b3-4b37-8ebe-102659e59517 | Method: POST | Path: /users/register
+2026-03-16 15:08:00,772 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 15:08:00,979 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 15:08:00,979 - INFO - ID: 7b6c81a5-78b3-4b37-8ebe-102659e59517 | Path: /users/register | Status: 200 | Time: 0.2093s
+**********************************************************
+
+2026-03-16 15:08:00,980 - INFO - 
+**********************************************************
+ID: 6d737585-2d85-4be8-af95-925202c5af31 | Method: POST | Path: /users/verify-otp
+2026-03-16 15:08:00,981 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '280372'}
+2026-03-16 15:08:00,984 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 3, 'created_at': datetime.datetime(2026, 3, 16, 15, 8, 0, 982427)}}
+2026-03-16 15:08:00,984 - INFO - ID: 6d737585-2d85-4be8-af95-925202c5af31 | Path: /users/verify-otp | Status: 200 | Time: 0.0039s
+**********************************************************
+
+2026-03-16 15:08:00,985 - INFO - 
+**********************************************************
+ID: 5ec31073-6203-4ded-851c-3fac736aee63 | Method: POST | Path: /users/login
+2026-03-16 15:08:00,987 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 15:08:01,189 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 15:08:01,190 - INFO - ID: 5ec31073-6203-4ded-851c-3fac736aee63 | Path: /users/login | Status: 200 | Time: 0.2046s
+**********************************************************
+
+2026-03-16 15:08:01,191 - INFO - 
+**********************************************************
+ID: 24b43b3c-4710-44e9-8e29-bdf28626d25f | Method: POST | Path: /items/
+2026-03-16 15:08:01,195 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 15:08:01,197 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-16 15:08:01,198 - INFO - ID: 24b43b3c-4710-44e9-8e29-bdf28626d25f | Path: /items/ | Status: 201 | Time: 0.0064s
+**********************************************************
+
+2026-03-16 15:08:01,199 - INFO - 
+**********************************************************
+ID: 15d6fbfa-41e9-4f4e-b154-32f0020d2405 | Method: PATCH | Path: /items/3
+2026-03-16 15:08:01,203 - INFO - Function Start: update_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 3, 'item': {'title': 'item title x', 'desc': None, 'active': None}}
+2026-03-16 15:08:01,207 - INFO - Function Success: update_item | Result: {'success': True, 'message': 'Item updated successfully.', 'data': {'title': 'item title x', 'desc': 'item description', 'active': True, 'id': 3, 'owner_id': 3}}
+2026-03-16 15:08:01,207 - INFO - ID: 15d6fbfa-41e9-4f4e-b154-32f0020d2405 | Path: /items/3 | Status: 200 | Time: 0.0085s
+**********************************************************
+
+2026-03-16 15:08:01,213 - INFO - 
+**********************************************************
+ID: a2f19e4e-0880-43ed-bd4a-8bdfb3e5a061 | Method: POST | Path: /users/register
+2026-03-16 15:08:01,215 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 15:08:01,420 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 15:08:01,420 - INFO - ID: a2f19e4e-0880-43ed-bd4a-8bdfb3e5a061 | Path: /users/register | Status: 200 | Time: 0.2073s
+**********************************************************
+
+2026-03-16 15:08:01,421 - INFO - 
+**********************************************************
+ID: ef6736b4-14f8-42b9-b5de-7eb0846379a3 | Method: POST | Path: /users/verify-otp
+2026-03-16 15:08:01,423 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '683320'}
+2026-03-16 15:08:01,425 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 4, 'created_at': datetime.datetime(2026, 3, 16, 15, 8, 1, 423607)}}
+2026-03-16 15:08:01,425 - INFO - ID: ef6736b4-14f8-42b9-b5de-7eb0846379a3 | Path: /users/verify-otp | Status: 200 | Time: 0.0038s
+**********************************************************
+
+2026-03-16 15:08:01,426 - INFO - 
+**********************************************************
+ID: 598bbbe6-2091-4bfc-8f62-c01264bd30e2 | Method: POST | Path: /users/login
+2026-03-16 15:08:01,428 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-16 15:08:01,630 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 15:08:01,630 - INFO - ID: 598bbbe6-2091-4bfc-8f62-c01264bd30e2 | Path: /users/login | Status: 200 | Time: 0.2039s
+**********************************************************
+
+2026-03-16 15:08:01,632 - INFO - 
+**********************************************************
+ID: 3346ad81-b9ef-4c94-8f4a-3f5452316392 | Method: POST | Path: /items/
+2026-03-16 15:08:01,635 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-16 15:08:01,638 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-16 15:08:01,638 - INFO - ID: 3346ad81-b9ef-4c94-8f4a-3f5452316392 | Path: /items/ | Status: 201 | Time: 0.0065s
+**********************************************************
+
+2026-03-16 15:08:01,639 - INFO - 
+**********************************************************
+ID: db7d15f5-9300-4b43-876b-f8d40b9ef988 | Method: DELETE | Path: /items/4
+2026-03-16 15:08:01,642 - INFO - Function Start: delete_item | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': 4}
+2026-03-16 15:08:01,645 - INFO - Function Success: delete_item | Result: {'success': True, 'message': 'Item removed successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 4, 'owner_id': 4}}
+2026-03-16 15:08:01,645 - INFO - ID: db7d15f5-9300-4b43-876b-f8d40b9ef988 | Path: /items/4 | Status: 200 | Time: 0.0062s
+**********************************************************
+
+2026-03-16 15:08:01,652 - INFO - 
+**********************************************************
+ID: 50dafa51-0734-48ad-b17c-076030e23dbe | Method: GET | Path: /
+2026-03-16 15:08:01,653 - INFO - ID: 50dafa51-0734-48ad-b17c-076030e23dbe | Path: / | Status: 200 | Time: 0.0010s
+**********************************************************
+
+2026-03-16 15:08:01,662 - INFO - 
+**********************************************************
+ID: 3cb691e3-b7ea-41a1-9162-b9a174801c50 | Method: POST | Path: /users/register
+2026-03-16 15:08:01,664 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 15:08:01,870 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 15:08:01,871 - INFO - ID: 3cb691e3-b7ea-41a1-9162-b9a174801c50 | Path: /users/register | Status: 200 | Time: 0.2088s
+**********************************************************
+
+2026-03-16 15:08:01,876 - INFO - 
+**********************************************************
+ID: cc9f1a7b-7f20-461d-88e3-b1325dfb8607 | Method: POST | Path: /users/register
+2026-03-16 15:08:01,879 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 15:08:02,084 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 15:08:02,084 - INFO - ID: cc9f1a7b-7f20-461d-88e3-b1325dfb8607 | Path: /users/register | Status: 200 | Time: 0.2082s
+**********************************************************
+
+2026-03-16 15:08:02,086 - INFO - 
+**********************************************************
+ID: ed0c4687-b06b-4e04-93c2-889dca22886d | Method: POST | Path: /users/verify-otp
+2026-03-16 15:08:02,087 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'jaymin4724@gmail.com', 'otp': '530471'}
+2026-03-16 15:08:02,089 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'jaymin4724@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 5, 'created_at': datetime.datetime(2026, 3, 16, 15, 8, 2, 87830)}}
+2026-03-16 15:08:02,089 - INFO - ID: ed0c4687-b06b-4e04-93c2-889dca22886d | Path: /users/verify-otp | Status: 200 | Time: 0.0037s
+**********************************************************
+
+2026-03-16 15:08:02,095 - INFO - 
+**********************************************************
+ID: f3d857a5-52fd-4d03-92d9-687fe3bb77a2 | Method: POST | Path: /users/register
+2026-03-16 15:08:02,097 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 15:08:02,301 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 15:08:02,301 - INFO - ID: f3d857a5-52fd-4d03-92d9-687fe3bb77a2 | Path: /users/register | Status: 200 | Time: 0.2064s
+**********************************************************
+
+2026-03-16 15:08:02,302 - INFO - 
+**********************************************************
+ID: 96956ec5-e38a-41b4-94cc-11f4f31f009a | Method: POST | Path: /users/verify-otp
+2026-03-16 15:08:02,304 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'duplicate@gmail.com', 'otp': '726359'}
+2026-03-16 15:08:02,306 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 6, 'created_at': datetime.datetime(2026, 3, 16, 15, 8, 2, 304639)}}
+2026-03-16 15:08:02,306 - INFO - ID: 96956ec5-e38a-41b4-94cc-11f4f31f009a | Path: /users/verify-otp | Status: 200 | Time: 0.0036s
+**********************************************************
+
+2026-03-16 15:08:02,307 - INFO - 
+**********************************************************
+ID: 3c676fde-7c82-4642-944f-4177929d976e | Method: POST | Path: /users/register
+2026-03-16 15:08:02,309 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'duplicate@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 15:08:02,310 - ERROR - Function Error: register_initiate | Exception: 400: Email already registered
+2026-03-16 15:08:02,310 - INFO - ID: 3c676fde-7c82-4642-944f-4177929d976e | Path: /users/register | Status: 400 | Time: 0.0031s
+**********************************************************
+
+2026-03-16 15:08:02,316 - INFO - 
+**********************************************************
+ID: cc0365e5-3681-4472-902d-c771133b614a | Method: POST | Path: /users/register
+2026-03-16 15:08:02,318 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 15:08:02,523 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 15:08:02,523 - INFO - ID: cc0365e5-3681-4472-902d-c771133b614a | Path: /users/register | Status: 200 | Time: 0.2073s
+**********************************************************
+
+2026-03-16 15:08:02,524 - INFO - 
+**********************************************************
+ID: c9897e70-966d-47be-a2a8-944eb376c57c | Method: POST | Path: /users/verify-otp
+2026-03-16 15:08:02,525 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'login-user@gmail.com', 'otp': '800065'}
+2026-03-16 15:08:02,528 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'login-user@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 7, 'created_at': datetime.datetime(2026, 3, 16, 15, 8, 2, 526526)}}
+2026-03-16 15:08:02,528 - INFO - ID: c9897e70-966d-47be-a2a8-944eb376c57c | Path: /users/verify-otp | Status: 200 | Time: 0.0039s
+**********************************************************
+
+2026-03-16 15:08:02,529 - INFO - 
+**********************************************************
+ID: e811d604-9dc5-42de-81a7-65114dd5d252 | Method: POST | Path: /users/login
+2026-03-16 15:08:02,531 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'login-user@gmail.com', 'password': '*******'}}
+2026-03-16 15:08:02,734 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 15:08:02,735 - INFO - ID: e811d604-9dc5-42de-81a7-65114dd5d252 | Path: /users/login | Status: 200 | Time: 0.2057s
+**********************************************************
+
+2026-03-16 15:08:02,741 - INFO - 
+**********************************************************
+ID: f5638e42-e7c6-4199-842d-49f693dec2ab | Method: POST | Path: /users/register
+2026-03-16 15:08:02,743 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 15:08:02,948 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 15:08:02,949 - INFO - ID: f5638e42-e7c6-4199-842d-49f693dec2ab | Path: /users/register | Status: 200 | Time: 0.2080s
+**********************************************************
+
+2026-03-16 15:08:02,950 - INFO - 
+**********************************************************
+ID: 0ac9a5de-9ab7-4593-8b1b-5d86b45ed40c | Method: POST | Path: /users/verify-otp
+2026-03-16 15:08:02,951 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'refresher@gmail.com', 'otp': '723823'}
+2026-03-16 15:08:02,954 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'refresher@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 8, 'created_at': datetime.datetime(2026, 3, 16, 15, 8, 2, 952360)}}
+2026-03-16 15:08:02,955 - INFO - ID: 0ac9a5de-9ab7-4593-8b1b-5d86b45ed40c | Path: /users/verify-otp | Status: 200 | Time: 0.0046s
+**********************************************************
+
+2026-03-16 15:08:02,956 - INFO - 
+**********************************************************
+ID: 2ccc3221-2100-4024-9228-31d1442cdcfd | Method: POST | Path: /users/login
+2026-03-16 15:08:02,957 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'refresher@gmail.com', 'password': '*******'}}
+2026-03-16 15:08:03,160 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 15:08:03,161 - INFO - ID: 2ccc3221-2100-4024-9228-31d1442cdcfd | Path: /users/login | Status: 200 | Time: 0.2052s
+**********************************************************
+
+2026-03-16 15:08:03,162 - INFO - 
+**********************************************************
+ID: e21c19d3-ffc3-463d-8b51-f07fe255ab42 | Method: POST | Path: /users/refresh
+2026-03-16 15:08:03,163 - INFO - Function Start: refresh_token | Args: () Kwargs: {'auth_service': 'obj', 'redis': 'obj', 'refresh_token': '*******'}
+2026-03-16 15:08:03,164 - INFO - Function Success: refresh_token | Result: {'success': True, 'message': 'Tokens rotated successfully.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 15:08:03,164 - INFO - ID: e21c19d3-ffc3-463d-8b51-f07fe255ab42 | Path: /users/refresh | Status: 200 | Time: 0.0024s
+**********************************************************
+
+2026-03-16 15:08:03,170 - INFO - 
+**********************************************************
+ID: e9793e66-c3bf-411c-85dd-bf6481e5602c | Method: POST | Path: /users/register
+2026-03-16 15:08:03,172 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-16 15:08:03,376 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-16 15:08:03,376 - INFO - ID: e9793e66-c3bf-411c-85dd-bf6481e5602c | Path: /users/register | Status: 200 | Time: 0.2069s
+**********************************************************
+
+2026-03-16 15:08:03,378 - INFO - 
+**********************************************************
+ID: 4fec9c03-f653-4172-8dcf-08109125df3d | Method: POST | Path: /users/verify-otp
+2026-03-16 15:08:03,379 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'reuser@gmail.com', 'otp': '676892'}
+2026-03-16 15:08:03,381 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'reuser@gmail.com', 'username': 'test-user', 'is_active': True, 'is_admin': False, 'id': 9, 'created_at': datetime.datetime(2026, 3, 16, 15, 8, 3, 379961)}}
+2026-03-16 15:08:03,382 - INFO - ID: 4fec9c03-f653-4172-8dcf-08109125df3d | Path: /users/verify-otp | Status: 200 | Time: 0.0040s
+**********************************************************
+
+2026-03-16 15:08:03,383 - INFO - 
+**********************************************************
+ID: 7278c438-76bf-49f4-8252-25f7ac961609 | Method: POST | Path: /users/login
+2026-03-16 15:08:03,384 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'reuser@gmail.com', 'password': '*******'}}
+2026-03-16 15:08:03,588 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 15:08:03,588 - INFO - ID: 7278c438-76bf-49f4-8252-25f7ac961609 | Path: /users/login | Status: 200 | Time: 0.2054s
+**********************************************************
+
+2026-03-16 15:08:03,589 - INFO - 
+**********************************************************
+ID: a5a4a57a-577e-4074-aefa-8925ceeed93a | Method: POST | Path: /users/refresh
+2026-03-16 15:08:03,590 - INFO - Function Start: refresh_token | Args: () Kwargs: {'auth_service': 'obj', 'redis': 'obj', 'refresh_token': '*******'}
+2026-03-16 15:08:03,591 - INFO - Function Success: refresh_token | Result: {'success': True, 'message': 'Tokens rotated successfully.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-16 15:08:03,591 - INFO - ID: a5a4a57a-577e-4074-aefa-8925ceeed93a | Path: /users/refresh | Status: 200 | Time: 0.0018s
+**********************************************************
+
+2026-03-16 15:08:03,592 - INFO - 
+**********************************************************
+ID: f825e712-c739-4a75-9008-6ecd88f3970c | Method: POST | Path: /users/refresh
+2026-03-16 15:08:03,593 - INFO - Function Start: refresh_token | Args: () Kwargs: {'auth_service': 'obj', 'redis': 'obj', 'refresh_token': '*******'}
+2026-03-16 15:08:03,593 - ERROR - Function Error: refresh_token | Exception: 401: Token has already been used
+2026-03-16 15:08:03,593 - INFO - ID: f825e712-c739-4a75-9008-6ecd88f3970c | Path: /users/refresh | Status: 401 | Time: 0.0013s
 **********************************************************
 

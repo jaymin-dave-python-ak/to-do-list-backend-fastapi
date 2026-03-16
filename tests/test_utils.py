@@ -6,7 +6,7 @@ def assert_response_structure(body: dict, success: bool = True):
 
 
 def create_user_data(
-    email="test-user@gmail.com", username="test-user", password="test-user123"
+    email="jaymin4724@gmail.com", username="test-user", password="test-user123"
 ):
     """Generates a dictionary for user registration/login tests."""
     return {
@@ -31,3 +31,6 @@ def update_item_data(title="item title x"):
     return {
         "title": title,
     }
+
+def generate_fixed_otp():
+    return "123456"
