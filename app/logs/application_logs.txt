@@ -1,0 +1,844 @@
+2026-03-17 10:29:58,061 - INFO - 
+**********************************************************
+ID: 9adec87c-cc5b-4831-bd69-2592834209bd | Method: POST | Path: /users/register
+2026-03-17 10:29:58,064 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:29:58,296 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:29:58,296 - INFO - ID: 9adec87c-cc5b-4831-bd69-2592834209bd | Path: /users/register | Status: 200 | Time: 0.2353s
+**********************************************************
+
+2026-03-17 10:29:58,298 - INFO - 
+**********************************************************
+ID: cf808d48-8f8d-493b-b8f2-d24ee1a3d064 | Method: POST | Path: /users/verify-otp
+2026-03-17 10:29:58,300 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'test-admin@gmail.com', 'otp': '731651'}
+2026-03-17 10:29:58,305 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'id': 1, 'created_at': datetime.datetime(2026, 3, 17, 10, 29, 58, 301671)}}
+2026-03-17 10:29:58,305 - INFO - ID: cf808d48-8f8d-493b-b8f2-d24ee1a3d064 | Path: /users/verify-otp | Status: 200 | Time: 0.0070s
+**********************************************************
+
+2026-03-17 10:29:58,306 - INFO - 
+**********************************************************
+ID: 8f886f17-c762-4701-a564-5bdb1a1cfe33 | Method: POST | Path: /users/login
+2026-03-17 10:29:58,309 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'password': '*******'}}
+2026-03-17 10:29:58,511 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-17 10:29:58,512 - INFO - ID: 8f886f17-c762-4701-a564-5bdb1a1cfe33 | Path: /users/login | Status: 200 | Time: 0.2055s
+**********************************************************
+
+2026-03-17 10:29:58,514 - INFO - 
+**********************************************************
+ID: 1abb659f-0e2b-4e31-864b-49fb72c42906 | Method: POST | Path: /admin/items/
+2026-03-17 10:29:58,514 - INFO - ID: 1abb659f-0e2b-4e31-864b-49fb72c42906 | Path: /admin/items/ | Status: 307 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:29:58,515 - INFO - 
+**********************************************************
+ID: 89f27546-dd3f-4899-bf9e-74de53f4764c | Method: POST | Path: /admin/items
+2026-03-17 10:29:58,521 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-17 10:29:58,526 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-17 10:29:58,527 - INFO - ID: 89f27546-dd3f-4899-bf9e-74de53f4764c | Path: /admin/items | Status: 201 | Time: 0.0118s
+**********************************************************
+
+2026-03-17 10:29:58,535 - INFO - 
+**********************************************************
+ID: a90d03fa-2496-4d9c-a2c6-17f69d8b5ee4 | Method: POST | Path: /users/register
+2026-03-17 10:29:58,538 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:29:58,743 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:29:58,743 - INFO - ID: a90d03fa-2496-4d9c-a2c6-17f69d8b5ee4 | Path: /users/register | Status: 200 | Time: 0.2075s
+**********************************************************
+
+2026-03-17 10:29:58,744 - INFO - 
+**********************************************************
+ID: 62863cc2-c92c-481a-ba4c-9d34ed728d67 | Method: POST | Path: /users/verify-otp
+2026-03-17 10:29:58,746 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'test-admin@gmail.com', 'otp': '765088'}
+2026-03-17 10:29:58,748 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'id': 2, 'created_at': datetime.datetime(2026, 3, 17, 10, 29, 58, 746653)}}
+2026-03-17 10:29:58,748 - INFO - ID: 62863cc2-c92c-481a-ba4c-9d34ed728d67 | Path: /users/verify-otp | Status: 200 | Time: 0.0041s
+**********************************************************
+
+2026-03-17 10:29:58,750 - INFO - 
+**********************************************************
+ID: c700c159-1c74-4cc4-9d4c-72bb35868742 | Method: POST | Path: /users/login
+2026-03-17 10:29:58,751 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'password': '*******'}}
+2026-03-17 10:29:58,958 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-17 10:29:58,959 - INFO - ID: c700c159-1c74-4cc4-9d4c-72bb35868742 | Path: /users/login | Status: 200 | Time: 0.2089s
+**********************************************************
+
+2026-03-17 10:29:58,963 - INFO - 
+**********************************************************
+ID: e3a41aa8-b052-42ed-b4cf-7cfa6e4d91d0 | Method: POST | Path: /admin/items/
+2026-03-17 10:29:58,964 - INFO - ID: e3a41aa8-b052-42ed-b4cf-7cfa6e4d91d0 | Path: /admin/items/ | Status: 307 | Time: 0.0005s
+**********************************************************
+
+2026-03-17 10:29:58,968 - INFO - 
+**********************************************************
+ID: d6871b6d-96a1-4812-a68d-bc5f2870b642 | Method: POST | Path: /admin/items
+2026-03-17 10:29:58,980 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-17 10:29:58,983 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-17 10:29:58,984 - INFO - ID: d6871b6d-96a1-4812-a68d-bc5f2870b642 | Path: /admin/items | Status: 201 | Time: 0.0157s
+**********************************************************
+
+2026-03-17 10:30:20,831 - INFO - 
+**********************************************************
+ID: 0fae64e3-8d97-40e5-be98-faa0bd63816c | Method: POST | Path: /users/register
+2026-03-17 10:30:20,834 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:30:21,066 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:30:21,066 - INFO - ID: 0fae64e3-8d97-40e5-be98-faa0bd63816c | Path: /users/register | Status: 200 | Time: 0.2353s
+**********************************************************
+
+2026-03-17 10:30:21,068 - INFO - 
+**********************************************************
+ID: cf82924f-cbb6-45c2-84b4-8bc732791707 | Method: POST | Path: /users/verify-otp
+2026-03-17 10:30:21,069 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'test-admin@gmail.com', 'otp': '425237'}
+2026-03-17 10:30:21,074 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'id': 1, 'created_at': datetime.datetime(2026, 3, 17, 10, 30, 21, 71384)}}
+2026-03-17 10:30:21,074 - INFO - ID: cf82924f-cbb6-45c2-84b4-8bc732791707 | Path: /users/verify-otp | Status: 200 | Time: 0.0065s
+**********************************************************
+
+2026-03-17 10:30:21,076 - INFO - 
+**********************************************************
+ID: 9ffc6b27-28e5-4738-9bed-b70a84bc926e | Method: POST | Path: /users/login
+2026-03-17 10:30:21,078 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'password': '*******'}}
+2026-03-17 10:30:21,282 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-17 10:30:21,283 - INFO - ID: 9ffc6b27-28e5-4738-9bed-b70a84bc926e | Path: /users/login | Status: 200 | Time: 0.2076s
+**********************************************************
+
+2026-03-17 10:30:21,286 - INFO - 
+**********************************************************
+ID: affa995e-6e8f-44eb-80d3-c53b173ab6ba | Method: POST | Path: /admin/items/
+2026-03-17 10:30:21,287 - INFO - ID: affa995e-6e8f-44eb-80d3-c53b173ab6ba | Path: /admin/items/ | Status: 307 | Time: 0.0011s
+**********************************************************
+
+2026-03-17 10:30:21,289 - INFO - 
+**********************************************************
+ID: 6c8eb5b2-ef9f-4455-88c4-bb15c79b7367 | Method: POST | Path: /admin/items
+2026-03-17 10:30:21,305 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-17 10:30:21,312 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-17 10:30:21,313 - INFO - ID: 6c8eb5b2-ef9f-4455-88c4-bb15c79b7367 | Path: /admin/items | Status: 201 | Time: 0.0241s
+**********************************************************
+
+2026-03-17 10:30:21,323 - INFO - 
+**********************************************************
+ID: 62b4918f-26f5-4e45-9389-1fd326493bf5 | Method: POST | Path: /users/register
+2026-03-17 10:30:21,325 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:30:21,532 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:30:21,532 - INFO - ID: 62b4918f-26f5-4e45-9389-1fd326493bf5 | Path: /users/register | Status: 200 | Time: 0.2092s
+**********************************************************
+
+2026-03-17 10:30:21,533 - INFO - 
+**********************************************************
+ID: ed42fa48-d4ca-466c-9932-6fb7127f1367 | Method: POST | Path: /users/verify-otp
+2026-03-17 10:30:21,534 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'test-admin@gmail.com', 'otp': '535684'}
+2026-03-17 10:30:21,537 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'id': 2, 'created_at': datetime.datetime(2026, 3, 17, 10, 30, 21, 535512)}}
+2026-03-17 10:30:21,537 - INFO - ID: ed42fa48-d4ca-466c-9932-6fb7127f1367 | Path: /users/verify-otp | Status: 200 | Time: 0.0039s
+**********************************************************
+
+2026-03-17 10:30:21,538 - INFO - 
+**********************************************************
+ID: 2f31ff11-cd48-4e8d-89c1-b00784cd2c2a | Method: POST | Path: /users/login
+2026-03-17 10:30:21,540 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'password': '*******'}}
+2026-03-17 10:30:21,743 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-17 10:30:21,744 - INFO - ID: 2f31ff11-cd48-4e8d-89c1-b00784cd2c2a | Path: /users/login | Status: 200 | Time: 0.2053s
+**********************************************************
+
+2026-03-17 10:30:21,746 - INFO - 
+**********************************************************
+ID: 528c4667-76d6-4192-9a2a-5f1b76f17232 | Method: POST | Path: /admin/items/
+2026-03-17 10:30:21,746 - INFO - ID: 528c4667-76d6-4192-9a2a-5f1b76f17232 | Path: /admin/items/ | Status: 307 | Time: 0.0003s
+**********************************************************
+
+2026-03-17 10:30:21,747 - INFO - 
+**********************************************************
+ID: 49dd834f-75ad-4eaa-a262-46031a3509c6 | Method: POST | Path: /admin/items
+2026-03-17 10:30:21,751 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-17 10:30:21,753 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-17 10:30:21,754 - INFO - ID: 49dd834f-75ad-4eaa-a262-46031a3509c6 | Path: /admin/items | Status: 201 | Time: 0.0071s
+**********************************************************
+
+2026-03-17 10:31:48,562 - INFO - 
+**********************************************************
+ID: b02d193f-9ab6-49cb-8139-97c11a0afcb2 | Method: POST | Path: /users/register
+2026-03-17 10:31:48,565 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:31:48,796 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:31:48,796 - INFO - ID: b02d193f-9ab6-49cb-8139-97c11a0afcb2 | Path: /users/register | Status: 200 | Time: 0.2343s
+**********************************************************
+
+2026-03-17 10:31:48,798 - INFO - 
+**********************************************************
+ID: 6b83c0ab-01d5-439e-be9f-4fef1adbba6d | Method: POST | Path: /users/verify-otp
+2026-03-17 10:31:48,800 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'test-admin@gmail.com', 'otp': '574229'}
+2026-03-17 10:31:48,804 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'id': 1, 'created_at': datetime.datetime(2026, 3, 17, 10, 31, 48, 801499)}}
+2026-03-17 10:31:48,805 - INFO - ID: 6b83c0ab-01d5-439e-be9f-4fef1adbba6d | Path: /users/verify-otp | Status: 200 | Time: 0.0066s
+**********************************************************
+
+2026-03-17 10:31:48,806 - INFO - 
+**********************************************************
+ID: 7bf5997c-69a8-4ce0-a160-b9b399c6eb0b | Method: POST | Path: /users/login
+2026-03-17 10:31:48,808 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'password': '*******'}}
+2026-03-17 10:31:49,010 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-17 10:31:49,011 - INFO - ID: 7bf5997c-69a8-4ce0-a160-b9b399c6eb0b | Path: /users/login | Status: 200 | Time: 0.2048s
+**********************************************************
+
+2026-03-17 10:31:49,013 - INFO - 
+**********************************************************
+ID: aa11c039-fe15-440e-b5f6-a2eabb524284 | Method: POST | Path: /admin/items/
+2026-03-17 10:31:49,013 - INFO - ID: aa11c039-fe15-440e-b5f6-a2eabb524284 | Path: /admin/items/ | Status: 307 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:31:49,014 - INFO - 
+**********************************************************
+ID: 4c275a71-e007-4ef4-95df-bd1c7fb48723 | Method: POST | Path: /admin/items
+2026-03-17 10:31:49,021 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'item title', 'desc': 'item description', 'active': True}}
+2026-03-17 10:31:49,026 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'item title', 'desc': 'item description', 'active': True, 'id': 1, 'owner_id': 1}}
+2026-03-17 10:31:49,026 - INFO - ID: 4c275a71-e007-4ef4-95df-bd1c7fb48723 | Path: /admin/items | Status: 201 | Time: 0.0124s
+**********************************************************
+
+2026-03-17 10:31:49,034 - INFO - 
+**********************************************************
+ID: 237d0cd2-a2b6-4559-824a-4e5cba6147c6 | Method: POST | Path: /users/register
+2026-03-17 10:31:49,036 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:31:49,244 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:31:49,244 - INFO - ID: 237d0cd2-a2b6-4559-824a-4e5cba6147c6 | Path: /users/register | Status: 200 | Time: 0.2105s
+**********************************************************
+
+2026-03-17 10:31:49,246 - INFO - 
+**********************************************************
+ID: 0bdb2f63-e2e3-4397-bdda-fb084005710d | Method: POST | Path: /users/verify-otp
+2026-03-17 10:31:49,247 - INFO - Function Start: verify_otp | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'email': 'test-admin@gmail.com', 'otp': '866970'}
+2026-03-17 10:31:49,250 - INFO - Function Success: verify_otp | Result: {'success': True, 'message': 'Email verified and user registered successfully.', 'data': {'email': 'test-admin@gmail.com', 'username': 'test-admin', 'is_active': True, 'is_admin': True, 'id': 2, 'created_at': datetime.datetime(2026, 3, 17, 10, 31, 49, 248410)}}
+2026-03-17 10:31:49,250 - INFO - ID: 0bdb2f63-e2e3-4397-bdda-fb084005710d | Path: /users/verify-otp | Status: 200 | Time: 0.0045s
+**********************************************************
+
+2026-03-17 10:31:49,251 - INFO - 
+**********************************************************
+ID: bd6002fd-18ee-49f9-89b5-615836947c5c | Method: POST | Path: /users/login
+2026-03-17 10:31:49,253 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'test-admin@gmail.com', 'password': '*******'}}
+2026-03-17 10:31:49,457 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-17 10:31:49,458 - INFO - ID: bd6002fd-18ee-49f9-89b5-615836947c5c | Path: /users/login | Status: 200 | Time: 0.2064s
+**********************************************************
+
+2026-03-17 10:31:49,459 - INFO - 
+**********************************************************
+ID: c4c8f559-6964-4bcd-bf13-ce8f44223cca | Method: POST | Path: /admin/items/
+2026-03-17 10:31:49,460 - INFO - ID: c4c8f559-6964-4bcd-bf13-ce8f44223cca | Path: /admin/items/ | Status: 307 | Time: 0.0003s
+**********************************************************
+
+2026-03-17 10:31:49,461 - INFO - 
+**********************************************************
+ID: eb4ce34f-bed8-40ae-9eaa-ac1bf6e0c2ce | Method: POST | Path: /admin/items
+2026-03-17 10:31:49,465 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'admin_dep': 'obj', 'admin_repo': 'obj', 'item': {'title': 'unique-title', 'desc': 'item description', 'active': True}}
+2026-03-17 10:31:49,467 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'unique-title', 'desc': 'item description', 'active': True, 'id': 2, 'owner_id': 2}}
+2026-03-17 10:31:49,468 - INFO - ID: eb4ce34f-bed8-40ae-9eaa-ac1bf6e0c2ce | Path: /admin/items | Status: 201 | Time: 0.0071s
+**********************************************************
+
+2026-03-17 10:32:57,946 - INFO - 
+**********************************************************
+ID: 1a5d4df8-279a-4f15-a924-8541f0dd1dc0 | Method: GET | Path: /docs
+2026-03-17 10:32:57,948 - INFO - ID: 1a5d4df8-279a-4f15-a924-8541f0dd1dc0 | Path: /docs | Status: 200 | Time: 0.0018s
+**********************************************************
+
+2026-03-17 10:32:58,687 - INFO - 
+**********************************************************
+ID: e26a26e8-0c4f-43b5-9129-e3511a5d5c2f | Method: GET | Path: /openapi.json
+2026-03-17 10:32:58,756 - INFO - ID: e26a26e8-0c4f-43b5-9129-e3511a5d5c2f | Path: /openapi.json | Status: 200 | Time: 0.0694s
+**********************************************************
+
+2026-03-17 10:33:05,941 - INFO - 
+**********************************************************
+ID: ff395f23-b470-41d0-9d5e-ee6137b9a460 | Method: POST | Path: /users/register
+2026-03-17 10:33:05,946 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'user@example.com', 'username': 'string', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:33:06,208 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:33:06,208 - INFO - ID: ff395f23-b470-41d0-9d5e-ee6137b9a460 | Path: /users/register | Status: 200 | Time: 0.2674s
+**********************************************************
+
+2026-03-17 10:33:07,520 - INFO - 
+**********************************************************
+ID: 9744d16f-eda2-4051-a867-e731314a2fd2 | Method: POST | Path: /users/register
+2026-03-17 10:33:07,524 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'user@example.com', 'username': 'string', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:33:07,746 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:33:07,747 - INFO - ID: 9744d16f-eda2-4051-a867-e731314a2fd2 | Path: /users/register | Status: 200 | Time: 0.2266s
+**********************************************************
+
+2026-03-17 10:33:08,250 - INFO - 
+**********************************************************
+ID: e4398ed0-1da3-42e2-b1ad-b2934580fa17 | Method: POST | Path: /users/register
+2026-03-17 10:33:08,253 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'user@example.com', 'username': 'string', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:33:08,473 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:33:08,473 - INFO - ID: e4398ed0-1da3-42e2-b1ad-b2934580fa17 | Path: /users/register | Status: 200 | Time: 0.2239s
+**********************************************************
+
+2026-03-17 10:33:08,937 - INFO - 
+**********************************************************
+ID: fa093906-5800-4fb7-8ec2-8d6b1c8c0ef6 | Method: POST | Path: /users/register
+2026-03-17 10:33:08,940 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'user@example.com', 'username': 'string', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:33:09,160 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:33:09,160 - INFO - ID: fa093906-5800-4fb7-8ec2-8d6b1c8c0ef6 | Path: /users/register | Status: 200 | Time: 0.2233s
+**********************************************************
+
+2026-03-17 10:33:09,644 - INFO - 
+**********************************************************
+ID: 8b8b6b4f-ae0f-427c-ba4f-c0718aa6a455 | Method: POST | Path: /users/register
+2026-03-17 10:33:09,647 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'user@example.com', 'username': 'string', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:33:09,866 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:33:09,866 - INFO - ID: 8b8b6b4f-ae0f-427c-ba4f-c0718aa6a455 | Path: /users/register | Status: 200 | Time: 0.2218s
+**********************************************************
+
+2026-03-17 10:33:10,226 - INFO - 
+**********************************************************
+ID: dc1b26b2-3da7-44bb-943c-67c22471760f | Method: POST | Path: /users/register
+2026-03-17 10:33:10,229 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'user@example.com', 'username': 'string', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:33:10,450 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:33:10,451 - INFO - ID: dc1b26b2-3da7-44bb-943c-67c22471760f | Path: /users/register | Status: 200 | Time: 0.2246s
+**********************************************************
+
+2026-03-17 10:33:10,865 - INFO - 
+**********************************************************
+ID: 5b3049f6-7b4a-4658-b579-c5c39c8473ac | Method: POST | Path: /users/register
+2026-03-17 10:33:10,868 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'user@example.com', 'username': 'string', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:33:11,090 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:33:11,090 - INFO - ID: 5b3049f6-7b4a-4658-b579-c5c39c8473ac | Path: /users/register | Status: 200 | Time: 0.2253s
+**********************************************************
+
+2026-03-17 10:33:11,472 - INFO - 
+**********************************************************
+ID: b3cbb38c-7122-49c3-a24b-12614813ef50 | Method: POST | Path: /users/register
+2026-03-17 10:33:11,475 - INFO - Function Start: register_initiate | Args: () Kwargs: {'db': 'obj', 'redis': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'email_service': 'obj', 'user_in': {'email': 'user@example.com', 'username': 'string', 'is_active': True, 'is_admin': False, 'password': '*******'}, 'background_tasks': 'obj'}
+2026-03-17 10:33:11,695 - INFO - Function Success: register_initiate | Result: {'success': True, 'message': 'OTP sent to your email. Valid for 10 minutes.', 'data': None}
+2026-03-17 10:33:11,696 - INFO - ID: b3cbb38c-7122-49c3-a24b-12614813ef50 | Path: /users/register | Status: 200 | Time: 0.2246s
+**********************************************************
+
+2026-03-17 10:33:58,148 - INFO - 
+**********************************************************
+ID: dc113cc9-e455-45f2-ad18-a7610a973de1 | Method: GET | Path: /favicon.ico
+2026-03-17 10:33:58,149 - INFO - ID: dc113cc9-e455-45f2-ad18-a7610a973de1 | Path: /favicon.ico | Status: 404 | Time: 0.0006s
+**********************************************************
+
+2026-03-17 10:34:00,570 - INFO - 
+**********************************************************
+ID: 56d194dd-1e7d-4e04-8307-e07bcd3d4e1b | Method: GET | Path: /docs
+2026-03-17 10:34:00,570 - INFO - ID: 56d194dd-1e7d-4e04-8307-e07bcd3d4e1b | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:34:00,711 - INFO - 
+**********************************************************
+ID: d169c48b-3173-4e5e-b841-4da775c5fea3 | Method: GET | Path: /openapi.json
+2026-03-17 10:34:00,711 - INFO - ID: d169c48b-3173-4e5e-b841-4da775c5fea3 | Path: /openapi.json | Status: 200 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:34:10,413 - INFO - 
+**********************************************************
+ID: 1206be6b-99ad-417a-894f-9ac5fc77435a | Method: GET | Path: /docs
+2026-03-17 10:34:10,413 - INFO - ID: 1206be6b-99ad-417a-894f-9ac5fc77435a | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:34:10,452 - INFO - 
+**********************************************************
+ID: 0ad920e7-53f9-44e2-9be0-30aa25178d20 | Method: GET | Path: /openapi.json
+2026-03-17 10:34:10,517 - INFO - ID: 0ad920e7-53f9-44e2-9be0-30aa25178d20 | Path: /openapi.json | Status: 200 | Time: 0.0651s
+**********************************************************
+
+2026-03-17 10:34:12,321 - INFO - 
+**********************************************************
+ID: 1523fe21-48c4-4f9d-9c24-79b489dd8468 | Method: GET | Path: /docs
+2026-03-17 10:34:12,322 - INFO - ID: 1523fe21-48c4-4f9d-9c24-79b489dd8468 | Path: /docs | Status: 200 | Time: 0.0005s
+**********************************************************
+
+2026-03-17 10:34:12,359 - INFO - 
+**********************************************************
+ID: a78f7a97-527c-48ed-8ae7-e9171a2dc41c | Method: GET | Path: /openapi.json
+2026-03-17 10:34:12,360 - INFO - ID: a78f7a97-527c-48ed-8ae7-e9171a2dc41c | Path: /openapi.json | Status: 200 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:34:13,985 - INFO - 
+**********************************************************
+ID: 331b990a-0e58-46ee-8dbe-0e8c806d8baa | Method: GET | Path: /docs
+2026-03-17 10:34:13,986 - INFO - ID: 331b990a-0e58-46ee-8dbe-0e8c806d8baa | Path: /docs | Status: 200 | Time: 0.0005s
+**********************************************************
+
+2026-03-17 10:34:14,025 - INFO - 
+**********************************************************
+ID: bcd60663-4622-495a-9d5c-f48c3666dfae | Method: GET | Path: /openapi.json
+2026-03-17 10:34:14,025 - INFO - ID: bcd60663-4622-495a-9d5c-f48c3666dfae | Path: /openapi.json | Status: 200 | Time: 0.0006s
+**********************************************************
+
+2026-03-17 10:34:15,057 - INFO - 
+**********************************************************
+ID: 6156f7bf-50fb-461c-bd0a-b2f2eb973405 | Method: GET | Path: /docs
+2026-03-17 10:34:15,058 - INFO - ID: 6156f7bf-50fb-461c-bd0a-b2f2eb973405 | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:34:15,094 - INFO - 
+**********************************************************
+ID: f239234e-e77c-40bf-b162-42b5e9e351e3 | Method: GET | Path: /openapi.json
+2026-03-17 10:34:15,095 - INFO - ID: f239234e-e77c-40bf-b162-42b5e9e351e3 | Path: /openapi.json | Status: 200 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:34:15,657 - INFO - 
+**********************************************************
+ID: 40ad9afc-a679-4ecb-80d2-94f70d23b32e | Method: GET | Path: /docs
+2026-03-17 10:34:15,657 - INFO - ID: 40ad9afc-a679-4ecb-80d2-94f70d23b32e | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:34:15,695 - INFO - 
+**********************************************************
+ID: 0a817d85-a656-4b6d-917a-f16278c89c8f | Method: GET | Path: /openapi.json
+2026-03-17 10:34:15,696 - INFO - ID: 0a817d85-a656-4b6d-917a-f16278c89c8f | Path: /openapi.json | Status: 200 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:34:25,440 - INFO - 
+**********************************************************
+ID: 482a2bd3-e63d-4093-8e04-d4ccea4a19da | Method: GET | Path: /docs
+2026-03-17 10:34:25,441 - INFO - ID: 482a2bd3-e63d-4093-8e04-d4ccea4a19da | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:34:25,486 - INFO - 
+**********************************************************
+ID: 27d1e973-97bc-4407-9192-f2b0cae922a2 | Method: GET | Path: /openapi.json
+2026-03-17 10:34:25,552 - INFO - ID: 27d1e973-97bc-4407-9192-f2b0cae922a2 | Path: /openapi.json | Status: 200 | Time: 0.0661s
+**********************************************************
+
+2026-03-17 10:34:29,151 - INFO - 
+**********************************************************
+ID: 73c76156-653f-4ac8-8613-5a667406ef07 | Method: GET | Path: /docs
+2026-03-17 10:34:29,152 - INFO - ID: 73c76156-653f-4ac8-8613-5a667406ef07 | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:34:29,192 - INFO - 
+**********************************************************
+ID: 8e940f38-5cf2-4a1d-abc6-9ef0b8991bf8 | Method: GET | Path: /openapi.json
+2026-03-17 10:34:29,193 - INFO - ID: 8e940f38-5cf2-4a1d-abc6-9ef0b8991bf8 | Path: /openapi.json | Status: 200 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:34:29,762 - INFO - 
+**********************************************************
+ID: 0f0ad885-066e-40bc-a062-f1b3e47b73fc | Method: GET | Path: /docs
+2026-03-17 10:34:29,762 - INFO - ID: 0f0ad885-066e-40bc-a062-f1b3e47b73fc | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:34:29,800 - INFO - 
+**********************************************************
+ID: 195d2ba3-7bb9-4cf8-8a4d-ffd8d059a1d6 | Method: GET | Path: /openapi.json
+2026-03-17 10:34:29,800 - INFO - ID: 195d2ba3-7bb9-4cf8-8a4d-ffd8d059a1d6 | Path: /openapi.json | Status: 200 | Time: 0.0006s
+**********************************************************
+
+2026-03-17 10:34:30,400 - INFO - 
+**********************************************************
+ID: 8155ddd1-0de2-4511-bec9-c485478b1c65 | Method: GET | Path: /docs
+2026-03-17 10:34:30,400 - INFO - ID: 8155ddd1-0de2-4511-bec9-c485478b1c65 | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:34:30,467 - INFO - 
+**********************************************************
+ID: d7779fc2-1358-48b1-a444-515defc67486 | Method: GET | Path: /openapi.json
+2026-03-17 10:34:30,467 - INFO - ID: d7779fc2-1358-48b1-a444-515defc67486 | Path: /openapi.json | Status: 200 | Time: 0.0006s
+**********************************************************
+
+2026-03-17 10:34:31,034 - INFO - 
+**********************************************************
+ID: cccfee3b-513d-4b66-b817-6c01ffa70731 | Method: GET | Path: /docs
+2026-03-17 10:34:31,034 - INFO - ID: cccfee3b-513d-4b66-b817-6c01ffa70731 | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:34:31,071 - INFO - 
+**********************************************************
+ID: 094ff6c0-dee3-4992-8342-6d065212f97f | Method: GET | Path: /openapi.json
+2026-03-17 10:34:31,072 - INFO - ID: 094ff6c0-dee3-4992-8342-6d065212f97f | Path: /openapi.json | Status: 200 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:34:48,929 - INFO - 
+**********************************************************
+ID: 2fd8e921-1fd5-4ceb-985b-1e7e09b1c29f | Method: GET | Path: /docs
+2026-03-17 10:34:48,929 - INFO - ID: 2fd8e921-1fd5-4ceb-985b-1e7e09b1c29f | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:34:48,964 - INFO - 
+**********************************************************
+ID: 0c50464d-271a-4ee7-bb0d-7cda768f16ca | Method: GET | Path: /openapi.json
+2026-03-17 10:34:49,031 - INFO - ID: 0c50464d-271a-4ee7-bb0d-7cda768f16ca | Path: /openapi.json | Status: 200 | Time: 0.0663s
+**********************************************************
+
+2026-03-17 10:34:49,427 - INFO - 
+**********************************************************
+ID: fda72cb0-8e2e-4e66-84da-fead9eb2166a | Method: GET | Path: /docs
+2026-03-17 10:34:49,428 - INFO - ID: fda72cb0-8e2e-4e66-84da-fead9eb2166a | Path: /docs | Status: 200 | Time: 0.0003s
+**********************************************************
+
+2026-03-17 10:34:49,464 - INFO - 
+**********************************************************
+ID: 7d385962-8b68-4afc-9eb5-ec2331948d86 | Method: GET | Path: /openapi.json
+2026-03-17 10:34:49,464 - INFO - ID: 7d385962-8b68-4afc-9eb5-ec2331948d86 | Path: /openapi.json | Status: 200 | Time: 0.0006s
+**********************************************************
+
+2026-03-17 10:34:50,453 - INFO - 
+**********************************************************
+ID: c41e8cc3-228a-4c17-9224-e1d8f50e9f8a | Method: GET | Path: /docs
+2026-03-17 10:34:50,453 - INFO - ID: c41e8cc3-228a-4c17-9224-e1d8f50e9f8a | Path: /docs | Status: 200 | Time: 0.0003s
+**********************************************************
+
+2026-03-17 10:34:50,492 - INFO - 
+**********************************************************
+ID: 76a69e95-c807-43dc-8e54-d1a7dfc2a436 | Method: GET | Path: /openapi.json
+2026-03-17 10:34:50,492 - INFO - ID: 76a69e95-c807-43dc-8e54-d1a7dfc2a436 | Path: /openapi.json | Status: 200 | Time: 0.0006s
+**********************************************************
+
+2026-03-17 10:34:50,970 - INFO - 
+**********************************************************
+ID: 08c33af6-7206-4bde-aa10-3ac594398b7e | Method: GET | Path: /docs
+2026-03-17 10:34:50,971 - INFO - ID: 08c33af6-7206-4bde-aa10-3ac594398b7e | Path: /docs | Status: 200 | Time: 0.0003s
+**********************************************************
+
+2026-03-17 10:34:51,008 - INFO - 
+**********************************************************
+ID: 1a37178d-5acf-4f76-a46a-449af204bedb | Method: GET | Path: /openapi.json
+2026-03-17 10:34:51,009 - INFO - ID: 1a37178d-5acf-4f76-a46a-449af204bedb | Path: /openapi.json | Status: 200 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:34:51,386 - INFO - 
+**********************************************************
+ID: 9f0f3fa1-9cde-45cb-b948-646b7811ce58 | Method: GET | Path: /docs
+2026-03-17 10:34:51,386 - INFO - ID: 9f0f3fa1-9cde-45cb-b948-646b7811ce58 | Path: /docs | Status: 200 | Time: 0.0003s
+**********************************************************
+
+2026-03-17 10:34:51,424 - INFO - 
+**********************************************************
+ID: f9de79c9-937a-4248-86ab-7239a5fa3caa | Method: GET | Path: /openapi.json
+2026-03-17 10:34:51,425 - INFO - ID: f9de79c9-937a-4248-86ab-7239a5fa3caa | Path: /openapi.json | Status: 200 | Time: 0.0006s
+**********************************************************
+
+2026-03-17 10:35:07,850 - INFO - 
+**********************************************************
+ID: bf34f4ff-1249-48a9-9aaf-81058fad3d4b | Method: GET | Path: /docs
+2026-03-17 10:35:07,851 - INFO - ID: bf34f4ff-1249-48a9-9aaf-81058fad3d4b | Path: /docs | Status: 200 | Time: 0.0015s
+**********************************************************
+
+2026-03-17 10:35:07,934 - INFO - 
+**********************************************************
+ID: 709cf5db-78d3-4712-8ac5-6415b6eac740 | Method: GET | Path: /openapi.json
+2026-03-17 10:35:08,005 - INFO - ID: 709cf5db-78d3-4712-8ac5-6415b6eac740 | Path: /openapi.json | Status: 200 | Time: 0.0708s
+**********************************************************
+
+2026-03-17 10:35:17,921 - INFO - 
+**********************************************************
+ID: 059317c8-8c08-4ed0-b274-0ed00083c631 | Method: GET | Path: /items/
+2026-03-17 10:35:17,924 - INFO - ID: 059317c8-8c08-4ed0-b274-0ed00083c631 | Path: /items/ | Status: 401 | Time: 0.0028s
+**********************************************************
+
+2026-03-17 10:35:18,926 - INFO - 
+**********************************************************
+ID: 652206ef-7258-469d-9803-6da68c507936 | Method: GET | Path: /items/
+2026-03-17 10:35:18,927 - INFO - ID: 652206ef-7258-469d-9803-6da68c507936 | Path: /items/ | Status: 401 | Time: 0.0010s
+**********************************************************
+
+2026-03-17 10:35:19,655 - INFO - 
+**********************************************************
+ID: 02be446b-e4c7-48c3-87dd-5716be07f587 | Method: GET | Path: /items/
+2026-03-17 10:35:19,656 - INFO - ID: 02be446b-e4c7-48c3-87dd-5716be07f587 | Path: /items/ | Status: 401 | Time: 0.0010s
+**********************************************************
+
+2026-03-17 10:35:20,417 - INFO - 
+**********************************************************
+ID: 50ca3a0c-d69d-45ac-b589-c97139c7b582 | Method: GET | Path: /items/
+2026-03-17 10:35:20,418 - INFO - ID: 50ca3a0c-d69d-45ac-b589-c97139c7b582 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:35:21,116 - INFO - 
+**********************************************************
+ID: b4004f8f-2a9c-4777-b5aa-09697575350c | Method: GET | Path: /items/
+2026-03-17 10:35:21,117 - INFO - ID: b4004f8f-2a9c-4777-b5aa-09697575350c | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:35:21,689 - INFO - 
+**********************************************************
+ID: 51430359-d311-4daa-8ad9-8a78d397b673 | Method: GET | Path: /items/
+2026-03-17 10:35:21,690 - INFO - ID: 51430359-d311-4daa-8ad9-8a78d397b673 | Path: /items/ | Status: 401 | Time: 0.0010s
+**********************************************************
+
+2026-03-17 10:35:22,407 - INFO - 
+**********************************************************
+ID: 2519db04-b57b-4649-bee2-9d82413dd015 | Method: GET | Path: /items/
+2026-03-17 10:35:22,408 - INFO - ID: 2519db04-b57b-4649-bee2-9d82413dd015 | Path: /items/ | Status: 401 | Time: 0.0009s
+**********************************************************
+
+2026-03-17 10:35:23,062 - INFO - 
+**********************************************************
+ID: 77bb5428-89af-430f-be3b-11a3bd4884a1 | Method: GET | Path: /items/
+2026-03-17 10:35:23,063 - INFO - ID: 77bb5428-89af-430f-be3b-11a3bd4884a1 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:44:31,638 - INFO - 
+**********************************************************
+ID: eb221456-871e-4de5-b982-6e3f198f1ca9 | Method: GET | Path: /docs
+2026-03-17 10:44:31,639 - INFO - ID: eb221456-871e-4de5-b982-6e3f198f1ca9 | Path: /docs | Status: 200 | Time: 0.0013s
+**********************************************************
+
+2026-03-17 10:44:31,727 - INFO - 
+**********************************************************
+ID: 39bb12e4-53b5-4408-8522-09e13b971a66 | Method: GET | Path: /openapi.json
+2026-03-17 10:44:31,801 - INFO - ID: 39bb12e4-53b5-4408-8522-09e13b971a66 | Path: /openapi.json | Status: 200 | Time: 0.0746s
+**********************************************************
+
+2026-03-17 10:53:49,988 - INFO - 
+**********************************************************
+ID: 92da4e40-7c88-4b96-ade7-8868416f8d9a | Method: GET | Path: /docs
+2026-03-17 10:53:49,989 - INFO - ID: 92da4e40-7c88-4b96-ade7-8868416f8d9a | Path: /docs | Status: 200 | Time: 0.0009s
+**********************************************************
+
+2026-03-17 10:53:50,074 - INFO - 
+**********************************************************
+ID: e80a9471-b23e-436f-8bca-cb5c19b4886e | Method: GET | Path: /openapi.json
+2026-03-17 10:53:50,148 - INFO - ID: e80a9471-b23e-436f-8bca-cb5c19b4886e | Path: /openapi.json | Status: 200 | Time: 0.0745s
+**********************************************************
+
+2026-03-17 10:53:53,321 - INFO - 
+**********************************************************
+ID: 3cf524a0-0155-4eac-8905-74edf5367ee1 | Method: GET | Path: /docs
+2026-03-17 10:53:53,322 - INFO - ID: 3cf524a0-0155-4eac-8905-74edf5367ee1 | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:53:53,361 - INFO - 
+**********************************************************
+ID: 6366b0f6-2129-4a46-b9c3-16d579384e1e | Method: GET | Path: /openapi.json
+2026-03-17 10:53:53,362 - INFO - ID: 6366b0f6-2129-4a46-b9c3-16d579384e1e | Path: /openapi.json | Status: 200 | Time: 0.0006s
+**********************************************************
+
+2026-03-17 10:53:58,113 - INFO - 
+**********************************************************
+ID: ee3c0e2f-b0b1-4983-8f45-a62861584a4e | Method: GET | Path: /docs
+2026-03-17 10:53:58,114 - INFO - ID: ee3c0e2f-b0b1-4983-8f45-a62861584a4e | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:53:58,155 - INFO - 
+**********************************************************
+ID: c240e033-b795-455a-8bbc-fcedcd67ab30 | Method: GET | Path: /openapi.json
+2026-03-17 10:53:58,156 - INFO - ID: c240e033-b795-455a-8bbc-fcedcd67ab30 | Path: /openapi.json | Status: 200 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:53:59,160 - INFO - 
+**********************************************************
+ID: 0ca365a0-2581-4832-97cf-d79d1358e2f3 | Method: GET | Path: /docs
+2026-03-17 10:53:59,161 - INFO - ID: 0ca365a0-2581-4832-97cf-d79d1358e2f3 | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:53:59,201 - INFO - 
+**********************************************************
+ID: c1b2cc6d-0ce9-4948-80ab-ef10fa87bfe7 | Method: GET | Path: /openapi.json
+2026-03-17 10:53:59,202 - INFO - ID: c1b2cc6d-0ce9-4948-80ab-ef10fa87bfe7 | Path: /openapi.json | Status: 200 | Time: 0.0014s
+**********************************************************
+
+2026-03-17 10:54:00,185 - INFO - 
+**********************************************************
+ID: 21e30b41-b7f3-4548-a018-686c50771374 | Method: GET | Path: /docs
+2026-03-17 10:54:00,185 - INFO - ID: 21e30b41-b7f3-4548-a018-686c50771374 | Path: /docs | Status: 200 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:54:00,226 - INFO - 
+**********************************************************
+ID: a7ffcfd2-0e79-4617-b955-b2c6a38aeedd | Method: GET | Path: /openapi.json
+2026-03-17 10:54:00,227 - INFO - ID: a7ffcfd2-0e79-4617-b955-b2c6a38aeedd | Path: /openapi.json | Status: 200 | Time: 0.0005s
+**********************************************************
+
+2026-03-17 10:54:01,289 - INFO - 
+**********************************************************
+ID: 53f79968-b10b-4376-8a29-3bde43987191 | Method: GET | Path: /docs
+2026-03-17 10:54:01,290 - INFO - ID: 53f79968-b10b-4376-8a29-3bde43987191 | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:54:01,330 - INFO - 
+**********************************************************
+ID: 5bff74a9-2edf-48cb-8725-a0636e90a1bf | Method: GET | Path: /openapi.json
+2026-03-17 10:54:01,330 - INFO - ID: 5bff74a9-2edf-48cb-8725-a0636e90a1bf | Path: /openapi.json | Status: 200 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:54:03,285 - INFO - 
+**********************************************************
+ID: e7ce53ed-65a7-40ce-b52f-1226f4cf7faa | Method: GET | Path: /docs
+2026-03-17 10:54:03,286 - INFO - ID: e7ce53ed-65a7-40ce-b52f-1226f4cf7faa | Path: /docs | Status: 200 | Time: 0.0003s
+**********************************************************
+
+2026-03-17 10:54:03,411 - INFO - 
+**********************************************************
+ID: 9a2158a9-6920-4f51-889c-b1522b643af1 | Method: GET | Path: /openapi.json
+2026-03-17 10:54:03,411 - INFO - ID: 9a2158a9-6920-4f51-889c-b1522b643af1 | Path: /openapi.json | Status: 200 | Time: 0.0006s
+**********************************************************
+
+2026-03-17 10:54:05,489 - INFO - 
+**********************************************************
+ID: 56193aaa-e8c6-400a-a07d-c64a0b4dc234 | Method: GET | Path: /docs
+2026-03-17 10:54:05,489 - INFO - ID: 56193aaa-e8c6-400a-a07d-c64a0b4dc234 | Path: /docs | Status: 200 | Time: 0.0004s
+**********************************************************
+
+2026-03-17 10:55:22,088 - INFO - 
+**********************************************************
+ID: ccc70277-dca6-4a71-9253-b44588d0024e | Method: GET | Path: /docs
+2026-03-17 10:55:22,090 - INFO - ID: ccc70277-dca6-4a71-9253-b44588d0024e | Path: /docs | Status: 200 | Time: 0.0014s
+**********************************************************
+
+2026-03-17 10:55:22,183 - INFO - 
+**********************************************************
+ID: f008259e-bce7-4750-aa31-e41ef6a23060 | Method: GET | Path: /openapi.json
+2026-03-17 10:55:22,255 - INFO - ID: f008259e-bce7-4750-aa31-e41ef6a23060 | Path: /openapi.json | Status: 200 | Time: 0.0724s
+**********************************************************
+
+2026-03-17 10:55:25,355 - INFO - 
+**********************************************************
+ID: 6dce3f60-3bde-4ea5-aab0-530abe67ef49 | Method: GET | Path: /items/
+2026-03-17 10:55:25,361 - INFO - ID: 6dce3f60-3bde-4ea5-aab0-530abe67ef49 | Path: /items/ | Status: 401 | Time: 0.0058s
+**********************************************************
+
+2026-03-17 10:55:26,328 - INFO - 
+**********************************************************
+ID: 122902b7-5d7f-4957-97f6-6b3ff6bd2ee1 | Method: GET | Path: /items/
+2026-03-17 10:55:26,329 - INFO - ID: 122902b7-5d7f-4957-97f6-6b3ff6bd2ee1 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:55:26,806 - INFO - 
+**********************************************************
+ID: 243ee38c-4741-4f8c-a4c9-e869df97f288 | Method: GET | Path: /items/
+2026-03-17 10:55:26,807 - INFO - ID: 243ee38c-4741-4f8c-a4c9-e869df97f288 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:55:27,206 - INFO - 
+**********************************************************
+ID: 55154c2d-3340-467f-8a18-3e7417a8bc6a | Method: GET | Path: /items/
+2026-03-17 10:55:27,207 - INFO - ID: 55154c2d-3340-467f-8a18-3e7417a8bc6a | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:55:27,588 - INFO - 
+**********************************************************
+ID: d67aee1e-dad5-48dc-a098-62239cb7e7d1 | Method: GET | Path: /items/
+2026-03-17 10:55:27,588 - INFO - ID: d67aee1e-dad5-48dc-a098-62239cb7e7d1 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:55:27,989 - INFO - 
+**********************************************************
+ID: 460733a2-97a3-48a9-bb5c-05840fc674d4 | Method: GET | Path: /items/
+2026-03-17 10:55:27,990 - INFO - ID: 460733a2-97a3-48a9-bb5c-05840fc674d4 | Path: /items/ | Status: 401 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:55:28,354 - INFO - 
+**********************************************************
+ID: 6797377d-d81f-4114-9d10-8de3ade2c29f | Method: GET | Path: /items/
+2026-03-17 10:55:28,355 - INFO - ID: 6797377d-d81f-4114-9d10-8de3ade2c29f | Path: /items/ | Status: 401 | Time: 0.0009s
+**********************************************************
+
+2026-03-17 10:55:28,707 - INFO - 
+**********************************************************
+ID: fdc32b13-4054-47ad-9aa0-adabbfee68a2 | Method: GET | Path: /items/
+2026-03-17 10:55:28,707 - INFO - ID: fdc32b13-4054-47ad-9aa0-adabbfee68a2 | Path: /items/ | Status: 401 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:55:29,079 - INFO - 
+**********************************************************
+ID: 3d430e91-64f4-4ce6-8829-9f254f3f5634 | Method: GET | Path: /items/
+2026-03-17 10:55:29,080 - INFO - ID: 3d430e91-64f4-4ce6-8829-9f254f3f5634 | Path: /items/ | Status: 401 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:55:29,490 - INFO - 
+**********************************************************
+ID: a42118be-e28f-4bfe-86d5-ae765304d250 | Method: GET | Path: /items/
+2026-03-17 10:55:29,490 - INFO - ID: a42118be-e28f-4bfe-86d5-ae765304d250 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:55:29,970 - INFO - 
+**********************************************************
+ID: 6d84715e-aa88-4f0a-91c0-e397a75970f0 | Method: GET | Path: /items/
+2026-03-17 10:55:29,971 - INFO - ID: 6d84715e-aa88-4f0a-91c0-e397a75970f0 | Path: /items/ | Status: 401 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:55:30,415 - INFO - 
+**********************************************************
+ID: 8a8e5659-0ca9-4f04-a2b1-c90dc6c81e74 | Method: GET | Path: /items/
+2026-03-17 10:55:30,416 - INFO - ID: 8a8e5659-0ca9-4f04-a2b1-c90dc6c81e74 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:55:30,826 - INFO - 
+**********************************************************
+ID: da1827fb-6c35-4e79-b01b-673079948d46 | Method: GET | Path: /items/
+2026-03-17 10:55:30,827 - INFO - ID: da1827fb-6c35-4e79-b01b-673079948d46 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:58:00,637 - INFO - 
+**********************************************************
+ID: 02dd5981-6f44-4f41-aa27-de0695b6b85b | Method: GET | Path: /items/
+2026-03-17 10:58:00,641 - INFO - ID: 02dd5981-6f44-4f41-aa27-de0695b6b85b | Path: /items/ | Status: 401 | Time: 0.0032s
+**********************************************************
+
+2026-03-17 10:58:01,401 - INFO - 
+**********************************************************
+ID: 05fc9887-34a1-4f5d-a251-100467742650 | Method: GET | Path: /items/
+2026-03-17 10:58:01,401 - INFO - ID: 05fc9887-34a1-4f5d-a251-100467742650 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:58:01,948 - INFO - 
+**********************************************************
+ID: bd3f1006-a496-4c96-94df-a19c4c137f91 | Method: GET | Path: /items/
+2026-03-17 10:58:01,948 - INFO - ID: bd3f1006-a496-4c96-94df-a19c4c137f91 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:58:02,380 - INFO - 
+**********************************************************
+ID: 35c03f8c-7b5d-442d-9d05-408f39d2f542 | Method: GET | Path: /items/
+2026-03-17 10:58:02,381 - INFO - ID: 35c03f8c-7b5d-442d-9d05-408f39d2f542 | Path: /items/ | Status: 401 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:58:02,780 - INFO - 
+**********************************************************
+ID: cc59a916-5a9f-4ed6-a6e1-a0de4ebd89a1 | Method: GET | Path: /items/
+2026-03-17 10:58:02,781 - INFO - ID: cc59a916-5a9f-4ed6-a6e1-a0de4ebd89a1 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:58:03,147 - INFO - 
+**********************************************************
+ID: 91695bfc-441d-4e82-9a39-1836a2a6342d | Method: GET | Path: /items/
+2026-03-17 10:58:03,148 - INFO - ID: 91695bfc-441d-4e82-9a39-1836a2a6342d | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:58:03,533 - INFO - 
+**********************************************************
+ID: 99f41828-df14-476c-8108-c6ed9677f2ae | Method: GET | Path: /items/
+2026-03-17 10:58:03,534 - INFO - ID: 99f41828-df14-476c-8108-c6ed9677f2ae | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:58:03,857 - INFO - 
+**********************************************************
+ID: 132705f1-eb05-48fc-8335-f857026ec324 | Method: GET | Path: /items/
+2026-03-17 10:58:03,857 - INFO - ID: 132705f1-eb05-48fc-8335-f857026ec324 | Path: /items/ | Status: 401 | Time: 0.0007s
+**********************************************************
+
+2026-03-17 10:58:04,226 - INFO - 
+**********************************************************
+ID: 7f5682b8-1174-4705-9ffb-b03645a896a1 | Method: GET | Path: /items/
+2026-03-17 10:58:04,227 - INFO - ID: 7f5682b8-1174-4705-9ffb-b03645a896a1 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:58:04,573 - INFO - 
+**********************************************************
+ID: b5e36121-90ab-4498-b39b-2c21a4fe5515 | Method: GET | Path: /items/
+2026-03-17 10:58:04,574 - INFO - ID: b5e36121-90ab-4498-b39b-2c21a4fe5515 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:58:04,971 - INFO - 
+**********************************************************
+ID: 83bdfc1c-2b32-4316-9501-13afe9d8bad2 | Method: GET | Path: /items/
+2026-03-17 10:58:04,971 - INFO - ID: 83bdfc1c-2b32-4316-9501-13afe9d8bad2 | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:58:05,464 - INFO - 
+**********************************************************
+ID: 2e2c28ec-c60b-425d-9341-444348500f9c | Method: GET | Path: /items/
+2026-03-17 10:58:05,465 - INFO - ID: 2e2c28ec-c60b-425d-9341-444348500f9c | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:58:05,878 - INFO - 
+**********************************************************
+ID: a38ec61e-3b5c-443c-8e70-8c6091b9ab69 | Method: GET | Path: /items/
+2026-03-17 10:58:05,879 - INFO - ID: a38ec61e-3b5c-443c-8e70-8c6091b9ab69 | Path: /items/ | Status: 401 | Time: 0.0009s
+**********************************************************
+
+2026-03-17 10:58:06,275 - INFO - 
+**********************************************************
+ID: 534f8737-0c79-4baf-946d-4e2e8850dcfb | Method: GET | Path: /items/
+2026-03-17 10:58:06,276 - INFO - ID: 534f8737-0c79-4baf-946d-4e2e8850dcfb | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-17 10:58:06,641 - INFO - 
+**********************************************************
+ID: e058e89e-fff8-4f70-b234-f53b2379c6e4 | Method: GET | Path: /items/
+2026-03-17 10:58:06,642 - INFO - ID: e058e89e-fff8-4f70-b234-f53b2379c6e4 | Path: /items/ | Status: 401 | Time: 0.0007s
+**********************************************************
+

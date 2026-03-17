@@ -69,9 +69,10 @@ class TestItem:
         body = response.json()
         item_id = body["data"]["id"]
 
-        update_item_details = update_item_data()
-        response = auth_client.patch(f"/items/{item_id}", json=update_item_details)
-        assert response.status_code == status.HTTP_200_OK
+        for _ in range(0, 15):
+            update_item_details = update_item_data()
+            response = auth_client.patch(f"/items/{item_id}", json=update_item_details)
+            assert response.status_code == status.HTTP_200_OK
 
         body = response.json()
         assert_response_structure(body)
