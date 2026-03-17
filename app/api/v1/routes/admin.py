@@ -25,7 +25,7 @@ def get_all_items(
     """Get all items."""
     items = admin_repo.get_all_items(db=db, page=pagination.page, size=pagination.size)
     items_data = [ItemOutSchema.model_validate(item).model_dump() for item in items]
-    return create_response(items_data, "Successfully retrieved all items.")
+    return create_response(items_data, "Successfully retrieved all items.")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
 
 
 @router.get(
@@ -49,7 +49,7 @@ def get_all_users(
 @router.post(
     "/items",
     status_code=status.HTTP_201_CREATED,
-    response_model=ResponseSchema,
+    response_model=ResponseSchema,                                                                                                                                                                                                                                                                                                                                                                                          
 )
 @log_func
 def create_item(
@@ -79,7 +79,7 @@ def update_item(
     item: ItemUpdateSchema,
     db: DBDep,
     admin_repo: AdminRepoDep,
-    admin_dep: AdminDep,
+    admin_dep: AdminDep,                                                                                        
 ):
     """Update specific fields of an item (Partial update)."""
     existing_item = admin_repo.get_item_by_id(item_id, db)
@@ -101,7 +101,7 @@ def update_item(
     response_model=ResponseSchema,
 )
 @log_func
-def update_user(
+def update_user(                                                                                                                                
     user_id: int,
     user: UserUpdateSchema,
     db: DBDep,

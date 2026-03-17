@@ -10,6 +10,7 @@ from app.api.v1.dependencies import (
 from app.api.v1.schemas.user import UserCreateSchema, UserInSchema, UserOutSchema
 from app.api.v1.schemas.response import ResponseSchema, create_response
 from app.core.logger import log_func
+from app.core.config import settings
 import json
 from fastapi import BackgroundTasks
 
@@ -33,19 +34,26 @@ async def register_initiate(
         )
 
     hashed = auth_service.hash_password(user_in.password)
-    otp = auth_service.generate_otp()
-
     pending_user = user_in.model_dump(exclude={"password"})
     pending_user["hashed_password"] = hashed
-    pending_user["otp"] = otp
 
-    # Stored in Redis (TTL: 10 minutes)
-    # Key: "pending_user:email@example.com"
-    redis.set(f"pending_user:{user_in.email}", json.dumps(pending_user), ex=600)
+    if settings.EMAIL_SERVICE_ACTIVE:
+        otp = auth_service.generate_otp()
 
-    background_tasks.add_task(email_service.send_otp_email, user_in.email, otp)
+        pending_user["otp"] = otp
 
-    return create_response(None, "OTP sent to your email. Valid for 10 minutes.")
+        redis.set(f"pending_user:{user_in.email}", json.dumps(pending_user), ex=600)
+
+        background_tasks.add_task(email_service.send_otp_email, user_in.email, otp)
+
+        return create_response(None, "OTP sent to your email. Valid for 10 minutes.")
+    else:
+        pending_user["is_verified"] = False 
+        new_user = user_repo.create(db, pending_user)
+        user_out = UserOutSchema.model_validate(new_user).model_dump()
+        return create_response(
+            user_out, "Email is not verified and user registered successfully."
+        )
 
 
 @router.post("/verify-otp", response_model=ResponseSchema)

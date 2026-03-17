@@ -1,6 +1,7 @@
 from pydantic_settings import BaseSettings, SettingsConfigDict
 from pydantic import EmailStr
 
+
 class Settings(BaseSettings):
     # Pydantic automatically reads these from environment variables
     # or the specified .env file
@@ -23,6 +24,7 @@ class Settings(BaseSettings):
     MAIL_SERVER: str
 
     TESTING: bool = True
+    EMAIL_SERVICE_ACTIVE: bool = True
     # Configuration to link the .env file
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 

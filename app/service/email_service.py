@@ -1,6 +1,8 @@
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig, MessageType
 from app.core.config import settings
 from pathlib import Path
+from fastapi import HTTPException, status
+
 
 class EmailService:
     def __init__(self):
@@ -14,7 +16,7 @@ class EmailService:
             MAIL_SSL_TLS=False,
             USE_CREDENTIALS=True,
             VALIDATE_CERTS=True,
-            TEMPLATE_FOLDER=Path(__file__).parent.parent / 'templates/email',
+            TEMPLATE_FOLDER=Path(__file__).parent.parent / "templates/email",
         )
         self.fastmail = FastMail(self.conf)
 
@@ -30,12 +32,18 @@ class EmailService:
             </body>
         </html>
         """
-        
+
         message = MessageSchema(
             subject="Your Verification Code",
             recipients=[email_to],
             body=body,
-            subtype=MessageType.html
+            subtype=MessageType.html,
         )
 
-        await self.fastmail.send_message(message)
+        try:
+            await self.fastmail.send_message(message)
+        except:
+            raise HTTPException(
+                status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+                detail="Failed to send verification email. Please try again later.",
+            )

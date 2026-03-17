@@ -3,7 +3,6 @@ from fastapi import status
 from tests.test_utils import assert_response_structure, create_user_data
 from tests.conftest import global_fake_redis
 
-
 class TestUser:
     def test_register_initiate_success(self, client):
         """Submit user details to trigger an OTP generation and save the pending user to Redis."""

@@ -16,6 +16,7 @@ class UserCreateSchema(UserBaseSchema):
 
 class UserOutSchema(UserBaseSchema):
     id: int
+    is_verified: bool
     created_at: datetime
     model_config = ConfigDict(from_attributes=True)
 
