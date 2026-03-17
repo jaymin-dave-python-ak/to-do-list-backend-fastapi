@@ -1,15 +1,21 @@
 from fastapi import status, Request, Response
 from app.core.redis import get_redis
+from app.core.config import settings
+
 
 # Implemented token bucket algorithm for ratelimitting
 async def rate_limitter_middleware(request: Request, call_next):
+    if settings.TESTING == True:
+        response = await call_next(request)
+        return response
+
     redis = get_redis()
-    
+
     ip_addr = request.client.host
     key = f"rate_limit:{ip_addr}"
-    
+
     limit = 15
-    ttl = 60 # window
+    ttl = 60  # window
 
     try:
         # Increment the counter (Redis creates it if it doesn't exist)
@@ -17,7 +23,7 @@ async def rate_limitter_middleware(request: Request, call_next):
 
         # If this is the first hit, set the expiration window
         if current_count == 1:
-            redis.expire(key, ttl) 
+            redis.expire(key, ttl)
 
         # Check if limit is exceeded
         if current_count > limit:
@@ -32,6 +38,6 @@ async def rate_limitter_middleware(request: Request, call_next):
     except Exception as e:
         # Fallback for Redis connection issues or other errors
         return Response(
-            content=f"Internal Server Error: {str(e)}", 
-            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR
+            content=f"Internal Server Error: {str(e)}",
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
         )

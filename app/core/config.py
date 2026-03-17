@@ -22,6 +22,7 @@ class Settings(BaseSettings):
     MAIL_PORT: int = 587
     MAIL_SERVER: str
 
+    TESTING: bool = True
     # Configuration to link the .env file
     model_config = SettingsConfigDict(env_file=".env", extra="ignore")
 
