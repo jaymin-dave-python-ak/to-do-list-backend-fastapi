@@ -2,7 +2,12 @@ from fastapi import APIRouter, status, HTTPException, Query
 from typing import Annotated
 from app.api.v1.dependencies import DBDep, AdminDep, AdminRepoDep
 from app.api.v1.schemas.response import create_response, ResponseSchema
-from app.api.v1.schemas.item import ItemOutSchema, ItemSchema, ItemUpdateSchema
+from app.api.v1.schemas.item import (
+    ItemOutSchema,
+    ItemSchema,
+    ItemUpdateSchema,
+    ItemOutDetailedSchema,
+)
 from app.api.v1.schemas.user import UserOutSchema, UserUpdateSchema
 from app.api.v1.schemas.pagination import PaginationSchema
 from app.core.logger import log_func
@@ -25,7 +30,7 @@ def get_all_items(
     """Get all items."""
     items = admin_repo.get_all_items(db=db, page=pagination.page, size=pagination.size)
     items_data = [ItemOutSchema.model_validate(item).model_dump() for item in items]
-    return create_response(items_data, "Successfully retrieved all items.")                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  
+    return create_response(items_data, "Successfully retrieved all items.")
 
 
 @router.get(
@@ -46,10 +51,32 @@ def get_all_users(
     return create_response(users_data, "Successfully retrieved all users.")
 
 
+@router.get(
+    "/items/detailed", status_code=status.HTTP_200_OK, response_model=ResponseSchema
+)
+@log_func
+def get_detailed_items(
+    db: DBDep,
+    admin_repo: AdminRepoDep,
+    admin_dep: AdminDep,
+    pagination: Annotated[PaginationSchema, Query()],
+):
+    """Get all items with user details."""
+    items = admin_repo.get_all_detailed_items(
+        db=db, page=pagination.page, size=pagination.size
+    )
+    items_data = [
+        ItemOutDetailedSchema.model_validate(item).model_dump() for item in items
+    ]
+    return create_response(
+        items_data, "Successfully retrieved items with user details."
+    )
+
+
 @router.post(
     "/items",
     status_code=status.HTTP_201_CREATED,
-    response_model=ResponseSchema,                                                                                                                                                                                                                                                                                                                                                                                          
+    response_model=ResponseSchema,
 )
 @log_func
 def create_item(
@@ -79,7 +106,7 @@ def update_item(
     item: ItemUpdateSchema,
     db: DBDep,
     admin_repo: AdminRepoDep,
-    admin_dep: AdminDep,                                                                                        
+    admin_dep: AdminDep,
 ):
     """Update specific fields of an item (Partial update)."""
     existing_item = admin_repo.get_item_by_id(item_id, db)
@@ -101,7 +128,7 @@ def update_item(
     response_model=ResponseSchema,
 )
 @log_func
-def update_user(                                                                                                                                
+def update_user(
     user_id: int,
     user: UserUpdateSchema,
     db: DBDep,

@@ -1,4 +1,4 @@
-from pydantic import BaseModel, ConfigDict
+from pydantic import BaseModel, ConfigDict, EmailStr
 from typing import Optional
 
 
@@ -19,3 +19,8 @@ class ItemUpdateSchema(BaseModel):
 class ItemOutSchema(ItemSchema):
     id: int
     owner_id: int
+
+
+class ItemOutDetailedSchema(ItemOutSchema):
+    username: str
+    email: EmailStr
