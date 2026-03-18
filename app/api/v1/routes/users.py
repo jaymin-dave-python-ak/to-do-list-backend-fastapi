@@ -28,7 +28,7 @@ async def register_initiate(
     email_service: EmailDep,
     background_tasks: BackgroundTasks,
 ):
-    if user_repo.get_by_email(db, user_in.email):
+    if await user_repo.get_by_email(db, user_in.email):
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST, detail="Email already registered"
         )
@@ -37,19 +37,19 @@ async def register_initiate(
     pending_user = user_in.model_dump(exclude={"password"})
     pending_user["hashed_password"] = hashed
 
-    if settings.EMAIL_SERVICE_ACTIVE:
+    if settings.EMAIL_SERVICE_ACTIVE or settings.TESTING:
         otp = auth_service.generate_otp()
 
         pending_user["otp"] = otp
 
-        redis.set(f"pending_user:{user_in.email}", json.dumps(pending_user), ex=600)
+        await redis.set(f"pending_user:{user_in.email}", json.dumps(pending_user), ex=600)
 
         background_tasks.add_task(email_service.send_otp_email, user_in.email, otp)
 
         return create_response(None, "OTP sent to your email. Valid for 10 minutes.")
     
     pending_user["is_verified"] = False 
-    new_user = user_repo.create(db, pending_user)
+    new_user = await user_repo.create(db, pending_user)
     user_out = UserOutSchema.model_validate(new_user).model_dump()
     return create_response(
         user_out, "Email is not verified and user registered successfully."
@@ -58,14 +58,14 @@ async def register_initiate(
 
 @router.post("/verify-otp", response_model=ResponseSchema)
 @log_func
-def verify_otp(
+async def verify_otp(
     email: str,
     otp: str,
     db: DBDep,
     redis: RedisDep,
     user_repo: UserRepoDep,
 ):
-    raw_data = redis.get(f"pending_user:{email}")
+    raw_data = await redis.get(f"pending_user:{email}")
     if not raw_data:
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
@@ -81,9 +81,9 @@ def verify_otp(
 
     # Remove OTP from data before saving
     pending_user.pop("otp")
-    new_user = user_repo.create(db, pending_user)
+    new_user = await user_repo.create(db, pending_user)
 
-    redis.delete(f"pending_user:{email}")
+    await redis.delete(f"pending_user:{email}")
 
     user_out = UserOutSchema.model_validate(new_user).model_dump()
     return create_response(user_out, "Email verified and user registered successfully.")
@@ -91,14 +91,14 @@ def verify_otp(
 
 @router.post("/login", response_model=ResponseSchema)
 @log_func
-def login(
+async def login(
     user_in: UserInSchema,
     db: DBDep,
     user_repo: UserRepoDep,
     auth_service: AuthDep,
 ):
     """Authenticate user credentials and generate a JWT access and refresh token for successful login."""
-    user = user_repo.get_by_email(db, user_in.email)
+    user = await user_repo.get_by_email(db, user_in.email)
 
     if not user or not auth_service.verify_password(
         user_in.password, user.hashed_password
@@ -121,7 +121,7 @@ def login(
 
 @router.post("/refresh", response_model=ResponseSchema)
 @log_func
-def refresh_token(refresh_token: str, auth_service: AuthDep, redis: RedisDep):
+async def refresh_token(refresh_token: str, auth_service: AuthDep, redis: RedisDep):
     """Swap an old refresh token for a brand-new access AND refresh token."""
 
     payload = auth_service.decode_token(refresh_token, is_refresh=True)
@@ -132,7 +132,7 @@ def refresh_token(refresh_token: str, auth_service: AuthDep, redis: RedisDep):
             detail="Invalid or expired refresh token",
         )
 
-    if redis.exists(f"blacklist:{refresh_token}"):
+    if await redis.exists(f"blacklist:{refresh_token}"):
         raise HTTPException(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="Token has already been used",
@@ -148,7 +148,7 @@ def refresh_token(refresh_token: str, auth_service: AuthDep, redis: RedisDep):
     ttl = int(exp_timestamp - now)
 
     if ttl > 0:
-        redis.set(f"blacklist:{refresh_token}", "used", ex=ttl)
+        await redis.set(f"blacklist:{refresh_token}", "used", ex=ttl)
 
     token_data = {
         "access_token": new_access_token,

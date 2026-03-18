@@ -1,17 +1,16 @@
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
 from app.core.config import settings
 
-# engine = create_engine(settings.DB_URL, connect_args={"check_same_thread": False}) # for sqllite
-engine = create_engine(settings.DB_URL)  # for postgress
+engine = create_async_engine(settings.DB_URL, echo=False)
 
-if engine:
-    print("DB Connection Established Succesfully!")
-
-# sessionmaker is a "factory" that creates the session for us
-SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
+AsyncSessionLocal = async_sessionmaker(
+    bind=engine, class_=AsyncSession, expire_on_commit=False, autoflush=False
+)
 
 
-def get_db():
-    with SessionLocal() as db:
-        yield db
+async def get_db():
+    async with AsyncSessionLocal() as db:
+        try:
+            yield db
+        finally:
+            await db.close()

@@ -21,14 +21,16 @@ router = APIRouter(prefix="/admin", tags=["Admin"])
     response_model=ResponseSchema,
 )
 @log_func
-def get_all_items(
+async def get_all_items(
     db: DBDep,
     admin_repo: AdminRepoDep,
     admin_dep: AdminDep,
     pagination: Annotated[PaginationSchema, Query()],
 ):
     """Get all items."""
-    items = admin_repo.get_all_items(db=db, page=pagination.page, size=pagination.size)
+    items = await admin_repo.get_all_items(
+        db=db, page=pagination.page, size=pagination.size
+    )
     items_data = [ItemOutSchema.model_validate(item).model_dump() for item in items]
     return create_response(items_data, "Successfully retrieved all items.")
 
@@ -39,14 +41,16 @@ def get_all_items(
     response_model=ResponseSchema,
 )
 @log_func
-def get_all_users(
+async def get_all_users(
     db: DBDep,
     admin_repo: AdminRepoDep,
     admin_dep: AdminDep,
     pagination: Annotated[PaginationSchema, Query()],
 ):
     """Get all users."""
-    users = admin_repo.get_all_users(db=db, page=pagination.page, size=pagination.size)
+    users = await admin_repo.get_all_users(
+        db=db, page=pagination.page, size=pagination.size
+    )
     users_data = [UserOutSchema.model_validate(user).model_dump() for user in users]
     return create_response(users_data, "Successfully retrieved all users.")
 
@@ -55,14 +59,14 @@ def get_all_users(
     "/items/detailed", status_code=status.HTTP_200_OK, response_model=ResponseSchema
 )
 @log_func
-def get_detailed_items(
+async def get_detailed_items(
     db: DBDep,
     admin_repo: AdminRepoDep,
     admin_dep: AdminDep,
     pagination: Annotated[PaginationSchema, Query()],
 ):
     """Get all items with user details."""
-    items = admin_repo.get_all_detailed_items(
+    items = await admin_repo.get_all_detailed_items(
         db=db, page=pagination.page, size=pagination.size
     )
     items_data = [
@@ -79,18 +83,18 @@ def get_detailed_items(
     response_model=ResponseSchema,
 )
 @log_func
-def create_item(
+async def create_item(
     item: ItemSchema,
     db: DBDep,
     admin_dep: AdminDep,
     admin_repo: AdminRepoDep,
 ):
     """Create a new item and check it doesn't already exist."""
-    if admin_repo.get_item_by_title(item.title, admin_dep.id, db):
+    if await admin_repo.get_item_by_title(item.title, admin_dep.id, db):
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT, detail="Item already exists"
         )
-    new_item = admin_repo.create_item(item, owner_id=admin_dep.id, db=db)
+    new_item = await admin_repo.create_item(item, owner_id=admin_dep.id, db=db)
     item_data = ItemOutSchema.model_validate(new_item).model_dump()
     return create_response(item_data, "Item added successfully.")
 
@@ -101,7 +105,7 @@ def create_item(
     response_model=ResponseSchema,
 )
 @log_func
-def update_item(
+async def update_item(
     item_id: int,
     item: ItemUpdateSchema,
     db: DBDep,
@@ -109,14 +113,14 @@ def update_item(
     admin_dep: AdminDep,
 ):
     """Update specific fields of an item (Partial update)."""
-    existing_item = admin_repo.get_item_by_id(item_id, db)
+    existing_item = await admin_repo.get_item_by_id(item_id, db)
     if not existing_item:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Item not found"
         )
 
     update_data = item.model_dump(exclude_unset=True)
-    updated_item = admin_repo.update_item(item_id, update_data, db)
+    updated_item = await admin_repo.update_item(item_id, update_data, db)
     updated_item_data = ItemOutSchema.model_validate(updated_item).model_dump()
 
     return create_response(updated_item_data, "Item updated successfully.")
@@ -128,7 +132,7 @@ def update_item(
     response_model=ResponseSchema,
 )
 @log_func
-def update_user(
+async def update_user(
     user_id: int,
     user: UserUpdateSchema,
     db: DBDep,
@@ -136,14 +140,14 @@ def update_user(
     admin_dep: AdminDep,
 ):
     """Update specific fields of user (Partial Update)."""
-    existing_user = admin_repo.get_user_by_id(user_id, db)
+    existing_user = await admin_repo.get_user_by_id(user_id, db)
     if not existing_user:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="User not found"
         )
 
     update_user = user.model_dump(exclude_unset=True)
-    updated_user = admin_repo.update_user(user_id, update_user, db)
+    updated_user = await admin_repo.update_user(user_id, update_user, db)
     updated_user_data = UserOutSchema.model_validate(updated_user).model_dump()
 
     return create_response(updated_user_data, "User updated successfully.")
@@ -155,19 +159,19 @@ def update_user(
     response_model=ResponseSchema,
 )
 @log_func
-def delete_item(
+async def delete_item(
     item_id: int,
     db: DBDep,
     admin_repo: AdminRepoDep,
     admin_dep: AdminDep,
 ):
     """Delete an item if it exists."""
-    item = admin_repo.get_item_by_id(item_id, db)
+    item = await admin_repo.get_item_by_id(item_id, db)
     if not item:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Item not found"
         )
     deleted_item_data = ItemOutSchema.model_validate(item).model_dump()
 
-    admin_repo.delete_item(item_id, db)
+    await admin_repo.delete_item(item_id, db)
     return create_response(deleted_item_data, "Item removed successfully.")

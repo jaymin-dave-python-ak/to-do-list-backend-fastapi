@@ -4,6 +4,7 @@ from app.core.config import settings
 import jwt
 import random
 from typing import Any
+import secrets
 
 # Setup the password hashing context
 # 'bcrypt' is the algorithm; 'deprecated="auto"' handles future upgrades
@@ -23,7 +24,9 @@ class AuthService:
         return pwd_context.verify(plain_password, hashed_password)
 
     @staticmethod
-    def _generate_token(data: dict, expires_delta: timedelta, secret: str, token_type: str) -> str:
+    def _generate_token(
+        data: dict, expires_delta: timedelta, secret: str, token_type: str
+    ) -> str:
         """Internal helper to generate JWT tokens."""
         to_encode = data.copy()
         expire = datetime.now(timezone.utc) + expires_delta
@@ -37,7 +40,7 @@ class AuthService:
             data=data,
             expires_delta=timedelta(minutes=int(settings.ACCESS_TOKEN_EXPIRE_MINUTES)),
             secret=settings.SECRET_ACCESS_KEY,
-            token_type="access"
+            token_type="access",
         )
 
     @staticmethod
@@ -47,13 +50,13 @@ class AuthService:
             data=data,
             expires_delta=timedelta(days=int(settings.REFRESH_TOKEN_EXPIRE_DAYS)),
             secret=settings.SECRET_REFRESH_KEY,
-            token_type="refresh"
+            token_type="refresh",
         )
 
     @staticmethod
     def decode_token(token: str, is_refresh: bool = False) -> dict[str, Any] | None:
         """Decode token using secret key based on its type."""
-        if is_refresh: 
+        if is_refresh:
             secret = settings.SECRET_REFRESH_KEY
         else:
             secret = settings.SECRET_ACCESS_KEY
@@ -62,11 +65,8 @@ class AuthService:
             return jwt.decode(token, secret, algorithms=[settings.ALGORITHM])
         except jwt.PyJWTError:
             return None
-    
-    import secrets
 
     @staticmethod
     def generate_otp() -> str:
-        """Generate a secure 6-digit OTP."""
-        otp = random.randint(100000, 999999);
-        return str(otp)
+        """Generate a cryptographically secure 6-digit OTP."""
+        return "".join(secrets.choice("0123456789") for _ in range(6))

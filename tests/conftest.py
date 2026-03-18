@@ -1,65 +1,73 @@
 import pytest
-import fakeredis
-from fastapi.testclient import TestClient
-from sqlalchemy import create_engine
-from sqlalchemy.orm import sessionmaker
+import asyncio
+from httpx import AsyncClient, ASGITransport
+from sqlalchemy.ext.asyncio import create_async_engine, AsyncSession, async_sessionmaker
+from fakeredis import FakeServer
+from fakeredis.aioredis import FakeRedis
 from unittest.mock import AsyncMock
+from sqlalchemy.pool import NullPool
 
 from app.main import app, Base
 from app.api.v1.dependencies import get_db, get_redis, EmailService
 from app.core.config import settings
 
-engine = create_engine(settings.TEST_DB_URL)
-TestingSession = sessionmaker(autocommit=False, autoflush=False, bind=engine)
-global_fake_redis = fakeredis.FakeRedis()
+engine = create_async_engine(
+    settings.TEST_DB_URL,
+    future=True,
+    poolclass=NullPool,
+)
+TestingSessionLocal = async_sessionmaker(
+    bind=engine, class_=AsyncSession, expire_on_commit=False
+)
+
+shared_server = FakeServer()
+global_fake_redis = FakeRedis(server=shared_server, decode_responses=True)
 
 
 @pytest.fixture(scope="session")
-def db_engine():
-    """Build the test database structure before any tests run and destroy it after."""
-    Base.metadata.create_all(bind=engine)
+def event_loop():
+    """Create an instance of the default event loop for each test case."""
+    policy = asyncio.get_event_loop_policy()
+    loop = policy.new_event_loop()
+    yield loop
+    loop.close()
+
+
+@pytest.fixture(scope="session", autouse=True)
+async def db_engine():
+    """Create tables at the start of the session."""
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.create_all)
     yield engine
-    Base.metadata.drop_all(bind=engine)
+    async with engine.begin() as conn:
+        await conn.run_sync(Base.metadata.drop_all)
+    
+
+@pytest.fixture
+async def db():
+    async with engine.connect() as connection:
+        transaction = await connection.begin()
+        async with TestingSessionLocal(bind=connection) as session:
+            yield session
+            await session.close()
+
+        await transaction.rollback()
 
 
 @pytest.fixture
-def db(db_engine):
-    """Create a temporary database session that undoes all changes after each test."""
-    connection = db_engine.connect()
-    transaction = connection.begin()
-    session = TestingSession(bind=connection)
-
-    yield session
-
-    session.close()
-    transaction.rollback()
-    connection.close()
-
-
-@pytest.fixture
-def client(db):
-    """Setup a test client with fake database, email, and redis services."""
-
-    def override_get_db():
-        """Swap the real database for the isolated test database."""
-        yield db
-
-    def override_get_redis():
-        """Swap the real Redis server for a fake in-memory version."""
-        return global_fake_redis
-
-    # Create mock email service
+async def client(db):
+    """Setup an async test client with overrides."""
     mock_email_instance = EmailService()
     mock_email_instance.send_otp_email = AsyncMock(return_value=None)
 
-    # Apply all overrides
-    app.dependency_overrides[get_db] = override_get_db
-    app.dependency_overrides[get_redis] = override_get_redis
+    app.dependency_overrides[get_db] = lambda: db
+    app.dependency_overrides[get_redis] = lambda: global_fake_redis
     app.dependency_overrides[EmailService] = lambda: mock_email_instance
 
-    with TestClient(app) as c:
-        yield c
+    async with AsyncClient(
+        transport=ASGITransport(app=app), base_url="http://test"
+    ) as ac:
+        yield ac
 
-    # Reset for the next test
     app.dependency_overrides.clear()
-    global_fake_redis.flushall()
+    await global_fake_redis.flushall()

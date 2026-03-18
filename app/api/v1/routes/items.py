@@ -11,14 +11,14 @@ router = APIRouter(prefix="/items", tags=["Items"])
 
 @router.get("/", status_code=status.HTTP_200_OK, response_model=ResponseSchema)
 @log_func
-def get_items(
+async def get_items(
     db: DBDep,
     current_user: CurrentUserDep,
     item_repo: ItemRepoDep,
     pagination: Annotated[PaginationSchema, Query()],
 ):
     """Get all the items of current user."""
-    items = item_repo.get_all(
+    items = await item_repo.get_all(
         owner_id=current_user.id, db=db, page=pagination.page, size=pagination.size
     )
     items_data = [ItemOutSchema.model_validate(item).model_dump() for item in items]
@@ -27,18 +27,18 @@ def get_items(
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=ResponseSchema)
 @log_func
-def create_item(
+async def create_item(
     item: ItemSchema,
     db: DBDep,
     current_user: CurrentUserDep,
     item_repo: ItemRepoDep,
 ):
     """Create a new item and check it doesn't already exist."""
-    if item_repo.get_by_title(item.title, current_user.id, db):
+    if await item_repo.get_by_title(item.title, current_user.id, db):
         raise HTTPException(
             status_code=status.HTTP_409_CONFLICT, detail="Item already exists"
         )
-    new_item = item_repo.create(item, owner_id=current_user.id, db=db)
+    new_item = await item_repo.create(item, owner_id=current_user.id, db=db)
     item_data = ItemOutSchema.model_validate(new_item).model_dump()
     return create_response(item_data, "Item added successfully.")
 
@@ -47,7 +47,7 @@ def create_item(
     "/{item_id}", status_code=status.HTTP_200_OK, response_model=ResponseSchema
 )
 @log_func
-def update_item(
+async def update_item(
     item_id: int,
     item: ItemUpdateSchema,
     db: DBDep,
@@ -55,7 +55,7 @@ def update_item(
     current_user: CurrentUserDep,
 ):
     """Update specific fields of an item (Partial update)."""
-    existing_item = item_repo.get_by_id(item_id, db)
+    existing_item = await item_repo.get_by_id(item_id, db)
     if not existing_item:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Item not found"
@@ -67,7 +67,7 @@ def update_item(
         )
 
     update_data = item.model_dump(exclude_unset=True)
-    updated_item = item_repo.update(item_id, update_data, db)
+    updated_item = await item_repo.update(item_id, update_data, db)
     updated_item_data = ItemOutSchema.model_validate(updated_item).model_dump()
 
     return create_response(updated_item_data, "Item updated successfully.")
@@ -77,11 +77,11 @@ def update_item(
     "/{item_id}", status_code=status.HTTP_200_OK, response_model=ResponseSchema
 )
 @log_func
-def delete_item(
+async def delete_item(
     item_id: int, db: DBDep, item_repo: ItemRepoDep, current_user: CurrentUserDep
 ):
     """Delete an item if it exists."""
-    item = item_repo.get_by_id(item_id, db)
+    item = await item_repo.get_by_id(item_id, db)
     if not item:
         raise HTTPException(
             status_code=status.HTTP_404_NOT_FOUND, detail="Item not found"
@@ -93,5 +93,5 @@ def delete_item(
         )
     deleted_item_data = ItemOutSchema.model_validate(item).model_dump()
 
-    item_repo.delete(item_id, db)
+    await item_repo.delete(item_id, db)
     return create_response(deleted_item_data, "Item removed successfully.")

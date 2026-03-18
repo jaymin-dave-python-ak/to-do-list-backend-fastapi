@@ -1,8 +1,8 @@
 from typing import Annotated
 from fastapi import HTTPException, status, Depends
-from sqlalchemy.orm import Session
+from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
-import redis
+import redis.asyncio as redis
 
 from app.db.database import get_db
 from app.core.redis import get_redis
@@ -26,7 +26,7 @@ admin_exception = HTTPException(
     detail="Could not validate admin credentials",
 )
 
-DBDep = Annotated[Session, Depends(get_db)]
+DBDep = Annotated[AsyncSession, Depends(get_db)]
 RedisDep = Annotated[redis.Redis, Depends(get_redis)]
 AuthDep = Annotated[AuthService, Depends(AuthService)]
 EmailDep = Annotated[EmailService, Depends(EmailService)]
@@ -35,7 +35,7 @@ ItemRepoDep = Annotated[ItemRepository, Depends(ItemRepository)]
 AdminRepoDep = Annotated[AdminRepository, Depends(AdminRepository)]
 
 
-def get_current_user(
+async def get_current_user(
     token_data: Annotated[HTTPAuthorizationCredentials, Depends(security)],
     db: DBDep,
     auth_service: AuthDep,
@@ -57,7 +57,7 @@ def get_current_user(
     except Exception:
         raise credentials_exception
 
-    user = user_repo.get_by_id(db, int(user_id))
+    user = await user_repo.get_by_id(db, int(user_id))
 
     if user is None:
         raise HTTPException(
