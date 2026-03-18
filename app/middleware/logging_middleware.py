@@ -10,7 +10,6 @@ async def log_requests_middleware(request: Request, call_next):
 
     # Pre-processing log
     logger.info(
-        f"\n**********************************************************\n"
         f"ID: {request_id} | Method: {request.method} | Path: {request.url.path}"
     )
 
