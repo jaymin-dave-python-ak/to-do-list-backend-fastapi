@@ -1,6 +1,7 @@
-from pydantic import BaseModel, EmailStr, Field, ConfigDict
+import uuid
 from datetime import datetime
 from typing import Optional
+from pydantic import BaseModel, EmailStr, Field, ConfigDict
 
 
 class UserBaseSchema(BaseModel):
@@ -8,6 +9,7 @@ class UserBaseSchema(BaseModel):
     username: str = Field(..., min_length=3, max_length=50)
     is_active: bool = True
     is_admin: bool = False
+    model_config = ConfigDict(from_attributes=True)
 
 
 class UserCreateSchema(UserBaseSchema):
@@ -15,10 +17,10 @@ class UserCreateSchema(UserBaseSchema):
 
 
 class UserOutSchema(UserBaseSchema):
-    id: int
+    id: uuid.UUID  
     is_verified: bool
     created_at: datetime
-    model_config = ConfigDict(from_attributes=True)
+    last_updated_at: datetime  
 
 
 class UserInDBSchema(UserOutSchema):
@@ -33,3 +35,4 @@ class UserInSchema(BaseModel):
 class UserUpdateSchema(BaseModel):
     is_active: Optional[bool] = None
     is_admin: Optional[bool] = None
+    is_verified: Optional[bool] = None
