@@ -129,7 +129,9 @@ class TestAdmin:
         user_id = users_resp.json()["data"][0]["id"]
 
         update_payload = {"is_active": False}
-        response = await auth_client.patch(f"/admin/users/{user_id}", json=update_payload)
+        response = await auth_client.patch(
+            f"/admin/users/{user_id}", json=update_payload
+        )
 
         assert response.status_code == status.HTTP_200_OK
         body = response.json()
@@ -139,6 +141,13 @@ class TestAdmin:
 
     async def test_update_user_not_found(self, auth_client):
         """Ensure a 404 is returned when updating a non-existent user."""
-        response = await auth_client.patch("/admin/users/9999", json={"username": "Ghost"})
+        import uuid
+
+        random_id = str(uuid.uuid4())
+
+        response = await auth_client.patch(
+            f"/admin/users/{random_id}",
+            json={"is_active": True},
+        )
         assert response.status_code == status.HTTP_404_NOT_FOUND
         assert response.json()["detail"] == "User not found"

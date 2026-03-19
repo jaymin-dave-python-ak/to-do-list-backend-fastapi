@@ -34,7 +34,7 @@ async def register_initiate(
         )
 
     hashed = auth_service.hash_password(user_in.password)
-    pending_user = user_in.model_dump(exclude={"password"})
+    pending_user = user_in.model_dump(exclude={"password"}, mode="json")
     pending_user["hashed_password"] = hashed
 
     if settings.EMAIL_SERVICE_ACTIVE or settings.TESTING:
@@ -42,15 +42,17 @@ async def register_initiate(
 
         pending_user["otp"] = otp
 
-        await redis.set(f"pending_user:{user_in.email}", json.dumps(pending_user), ex=600)
+        await redis.set(
+            f"pending_user:{user_in.email}", json.dumps(pending_user), ex=600
+        )
 
         background_tasks.add_task(email_service.send_otp_email, user_in.email, otp)
 
         return create_response(None, "OTP sent to your email. Valid for 10 minutes.")
-    
-    pending_user["is_verified"] = False 
+
+    pending_user["is_verified"] = False
     new_user = await user_repo.create(db, pending_user)
-    user_out = UserOutSchema.model_validate(new_user).model_dump()
+    user_out = UserOutSchema.model_validate(new_user).model_dump(mode="json")
     return create_response(
         user_out, "Email is not verified and user registered successfully."
     )
@@ -85,7 +87,7 @@ async def verify_otp(
 
     await redis.delete(f"pending_user:{email}")
 
-    user_out = UserOutSchema.model_validate(new_user).model_dump()
+    user_out = UserOutSchema.model_validate(new_user).model_dump(mode="json")
     return create_response(user_out, "Email verified and user registered successfully.")
 
 

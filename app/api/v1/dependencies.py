@@ -3,6 +3,7 @@ from fastapi import HTTPException, status, Depends
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 import redis.asyncio as redis
+import uuid
 
 from app.db.database import get_db
 from app.core.redis import get_redis
@@ -47,17 +48,16 @@ async def get_current_user(
 
     try:
         payload = auth_service.decode_token(token)
-        if payload is None:
+        user_id_str: str = payload.get("sub")
+        if user_id_str is None:
             raise credentials_exception
+        
+        user_id = uuid.UUID(user_id_str) 
 
-        user_id: str = payload.get("sub")
-        if user_id is None:
-            raise credentials_exception
-
-    except Exception:
+    except (Exception, ValueError):
         raise credentials_exception
 
-    user = await user_repo.get_by_id(db, int(user_id))
+    user = await user_repo.get_by_id(db, user_id)
 
     if user is None:
         raise HTTPException(

@@ -29,6 +29,10 @@ class AuthService:
     ) -> str:
         """Internal helper to generate JWT tokens."""
         to_encode = data.copy()
+
+        if "sub" in to_encode and not isinstance(to_encode["sub"], str):
+            to_encode["sub"] = str(to_encode["sub"])
+
         expire = datetime.now(timezone.utc) + expires_delta
         to_encode.update({"exp": expire, "type": token_type})
         return jwt.encode(to_encode, secret, algorithm=settings.ALGORITHM)

@@ -1,3 +1,4 @@
+import uuid
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.db.models.user import UserModel
@@ -8,7 +9,7 @@ class UserRepository:
         """Finds a user by email for login/validation."""
         return await db.scalar(select(UserModel).where(UserModel.email == email))
 
-    async def get_by_id(self, db: AsyncSession, user_id: int):
+    async def get_by_id(self, db: AsyncSession, user_id: uuid.UUID):
         """Finds a user by ID for the 'get_current_user' logic."""
         return await db.get(UserModel, user_id)
 

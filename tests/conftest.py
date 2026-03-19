@@ -7,7 +7,8 @@ from fakeredis.aioredis import FakeRedis
 from unittest.mock import AsyncMock
 from sqlalchemy.pool import NullPool
 
-from app.main import app, Base
+from app.main import app
+from app.db.models.base import Base
 from app.api.v1.dependencies import get_db, get_redis, EmailService
 from app.core.config import settings
 

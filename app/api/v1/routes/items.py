@@ -2,9 +2,16 @@ from fastapi import APIRouter, status, HTTPException, Query
 from typing import Annotated
 from app.api.v1.dependencies import DBDep, ItemRepoDep, CurrentUserDep
 from app.api.v1.schemas.response import ResponseSchema, create_response
-from app.api.v1.schemas.item import ItemOutSchema, ItemSchema, ItemUpdateSchema
+from app.api.v1.schemas.item import (
+    ItemOutSchema,
+    ItemCreateSchema,
+    ItemUpdateSchema,
+    ItemStatus,
+    DeactivationType,
+)
 from app.api.v1.schemas.pagination import PaginationSchema
 from app.core.logger import log_func
+import uuid
 
 router = APIRouter(prefix="/items", tags=["Items"])
 
@@ -21,14 +28,16 @@ async def get_items(
     items = await item_repo.get_all(
         owner_id=current_user.id, db=db, page=pagination.page, size=pagination.size
     )
-    items_data = [ItemOutSchema.model_validate(item).model_dump() for item in items]
+    items_data = [
+        ItemOutSchema.model_validate(item).model_dump(mode="json") for item in items
+    ]
     return create_response(items_data, "Successfully retrieved all items.")
 
 
 @router.post("/", status_code=status.HTTP_201_CREATED, response_model=ResponseSchema)
 @log_func
 async def create_item(
-    item: ItemSchema,
+    item: ItemCreateSchema,
     db: DBDep,
     current_user: CurrentUserDep,
     item_repo: ItemRepoDep,
@@ -39,7 +48,7 @@ async def create_item(
             status_code=status.HTTP_409_CONFLICT, detail="Item already exists"
         )
     new_item = await item_repo.create(item, owner_id=current_user.id, db=db)
-    item_data = ItemOutSchema.model_validate(new_item).model_dump()
+    item_data = ItemOutSchema.model_validate(new_item).model_dump(mode="json")
     return create_response(item_data, "Item added successfully.")
 
 
@@ -48,7 +57,7 @@ async def create_item(
 )
 @log_func
 async def update_item(
-    item_id: int,
+    item_id: uuid.UUID,
     item: ItemUpdateSchema,
     db: DBDep,
     item_repo: ItemRepoDep,
@@ -67,8 +76,16 @@ async def update_item(
         )
 
     update_data = item.model_dump(exclude_unset=True)
+    if "status" in update_data:
+        if update_data["status"] == ItemStatus.deactivated:
+            update_data["deactivation_type"] = DeactivationType.manual
+        else:
+            update_data["deactivation_type"] = DeactivationType.none
+
     updated_item = await item_repo.update(item_id, update_data, db)
-    updated_item_data = ItemOutSchema.model_validate(updated_item).model_dump()
+    updated_item_data = ItemOutSchema.model_validate(updated_item).model_dump(
+        mode="json"
+    )
 
     return create_response(updated_item_data, "Item updated successfully.")
 
@@ -78,7 +95,7 @@ async def update_item(
 )
 @log_func
 async def delete_item(
-    item_id: int, db: DBDep, item_repo: ItemRepoDep, current_user: CurrentUserDep
+    item_id: uuid.UUID, db: DBDep, item_repo: ItemRepoDep, current_user: CurrentUserDep
 ):
     """Delete an item if it exists."""
     item = await item_repo.get_by_id(item_id, db)
@@ -91,7 +108,7 @@ async def delete_item(
             status_code=status.HTTP_403_FORBIDDEN,
             detail="Not authorized to delete this item",
         )
-    deleted_item_data = ItemOutSchema.model_validate(item).model_dump()
+    deleted_item_data = ItemOutSchema.model_validate(item).model_dump(mode="json")
 
     await item_repo.delete(item_id, db)
     return create_response(deleted_item_data, "Item removed successfully.")

@@ -4,13 +4,16 @@ from app.api.v1.dependencies import DBDep, AdminDep, AdminRepoDep
 from app.api.v1.schemas.response import create_response, ResponseSchema
 from app.api.v1.schemas.item import (
     ItemOutSchema,
-    ItemSchema,
+    ItemCreateSchema,
     ItemUpdateSchema,
     ItemOutDetailedSchema,
+    ItemStatus,        
+    DeactivationType   
 )
 from app.api.v1.schemas.user import UserOutSchema, UserUpdateSchema
 from app.api.v1.schemas.pagination import PaginationSchema
 from app.core.logger import log_func
+import uuid 
 
 router = APIRouter(prefix="/admin", tags=["Admin"])
 
@@ -84,7 +87,7 @@ async def get_detailed_items(
 )
 @log_func
 async def create_item(
-    item: ItemSchema,
+    item: ItemCreateSchema,
     db: DBDep,
     admin_dep: AdminDep,
     admin_repo: AdminRepoDep,
@@ -106,7 +109,7 @@ async def create_item(
 )
 @log_func
 async def update_item(
-    item_id: int,
+    item_id: uuid.UUID,
     item: ItemUpdateSchema,
     db: DBDep,
     admin_repo: AdminRepoDep,
@@ -120,11 +123,17 @@ async def update_item(
         )
 
     update_data = item.model_dump(exclude_unset=True)
+    if "status" in update_data:
+        new_status = update_data["status"]
+        if new_status == ItemStatus.deactivated:
+            update_data["deactivation_type"] = DeactivationType.manual
+        else:
+            update_data["deactivation_type"] = DeactivationType.none
+
     updated_item = await admin_repo.update_item(item_id, update_data, db)
-    updated_item_data = ItemOutSchema.model_validate(updated_item).model_dump()
+    updated_item_data = ItemOutSchema.model_validate(updated_item).model_dump(mode="json")
 
     return create_response(updated_item_data, "Item updated successfully.")
-
 
 @router.patch(
     "/users/{user_id}",
@@ -133,7 +142,7 @@ async def update_item(
 )
 @log_func
 async def update_user(
-    user_id: int,
+    user_id: uuid.UUID,
     user: UserUpdateSchema,
     db: DBDep,
     admin_repo: AdminRepoDep,
@@ -160,7 +169,7 @@ async def update_user(
 )
 @log_func
 async def delete_item(
-    item_id: int,
+    item_id: uuid.UUID,
     db: DBDep,
     admin_repo: AdminRepoDep,
     admin_dep: AdminDep,
