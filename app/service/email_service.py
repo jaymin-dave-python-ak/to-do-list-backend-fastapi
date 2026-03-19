@@ -1,7 +1,9 @@
+import asyncio
 from fastapi_mail import FastMail, MessageSchema, ConnectionConfig, MessageType
 from app.core.config import settings
 from pathlib import Path
 from fastapi import HTTPException, status
+from app.core.celery_app import celery_app
 
 
 class EmailService:
@@ -47,3 +49,26 @@ class EmailService:
                 status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
                 detail="Failed to send verification email. Please try again later.",
             )
+
+    async def send_reminder_async(self, email_to: str, subject: str, body: str):
+        """Internal async method to send the actual email"""
+        message = MessageSchema(
+            subject=subject,
+            recipients=[email_to],
+            body=body,
+            subtype=MessageType.html,
+        )
+        await self.fastmail.send_message(message)
+
+
+@celery_app.task(name="send_reminder_email")
+def send_reminder_email(email_to: str, subject: str, body: str):
+    """Bridge for Celery (Sync) to call FastMail (Async)"""
+    service = EmailService()
+    try:
+        loop = asyncio.get_event_loop()
+    except RuntimeError:
+        loop = asyncio.new_event_loop()
+        asyncio.set_event_loop(loop)
+
+    return loop.run_until_complete(service.send_reminder_async(email_to, subject, body))

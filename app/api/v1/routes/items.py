@@ -1,4 +1,4 @@
-from fastapi import APIRouter, status, HTTPException, Query
+from fastapi import APIRouter, status, HTTPException, Query, Body
 from typing import Annotated
 from app.api.v1.dependencies import DBDep, ItemRepoDep, CurrentUserDep
 from app.api.v1.schemas.response import ResponseSchema, create_response
@@ -12,6 +12,8 @@ from app.api.v1.schemas.item import (
 from app.api.v1.schemas.pagination import PaginationSchema
 from app.core.logger import log_func
 import uuid
+from datetime import datetime, timezone
+from app.service.email_service import send_reminder_email
 
 router = APIRouter(prefix="/items", tags=["Items"])
 
@@ -112,3 +114,63 @@ async def delete_item(
 
     await item_repo.delete(item_id, db)
     return create_response(deleted_item_data, "Item removed successfully.")
+
+
+@router.post("/remind/{item_id}", status_code=status.HTTP_202_ACCEPTED, response_model=ResponseSchema)
+@log_func
+async def schedule_item_reminder(
+    item_id: uuid.UUID,
+    remind_at: Annotated[datetime, Body(embed=True)],
+    db: DBDep,
+    item_repo: ItemRepoDep,
+    current_user: CurrentUserDep,
+):
+    """
+    Schedules a background email reminder for a specific item.
+    - Validates item ownership.
+    - Checks if the reminder time is in the future.
+    - Uses Celery to queue the task.
+    """
+    # 1. Validation & Authorization
+    item = await item_repo.get_by_id(item_id, db)
+    if not item:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND, 
+            detail="Item not found"
+        )
+
+    # 2. Time Validation (Don't schedule reminders in the past)
+    now = datetime.now(timezone.utc)
+    if remind_at.tzinfo is None:
+        # If user sends naive datetime, assume UTC
+        remind_at = remind_at.replace(tzinfo=timezone.utc)
+        
+    if remind_at <= now:
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Reminder time must be in the future"
+        )
+
+    # 3. Offload to Celery (The Back-office Assistant)
+    # We pass the user's email and item title dynamically
+    email_body = f"""
+    <html>
+        <body>
+            <h1>Reminder for {item.title}</h1>
+            <p>You asked us to remind you about this item at this time.</p>
+            <p>Item ID: {item.id}</p>
+        </body>
+    </html>
+    """
+    
+    send_reminder_email.apply_async(
+        args=[current_user.email, f"Reminder: {item.title}", email_body],
+        eta=remind_at
+    )
+
+    # 4. Standard Response
+    item_data = ItemOutSchema.model_validate(item).model_dump(mode="json")
+    return create_response(
+        item_data, 
+        f"Reminder scheduled successfully for {remind_at.strftime('%Y-%m-%d %H:%M:%S UTC')}."
+    )
