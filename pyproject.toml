@@ -12,6 +12,7 @@ dependencies = [
     "fakeredis>=2.34.1",
     "fastapi-mail>=1.6.2",
     "fastapi[standard]>=0.132.0",
+    "flower>=2.0.1",
     "httpx>=0.28.1",
     "passlib[bcrypt]>=1.7.4",
     "pydantic-settings>=2.13.1",

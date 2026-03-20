@@ -4,6 +4,7 @@ from typing import Optional
 from pydantic import BaseModel, ConfigDict, EmailStr
 from app.db.models.item import ItemStatus, DeactivationType
 
+
 class ItemBaseSchema(BaseModel):
     title: str
     desc: Optional[str] = None
@@ -11,8 +12,10 @@ class ItemBaseSchema(BaseModel):
     remind_me_at: Optional[datetime] = None
     model_config = ConfigDict(from_attributes=True)
 
+
 class ItemCreateSchema(ItemBaseSchema):
     pass
+
 
 class ItemUpdateSchema(BaseModel):
     title: Optional[str] = None
@@ -22,13 +25,16 @@ class ItemUpdateSchema(BaseModel):
     deactivation_type: Optional[DeactivationType] = None
     model_config = ConfigDict(from_attributes=True)
 
+
 class ItemOutSchema(ItemBaseSchema):
-    id: uuid.UUID  
+    id: uuid.UUID
     owner_id: uuid.UUID
     reminded: bool
+    dispatched: bool
     deactivation_type: DeactivationType
     created_at: datetime
     last_updated_at: datetime
+
 
 class ItemOutDetailedSchema(ItemOutSchema):
     username: str

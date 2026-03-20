@@ -3,6 +3,8 @@ from typing import Sequence, Optional
 from sqlalchemy import select
 from sqlalchemy.ext.asyncio import AsyncSession
 from app.db.models.item import ItemModel
+from datetime import datetime, timezone
+from sqlalchemy.orm import selectinload
 
 
 class ItemRepository:
@@ -64,3 +66,44 @@ class ItemRepository:
             await db.delete(item)
             await db.commit()
         return item
+
+    async def update_reminder(
+        self, item_id: uuid.UUID, remind_at: datetime, db: AsyncSession
+    ) -> Optional[ItemModel]:
+        """
+        Updates the reminder time for an item.
+        Ensures timezone awareness and resets the reminded flag.
+        """
+        if remind_at.tzinfo is None:
+            remind_at = remind_at.replace(tzinfo=timezone.utc)
+        else:
+            remind_at = remind_at.astimezone(timezone.utc)
+
+        item = await self.get_by_id(item_id, db)
+
+        if item:
+            item.remind_me_at = remind_at
+            item.reminded = False
+            item.dispatched = False
+            try:
+                await db.commit()
+                await db.refresh(item)
+            except Exception as e:
+                await db.rollback()
+                raise e
+        return item
+
+    async def get_all_pending_reminders(self, window_end: datetime, db: AsyncSession):
+        """
+        Fetches ALL items where reminded is False and the time is
+        anywhere in the past OR up to 10 minutes in the future.
+        """
+        result = await db.execute(
+            select(ItemModel)
+            .options(selectinload(ItemModel.owner))
+            .where(ItemModel.remind_me_at != None)
+            .where(ItemModel.reminded == False)
+            .where(ItemModel.dispatched == False)
+            .where(ItemModel.remind_me_at <= window_end) 
+        )
+        return result.scalars().all()

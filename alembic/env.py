@@ -32,7 +32,7 @@ def run_migrations_offline() -> None:
 
 def do_run_migrations(connection):
     """The synchronous bridge for running migrations."""
-    context.configure(connection=connection, target_metadata=target_metadata)
+    context.configure(connection=connection, target_metadata=target_metadata, compare_type=True)
 
     with context.begin_transaction():
         context.run_migrations()

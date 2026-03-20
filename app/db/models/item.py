@@ -36,8 +36,9 @@ class ItemModel(Base):
         Enum(DeactivationType), default=DeactivationType.none
     )
 
-    remind_me_at: Mapped[Optional[datetime]] = mapped_column(DateTime, nullable=True)
+    remind_me_at: Mapped[Optional[datetime]] = mapped_column(DateTime(timezone=True),nullable=True)
     reminded: Mapped[bool] = mapped_column(Boolean, default=False)
+    dispatched: Mapped[bool] = mapped_column(Boolean, default=False)
 
     owner_id: Mapped[uuid.UUID] = mapped_column(ForeignKey("users.id"))
     

@@ -1,0 +1,338 @@
+2026-03-20 10:42:29,292 - INFO - ID: 23039c6b-5033-4391-854d-6c334b0e9d34 | Method: GET | Path: /docs
+2026-03-20 10:42:29,293 - INFO - ID: 23039c6b-5033-4391-854d-6c334b0e9d34 | Path: /docs | Status: 200 | Time: 0.0016s
+**********************************************************
+
+2026-03-20 10:42:29,819 - INFO - ID: 570d5636-624f-4691-bf89-617d98ba536c | Method: GET | Path: /openapi.json
+2026-03-20 10:42:29,867 - INFO - ID: 570d5636-624f-4691-bf89-617d98ba536c | Path: /openapi.json | Status: 200 | Time: 0.0473s
+**********************************************************
+
+2026-03-20 11:04:19,747 - INFO - ID: 34c828a6-6518-4d0b-a6cf-30e8195bfa40 | Method: GET | Path: /items/
+2026-03-20 11:04:19,749 - INFO - ID: 34c828a6-6518-4d0b-a6cf-30e8195bfa40 | Path: /items/ | Status: 401 | Time: 0.0017s
+**********************************************************
+
+2026-03-20 11:04:37,943 - INFO - ID: 27d28cdc-df35-4acb-83fb-a8f6c300e209 | Method: POST | Path: /users/login
+2026-03-20 11:04:37,946 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-20 11:04:38,234 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-20 11:04:38,235 - INFO - ID: 27d28cdc-df35-4acb-83fb-a8f6c300e209 | Path: /users/login | Status: 200 | Time: 0.2917s
+**********************************************************
+
+2026-03-20 11:06:23,370 - INFO - ID: 2fe80dc5-fde1-4403-9e4d-12e5dd99e60f | Method: GET | Path: /items/
+2026-03-20 11:06:23,375 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 11:06:23,392 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': None, 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-19T12:14:43.912815'}]}
+2026-03-20 11:06:23,392 - INFO - ID: 2fe80dc5-fde1-4403-9e4d-12e5dd99e60f | Path: /items/ | Status: 200 | Time: 0.0216s
+**********************************************************
+
+2026-03-20 11:07:19,058 - INFO - ID: 66acf4da-ec49-48e0-bd1b-7b140b922f5a | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 11:07:19,061 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 5, 37, 30, 762000, tzinfo=TzInfo(0))}
+2026-03-20 11:07:19,067 - ERROR - Function Error: schedule_item_reminder | Exception: (sqlalchemy.dialects.postgresql.asyncpg.Error) <class 'asyncpg.exceptions.DataError'>: invalid input for query argument $1: datetime.datetime(2026, 3, 20, 5, 37, 30... (can't subtract offset-naive and offset-aware datetimes)
+[SQL: UPDATE items SET remind_me_at=$1::TIMESTAMP WITHOUT TIME ZONE, last_updated_at=$2::TIMESTAMP WITHOUT TIME ZONE WHERE items.id = $3::UUID]
+[parameters: (datetime.datetime(2026, 3, 20, 5, 37, 30, 762000, tzinfo=TzInfo(0)), datetime.datetime(2026, 3, 20, 5, 37, 19, 66189), UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'))]
+(Background on this error at: https://sqlalche.me/e/20/dbapi)
+2026-03-20 11:15:47,827 - INFO - ID: 37989579-ce83-41e3-b007-5d216ce26abe | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 11:15:47,874 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 5, 37, 30, 762000, tzinfo=TzInfo(0))}
+2026-03-20 11:15:47,884 - ERROR - Function Error: schedule_item_reminder | Exception: 400: Reminder time must be in the future
+2026-03-20 11:15:47,885 - INFO - ID: 37989579-ce83-41e3-b007-5d216ce26abe | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 400 | Time: 0.0579s
+**********************************************************
+
+2026-03-20 11:16:02,178 - INFO - ID: b6299255-e19f-41d2-9b9e-6941b9b33772 | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 11:16:02,181 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 5, 46, 30, 762000, tzinfo=TzInfo(0))}
+2026-03-20 11:16:02,191 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 05:46:30 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T05:46:30.762000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T05:46:02.184854'}}
+2026-03-20 11:16:02,191 - INFO - ID: b6299255-e19f-41d2-9b9e-6941b9b33772 | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.0127s
+**********************************************************
+
+2026-03-20 11:28:58,638 - INFO - ID: 202211fe-755c-4988-9be7-1f412d998c36 | Method: GET | Path: /items/
+2026-03-20 11:28:58,642 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 11:28:58,645 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T05:46:30.762000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T05:46:02.184854'}]}
+2026-03-20 11:28:58,645 - INFO - ID: 202211fe-755c-4988-9be7-1f412d998c36 | Path: /items/ | Status: 200 | Time: 0.0066s
+**********************************************************
+
+2026-03-20 11:34:10,663 - INFO - ID: d3437cf4-d92e-4719-90ae-262f0562130f | Method: GET | Path: /docs
+2026-03-20 11:34:10,665 - INFO - ID: d3437cf4-d92e-4719-90ae-262f0562130f | Path: /docs | Status: 200 | Time: 0.0024s
+**********************************************************
+
+2026-03-20 11:34:10,868 - INFO - ID: 1563744b-7bb6-45e7-b2fd-d329071f2c39 | Method: GET | Path: /openapi.json
+2026-03-20 11:34:10,935 - INFO - ID: 1563744b-7bb6-45e7-b2fd-d329071f2c39 | Path: /openapi.json | Status: 200 | Time: 0.0672s
+**********************************************************
+
+2026-03-20 11:34:29,878 - INFO - ID: 36a7ed47-da10-44c5-8868-023e960918c5 | Method: POST | Path: /users/login
+2026-03-20 11:34:29,881 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-20 11:34:30,152 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-20 11:34:30,152 - INFO - ID: 36a7ed47-da10-44c5-8868-023e960918c5 | Path: /users/login | Status: 200 | Time: 0.2735s
+**********************************************************
+
+2026-03-20 11:34:42,292 - INFO - ID: 4703c1f2-ab45-4759-9af6-e8c4e4a375d1 | Method: GET | Path: /items/
+2026-03-20 11:34:42,297 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 11:34:42,308 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T05:46:30.762000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T05:46:02.184854'}]}
+2026-03-20 11:34:42,309 - INFO - ID: 4703c1f2-ab45-4759-9af6-e8c4e4a375d1 | Path: /items/ | Status: 200 | Time: 0.0164s
+**********************************************************
+
+2026-03-20 11:35:35,251 - INFO - ID: c357401f-8ae2-46eb-a3f2-2a2e51a0c83c | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 11:35:35,255 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 6, 6, 20, 752000, tzinfo=TzInfo(0))}
+2026-03-20 11:35:35,271 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 06:06:20 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T06:06:20.752000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T06:05:35.261008'}}
+2026-03-20 11:35:35,271 - INFO - ID: c357401f-8ae2-46eb-a3f2-2a2e51a0c83c | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.0197s
+**********************************************************
+
+2026-03-20 11:35:39,102 - INFO - ID: a73eca40-845f-4b8c-8989-3446ed910a6a | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 11:35:39,105 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 6, 6, 20, 752000, tzinfo=TzInfo(0))}
+2026-03-20 11:35:39,108 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 06:06:20 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T06:06:20.752000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T06:05:35.261008'}}
+2026-03-20 11:35:39,109 - INFO - ID: a73eca40-845f-4b8c-8989-3446ed910a6a | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.0064s
+**********************************************************
+
+2026-03-20 11:35:42,253 - INFO - ID: 6ef5b4a2-589a-4ba2-b9ed-e2e12071f1d0 | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 11:35:42,256 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 6, 6, 20, 752000, tzinfo=TzInfo(0))}
+2026-03-20 11:35:42,260 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 06:06:20 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T06:06:20.752000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T06:05:35.261008'}}
+2026-03-20 11:35:42,260 - INFO - ID: 6ef5b4a2-589a-4ba2-b9ed-e2e12071f1d0 | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.0071s
+**********************************************************
+
+2026-03-20 11:35:44,002 - INFO - ID: 59ebbf28-defa-4433-bec7-33e5b74fed35 | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 11:35:44,005 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 6, 6, 20, 752000, tzinfo=TzInfo(0))}
+2026-03-20 11:35:44,008 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 06:06:20 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T06:06:20.752000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T06:05:35.261008'}}
+2026-03-20 11:35:44,009 - INFO - ID: 59ebbf28-defa-4433-bec7-33e5b74fed35 | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.0063s
+**********************************************************
+
+2026-03-20 11:35:44,449 - INFO - ID: c839db05-19da-4426-8e49-f4e4220385cb | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 11:35:44,452 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 6, 6, 20, 752000, tzinfo=TzInfo(0))}
+2026-03-20 11:35:44,455 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 06:06:20 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T06:06:20.752000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T06:05:35.261008'}}
+2026-03-20 11:35:44,456 - INFO - ID: c839db05-19da-4426-8e49-f4e4220385cb | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.0066s
+**********************************************************
+
+2026-03-20 13:20:23,918 - INFO - ID: 166f32f0-44c3-45ee-ab8e-5d10c0d0cf76 | Method: GET | Path: /docs
+2026-03-20 13:20:23,920 - INFO - ID: 166f32f0-44c3-45ee-ab8e-5d10c0d0cf76 | Path: /docs | Status: 200 | Time: 0.0013s
+**********************************************************
+
+2026-03-20 13:20:24,012 - INFO - ID: c3b4f978-a136-45de-b8f3-90add616bfa6 | Method: GET | Path: /openapi.json
+2026-03-20 13:20:24,055 - INFO - ID: c3b4f978-a136-45de-b8f3-90add616bfa6 | Path: /openapi.json | Status: 200 | Time: 0.0430s
+**********************************************************
+
+2026-03-20 13:25:35,973 - INFO - ID: 1fb8546f-89b4-4038-aa93-d1709c658749 | Method: POST | Path: /users/login
+2026-03-20 13:25:35,976 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-20 13:25:36,247 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-20 13:25:36,247 - INFO - ID: 1fb8546f-89b4-4038-aa93-d1709c658749 | Path: /users/login | Status: 200 | Time: 0.2744s
+**********************************************************
+
+2026-03-20 13:25:52,271 - INFO - ID: f2762045-78a3-40fe-92b7-52b4e9c0eb91 | Method: GET | Path: /items/
+2026-03-20 13:25:52,277 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 13:25:52,287 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T06:06:20.752000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T06:05:35.261008'}]}
+2026-03-20 13:25:52,287 - INFO - ID: f2762045-78a3-40fe-92b7-52b4e9c0eb91 | Path: /items/ | Status: 200 | Time: 0.0163s
+**********************************************************
+
+2026-03-20 13:26:24,139 - INFO - ID: 021be954-1976-425b-ab5b-89b29e488ee6 | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 13:26:24,143 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 7, 56, 11, 788000, tzinfo=TzInfo(0))}
+2026-03-20 13:26:24,146 - ERROR - Function Error: schedule_item_reminder | Exception: 400: Reminder time must be in the future
+2026-03-20 13:26:24,147 - INFO - ID: 021be954-1976-425b-ab5b-89b29e488ee6 | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 400 | Time: 0.0083s
+**********************************************************
+
+2026-03-20 13:26:52,266 - INFO - ID: a3ae1a93-e792-4c4f-b73a-6cfbfa864d1f | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 13:26:52,268 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 7, 57, 10, 788000, tzinfo=TzInfo(0))}
+2026-03-20 13:26:52,275 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 07:57:10 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T07:57:10.788000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T07:56:52.271032'}}
+2026-03-20 13:26:52,276 - INFO - ID: a3ae1a93-e792-4c4f-b73a-6cfbfa864d1f | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.0099s
+**********************************************************
+
+2026-03-20 14:54:50,103 - INFO - ID: c1054ab6-3b61-4408-8705-dbab4fcd30dc | Method: GET | Path: /docs
+2026-03-20 14:54:50,104 - INFO - ID: c1054ab6-3b61-4408-8705-dbab4fcd30dc | Path: /docs | Status: 200 | Time: 0.0012s
+**********************************************************
+
+2026-03-20 14:54:50,196 - INFO - ID: 2ed0dd22-03eb-46bf-812c-a9d36bfe1cbd | Method: GET | Path: /openapi.json
+2026-03-20 14:54:50,236 - INFO - ID: 2ed0dd22-03eb-46bf-812c-a9d36bfe1cbd | Path: /openapi.json | Status: 200 | Time: 0.0394s
+**********************************************************
+
+2026-03-20 14:55:05,832 - INFO - ID: 487be043-bcb4-45b8-977f-ab1aeefb366e | Method: POST | Path: /users/login
+2026-03-20 14:55:05,835 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-20 14:55:06,109 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-20 14:55:06,110 - INFO - ID: 487be043-bcb4-45b8-977f-ab1aeefb366e | Path: /users/login | Status: 200 | Time: 0.2776s
+**********************************************************
+
+2026-03-20 14:55:23,013 - INFO - ID: 54e4a9ae-c8e7-4e58-9708-40e95aadfe05 | Method: GET | Path: /items/
+2026-03-20 14:55:23,019 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 14:55:23,030 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T07:57:10.788000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': True, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T07:58:55.661128'}]}
+2026-03-20 14:55:23,030 - INFO - ID: 54e4a9ae-c8e7-4e58-9708-40e95aadfe05 | Path: /items/ | Status: 200 | Time: 0.0174s
+**********************************************************
+
+2026-03-20 14:55:49,967 - INFO - ID: c867e027-8083-4abf-8cd4-813f5f375ce1 | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 14:55:49,971 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 9, 26, 35, 498000, tzinfo=TzInfo(0))}
+2026-03-20 14:55:50,017 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 09:26:35 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T09:26:35.498000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T09:25:50.014566'}}
+2026-03-20 14:55:50,017 - INFO - ID: c867e027-8083-4abf-8cd4-813f5f375ce1 | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.0503s
+**********************************************************
+
+2026-03-20 14:56:09,671 - INFO - ID: 315e9b69-dec1-45e0-93eb-a132356562a4 | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 14:56:09,674 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 9, 36, 35, 498000, tzinfo=TzInfo(0))}
+2026-03-20 14:56:09,679 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 09:36:35 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T09:36:35.498000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T09:26:09.676530'}}
+2026-03-20 14:56:09,679 - INFO - ID: 315e9b69-dec1-45e0-93eb-a132356562a4 | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.0087s
+**********************************************************
+
+2026-03-20 16:15:45,895 - INFO - ID: 3c6b5392-e3e0-4b94-8218-c42036db7118 | Method: POST | Path: /users/refresh
+2026-03-20 16:15:45,898 - INFO - Function Start: refresh_token | Args: () Kwargs: {'auth_service': 'obj', 'redis': 'obj', 'refresh_token': '*******'}
+2026-03-20 16:15:45,901 - INFO - Function Success: refresh_token | Result: {'success': True, 'message': 'Tokens rotated successfully.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-20 16:15:45,901 - INFO - ID: 3c6b5392-e3e0-4b94-8218-c42036db7118 | Path: /users/refresh | Status: 200 | Time: 0.0057s
+**********************************************************
+
+2026-03-20 16:17:13,997 - INFO - ID: 6f02d20c-0cea-4e10-93de-02dd1c202a5e | Method: GET | Path: /items/
+2026-03-20 16:17:14,044 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 16:17:14,055 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': None, 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': True, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T10:35:32.721802'}]}
+2026-03-20 16:17:14,055 - INFO - ID: 6f02d20c-0cea-4e10-93de-02dd1c202a5e | Path: /items/ | Status: 200 | Time: 0.0578s
+**********************************************************
+
+2026-03-20 16:17:35,845 - INFO - ID: 1744fcd5-e49f-4851-acac-9f4c093aa03e | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 16:17:35,849 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 9, 38, 35, 498000, tzinfo=TzInfo(0))}
+2026-03-20 16:17:35,851 - ERROR - Function Error: schedule_item_reminder | Exception: 400: Reminder time must be in the future
+2026-03-20 16:17:35,851 - INFO - ID: 1744fcd5-e49f-4851-acac-9f4c093aa03e | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 400 | Time: 0.0067s
+**********************************************************
+
+2026-03-20 16:17:54,679 - INFO - ID: 2df51bb3-0a41-40e6-992b-1e83d9b8d5d7 | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 16:17:54,682 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 10, 48, 35, 498000, tzinfo=TzInfo(0))}
+2026-03-20 16:17:54,689 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 10:48:35 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T10:48:35.498000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T10:47:54.685009'}}
+2026-03-20 16:17:54,690 - INFO - ID: 2df51bb3-0a41-40e6-992b-1e83d9b8d5d7 | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.0110s
+**********************************************************
+
+2026-03-20 16:28:27,761 - INFO - ID: d069868d-7dd0-4ce4-8bdc-eb0789f1562d | Method: GET | Path: /docs
+2026-03-20 16:28:27,762 - INFO - ID: d069868d-7dd0-4ce4-8bdc-eb0789f1562d | Path: /docs | Status: 200 | Time: 0.0010s
+**********************************************************
+
+2026-03-20 16:28:27,846 - INFO - ID: cca0745a-752c-439d-9318-c97e670fee39 | Method: GET | Path: /openapi.json
+2026-03-20 16:28:27,895 - INFO - ID: cca0745a-752c-439d-9318-c97e670fee39 | Path: /openapi.json | Status: 200 | Time: 0.0488s
+**********************************************************
+
+2026-03-20 16:28:30,905 - INFO - ID: c32b7f24-d7ab-40f1-8a61-3c3b24714a8e | Method: GET | Path: /items/
+2026-03-20 16:28:30,906 - INFO - ID: c32b7f24-d7ab-40f1-8a61-3c3b24714a8e | Path: /items/ | Status: 401 | Time: 0.0019s
+**********************************************************
+
+2026-03-20 16:28:53,298 - INFO - ID: a5163016-62f8-4ccb-a873-730ee1cb2a08 | Method: POST | Path: /users/login
+2026-03-20 16:28:53,300 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-20 16:28:53,567 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-20 16:28:53,567 - INFO - ID: a5163016-62f8-4ccb-a873-730ee1cb2a08 | Path: /users/login | Status: 200 | Time: 0.2698s
+**********************************************************
+
+2026-03-20 16:29:05,021 - INFO - ID: 3d21df81-4a00-48b3-a8e3-08244112050e | Method: GET | Path: /items/
+2026-03-20 16:29:05,026 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 16:29:05,038 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T10:48:35.498000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T10:47:54.685009'}]}
+2026-03-20 16:29:05,039 - INFO - ID: 3d21df81-4a00-48b3-a8e3-08244112050e | Path: /items/ | Status: 200 | Time: 0.0181s
+**********************************************************
+
+2026-03-20 16:30:24,384 - INFO - ID: 7a9da5cc-4fbd-49f4-b754-290ec07ded61 | Method: POST | Path: /items/
+2026-03-20 16:30:24,387 - INFO - Function Start: create_item | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'item': {'title': 'string 2', 'desc': 'string', 'status': 'obj', 'remind_me_at': datetime.datetime(2026, 3, 20, 11, 1, 5, 293000, tzinfo=TzInfo(0))}}
+2026-03-20 16:30:24,433 - INFO - Function Success: create_item | Result: {'success': True, 'message': 'Item added successfully.', 'data': {'title': 'string 2', 'desc': 'string', 'status': 'pending', 'remind_me_at': '2026-03-20T11:01:05.293000Z', 'id': '193aaeff-d216-4ff3-aaea-9cf6a56f145f', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-20T11:00:24.429877', 'last_updated_at': '2026-03-20T11:00:24.429884'}}
+2026-03-20 16:30:24,433 - INFO - ID: 7a9da5cc-4fbd-49f4-b754-290ec07ded61 | Path: /items/ | Status: 201 | Time: 0.0498s
+**********************************************************
+
+2026-03-20 16:32:20,484 - INFO - ID: 1b1bf49f-9f62-41d7-bbff-bc749b918bab | Method: GET | Path: /items/
+2026-03-20 16:32:20,485 - INFO - ID: 1b1bf49f-9f62-41d7-bbff-bc749b918bab | Path: /items/ | Status: 401 | Time: 0.0008s
+**********************************************************
+
+2026-03-20 16:32:30,013 - INFO - ID: 7a490dfb-ee28-449d-a9ef-09d5a0993cce | Method: GET | Path: /items/
+2026-03-20 16:32:30,014 - INFO - ID: 7a490dfb-ee28-449d-a9ef-09d5a0993cce | Path: /items/ | Status: 401 | Time: 0.0013s
+**********************************************************
+
+2026-03-20 16:32:45,038 - INFO - ID: b065a51f-eb86-424d-9693-441b1183ded0 | Method: POST | Path: /users/login
+2026-03-20 16:32:45,039 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-20 16:32:45,249 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-20 16:32:45,250 - INFO - ID: b065a51f-eb86-424d-9693-441b1183ded0 | Path: /users/login | Status: 200 | Time: 0.2118s
+**********************************************************
+
+2026-03-20 16:32:58,038 - INFO - ID: a4d9077d-e6c8-487a-893d-7e3a48082965 | Method: GET | Path: /items/
+2026-03-20 16:32:58,041 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 16:32:58,043 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T10:48:35.498000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T10:47:54.685009'}, {'title': 'string 2', 'desc': 'string', 'status': 'pending', 'remind_me_at': '2026-03-20T11:01:05.293000Z', 'id': '193aaeff-d216-4ff3-aaea-9cf6a56f145f', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-20T11:00:24.429877', 'last_updated_at': '2026-03-20T11:00:24.429884'}]}
+2026-03-20 16:32:58,043 - INFO - ID: a4d9077d-e6c8-487a-893d-7e3a48082965 | Path: /items/ | Status: 200 | Time: 0.0050s
+**********************************************************
+
+2026-03-20 16:59:16,448 - INFO - ID: 3b851914-7847-4ffc-a2b3-5ae20802899a | Method: GET | Path: /items/
+2026-03-20 16:59:16,500 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 16:59:16,508 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'string 2', 'desc': 'string', 'status': 'pending', 'remind_me_at': None, 'id': '193aaeff-d216-4ff3-aaea-9cf6a56f145f', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': True, 'deactivation_type': 'none', 'created_at': '2026-03-20T11:00:24.429877', 'last_updated_at': '2026-03-20T11:27:06.221605'}, {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': None, 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': True, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T11:27:06.351526'}]}
+2026-03-20 16:59:16,508 - INFO - ID: 3b851914-7847-4ffc-a2b3-5ae20802899a | Path: /items/ | Status: 200 | Time: 0.0602s
+**********************************************************
+
+2026-03-20 16:59:41,218 - INFO - ID: d257abb5-e268-4353-871d-9f3d306f2b92 | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 16:59:41,252 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 11, 30, 31, 897000, tzinfo=TzInfo(0))}
+2026-03-20 16:59:41,305 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 11:30:31 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T11:30:31.897000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T11:29:41.261023'}}
+2026-03-20 16:59:41,305 - INFO - ID: d257abb5-e268-4353-871d-9f3d306f2b92 | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.0872s
+**********************************************************
+
+2026-03-20 17:40:09,172 - INFO - ID: 8658ed43-77c0-4dcc-bf28-493c0d5c27ce | Method: GET | Path: /docs
+2026-03-20 17:40:09,173 - INFO - ID: 8658ed43-77c0-4dcc-bf28-493c0d5c27ce | Path: /docs | Status: 200 | Time: 0.0009s
+**********************************************************
+
+2026-03-20 17:40:09,257 - INFO - ID: a7ab53dc-7a80-4a35-96a6-94b03b1d555b | Method: GET | Path: /openapi.json
+2026-03-20 17:40:09,303 - INFO - ID: a7ab53dc-7a80-4a35-96a6-94b03b1d555b | Path: /openapi.json | Status: 200 | Time: 0.0459s
+**********************************************************
+
+2026-03-20 17:40:25,665 - INFO - ID: 1edc2c41-0c0d-4681-8d28-4a9dae218401 | Method: POST | Path: /users/login
+2026-03-20 17:40:25,668 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-20 17:40:25,940 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-20 17:40:25,940 - INFO - ID: 1edc2c41-0c0d-4681-8d28-4a9dae218401 | Path: /users/login | Status: 200 | Time: 0.2749s
+**********************************************************
+
+2026-03-20 17:40:35,765 - INFO - ID: 46ef0fa6-2cdb-4e76-bac5-4eea72771976 | Method: GET | Path: /items/
+2026-03-20 17:40:35,801 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 17:40:35,810 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'string 2', 'desc': 'string', 'status': 'pending', 'remind_me_at': None, 'id': '193aaeff-d216-4ff3-aaea-9cf6a56f145f', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': True, 'dispatched': False, 'deactivation_type': 'none', 'created_at': '2026-03-20T11:00:24.429877', 'last_updated_at': '2026-03-20T11:27:06.221605'}, {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': None, 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': True, 'dispatched': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T11:30:39.518971'}]}
+2026-03-20 17:40:35,810 - INFO - ID: 46ef0fa6-2cdb-4e76-bac5-4eea72771976 | Path: /items/ | Status: 200 | Time: 0.0446s
+**********************************************************
+
+2026-03-20 17:40:53,400 - INFO - ID: 57bf5b0c-0e9a-40d1-b997-8c71874761b3 | Method: POST | Path: /items/remind/193aaeff-d216-4ff3-aaea-9cf6a56f145f
+2026-03-20 17:40:53,435 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('193aaeff-d216-4ff3-aaea-9cf6a56f145f'), 'remind_at': datetime.datetime(2026, 3, 20, 12, 11, 45, 189000, tzinfo=TzInfo(0))}
+2026-03-20 17:40:53,524 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 12:11:45 UTC.', 'data': {'title': 'string 2', 'desc': 'string', 'status': 'pending', 'remind_me_at': '2026-03-20T12:11:45.189000Z', 'id': '193aaeff-d216-4ff3-aaea-9cf6a56f145f', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'dispatched': False, 'deactivation_type': 'none', 'created_at': '2026-03-20T11:00:24.429877', 'last_updated_at': '2026-03-20T12:10:53.482450'}}
+2026-03-20 17:40:53,524 - INFO - ID: 57bf5b0c-0e9a-40d1-b997-8c71874761b3 | Path: /items/remind/193aaeff-d216-4ff3-aaea-9cf6a56f145f | Status: 202 | Time: 0.1241s
+**********************************************************
+
+2026-03-20 17:41:07,524 - INFO - ID: e5db398f-f81c-463c-95f1-fe7e595974c5 | Method: POST | Path: /items/remind/193aaeff-d216-4ff3-aaea-9cf6a56f145f
+2026-03-20 17:41:07,558 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('193aaeff-d216-4ff3-aaea-9cf6a56f145f'), 'remind_at': datetime.datetime(2026, 3, 20, 12, 12, 45, 189000, tzinfo=TzInfo(0))}
+2026-03-20 17:41:07,610 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 12:12:45 UTC.', 'data': {'title': 'string 2', 'desc': 'string', 'status': 'pending', 'remind_me_at': '2026-03-20T12:12:45.189000Z', 'id': '193aaeff-d216-4ff3-aaea-9cf6a56f145f', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'dispatched': False, 'deactivation_type': 'none', 'created_at': '2026-03-20T11:00:24.429877', 'last_updated_at': '2026-03-20T12:11:07.568449'}}
+2026-03-20 17:41:07,610 - INFO - ID: e5db398f-f81c-463c-95f1-fe7e595974c5 | Path: /items/remind/193aaeff-d216-4ff3-aaea-9cf6a56f145f | Status: 202 | Time: 0.0863s
+**********************************************************
+
+2026-03-20 17:54:25,260 - INFO - ID: 17deadc2-6321-4c94-93c9-6e264b71582a | Method: GET | Path: /docs
+2026-03-20 17:54:25,261 - INFO - ID: 17deadc2-6321-4c94-93c9-6e264b71582a | Path: /docs | Status: 200 | Time: 0.0011s
+**********************************************************
+
+2026-03-20 17:54:25,349 - INFO - ID: 252cac91-6637-4d36-aaea-5959d60f9c7d | Method: GET | Path: /openapi.json
+2026-03-20 17:54:25,388 - INFO - ID: 252cac91-6637-4d36-aaea-5959d60f9c7d | Path: /openapi.json | Status: 200 | Time: 0.0393s
+**********************************************************
+
+2026-03-20 17:54:40,160 - INFO - ID: 6840cbd7-0349-45c1-8ad9-fb089e505527 | Method: POST | Path: /users/login
+2026-03-20 17:54:40,162 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-20 17:54:40,433 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-20 17:54:40,434 - INFO - ID: 6840cbd7-0349-45c1-8ad9-fb089e505527 | Path: /users/login | Status: 200 | Time: 0.2738s
+**********************************************************
+
+2026-03-20 17:54:54,290 - INFO - ID: 29a69b37-ed63-4a20-80e1-af1b7bd246ce | Method: GET | Path: /items/
+2026-03-20 17:54:54,328 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 17:54:54,338 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': None, 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': True, 'dispatched': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T11:30:39.518971'}, {'title': 'string 2', 'desc': 'string', 'status': 'pending', 'remind_me_at': None, 'id': '193aaeff-d216-4ff3-aaea-9cf6a56f145f', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': True, 'dispatched': True, 'deactivation_type': 'none', 'created_at': '2026-03-20T11:00:24.429877', 'last_updated_at': '2026-03-20T12:12:56.382887'}]}
+2026-03-20 17:54:54,338 - INFO - ID: 29a69b37-ed63-4a20-80e1-af1b7bd246ce | Path: /items/ | Status: 200 | Time: 0.0480s
+**********************************************************
+
+2026-03-20 17:55:16,320 - INFO - ID: 265376bc-792b-4f7b-a091-10cdf9403b43 | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 17:55:16,357 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 12, 26, 30, 433000, tzinfo=TzInfo(0))}
+2026-03-20 17:55:16,447 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 12:26:30 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T12:26:30.433000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'dispatched': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T12:25:16.404739'}}
+2026-03-20 17:55:16,448 - INFO - ID: 265376bc-792b-4f7b-a091-10cdf9403b43 | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.1278s
+**********************************************************
+
+2026-03-20 17:57:11,135 - INFO - ID: 3ea3e04c-47ee-476a-b4c8-d297a9defab4 | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 17:57:11,185 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 12, 28, 30, 433000, tzinfo=TzInfo(0))}
+2026-03-20 17:57:11,237 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 12:28:30 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T12:28:30.433000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'dispatched': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T12:27:11.196990'}}
+2026-03-20 17:57:11,238 - INFO - ID: 3ea3e04c-47ee-476a-b4c8-d297a9defab4 | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.1031s
+**********************************************************
+
+2026-03-20 18:30:05,859 - INFO - ID: 7a8e603d-4dd5-488c-ac77-c8d39e0c4fcd | Method: GET | Path: /docs
+2026-03-20 18:30:05,860 - INFO - ID: 7a8e603d-4dd5-488c-ac77-c8d39e0c4fcd | Path: /docs | Status: 200 | Time: 0.0011s
+**********************************************************
+
+2026-03-20 18:30:05,963 - INFO - ID: acf534fe-4f0e-4aaf-bc76-ef44d6a31bd8 | Method: GET | Path: /openapi.json
+2026-03-20 18:30:06,011 - INFO - ID: acf534fe-4f0e-4aaf-bc76-ef44d6a31bd8 | Path: /openapi.json | Status: 200 | Time: 0.0471s
+**********************************************************
+
+2026-03-20 18:30:25,069 - INFO - ID: 42516f85-f702-45c9-9cb8-795c45a9f2d0 | Method: POST | Path: /users/login
+2026-03-20 18:30:25,072 - INFO - Function Start: login | Args: () Kwargs: {'db': 'obj', 'user_repo': 'obj', 'auth_service': 'obj', 'user_in': {'email': 'jaymin4724@gmail.com', 'password': '*******'}}
+2026-03-20 18:30:25,341 - INFO - Function Success: login | Result: {'success': True, 'message': 'Login successful.', 'data': {'access_token': '*******', 'refresh_token': '*******', 'token_type': 'bearer'}}
+2026-03-20 18:30:25,341 - INFO - ID: 42516f85-f702-45c9-9cb8-795c45a9f2d0 | Path: /users/login | Status: 200 | Time: 0.2718s
+**********************************************************
+
+2026-03-20 18:30:40,665 - INFO - ID: 503e3019-a305-4dc8-b403-916678aa98e6 | Method: GET | Path: /items/
+2026-03-20 18:30:40,704 - INFO - Function Start: get_items | Args: () Kwargs: {'db': 'obj', 'current_user': 'obj', 'item_repo': 'obj', 'pagination': {'page': 1, 'size': 10}}
+2026-03-20 18:30:40,713 - INFO - Function Success: get_items | Result: {'success': True, 'message': 'Successfully retrieved all items.', 'data': [{'title': 'string 2', 'desc': 'string', 'status': 'pending', 'remind_me_at': None, 'id': '193aaeff-d216-4ff3-aaea-9cf6a56f145f', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': True, 'dispatched': True, 'deactivation_type': 'none', 'created_at': '2026-03-20T11:00:24.429877', 'last_updated_at': '2026-03-20T12:12:56.382887'}, {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': None, 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': True, 'dispatched': True, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T12:28:35.543281'}]}
+2026-03-20 18:30:40,713 - INFO - ID: 503e3019-a305-4dc8-b403-916678aa98e6 | Path: /items/ | Status: 200 | Time: 0.0474s
+**********************************************************
+
+2026-03-20 18:31:02,518 - INFO - ID: 88428900-b028-4188-9f70-cb557434fbae | Method: POST | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14
+2026-03-20 18:31:02,556 - INFO - Function Start: schedule_item_reminder | Args: () Kwargs: {'db': 'obj', 'item_repo': 'obj', 'current_user': 'obj', 'item_id': UUID('6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14'), 'remind_at': datetime.datetime(2026, 3, 20, 13, 1, 50, 945000, tzinfo=TzInfo(0))}
+2026-03-20 18:31:02,646 - INFO - Function Success: schedule_item_reminder | Result: {'success': True, 'message': 'Reminder saved for 2026-03-20 13:01:50 UTC.', 'data': {'title': 'this is my item 1', 'desc': None, 'status': 'pending', 'remind_me_at': '2026-03-20T13:01:50.945000Z', 'id': '6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14', 'owner_id': '2822905e-f5d9-4e19-ae78-25fed91eb8a5', 'reminded': False, 'dispatched': False, 'deactivation_type': 'none', 'created_at': '2026-03-19T12:14:43.912809', 'last_updated_at': '2026-03-20T13:01:02.607474'}}
+2026-03-20 18:31:02,647 - INFO - ID: 88428900-b028-4188-9f70-cb557434fbae | Path: /items/remind/6f0ca9bd-649d-44ef-8e42-8e0b4d2a4c14 | Status: 202 | Time: 0.1285s
+**********************************************************
+
